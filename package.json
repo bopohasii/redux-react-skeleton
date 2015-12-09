@@ -1,0 +1,67 @@
+{
+  "name": "redux-react-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack -d --watch --colors",
+    "devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8050 --host 0.0.0.0",
+    "lint": "eslint shared client server",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noxwille/redux-react-skeleton.git"
+  },
+  "keywords": [
+    "Flux",
+    "Redux",
+    "React",
+    "Webpack"
+  ],
+  "author": {
+    "name": "Bogdan Pohasii",
+    "email": "bogdanpogasiy@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noxwille/redux-react-skeleton/issues"
+  },
+  "homepage": "https://github.com/Noxwille/redux-react-skeleton#readme",
+  "dependencies": {
+    "classnames": "^2.2.1",
+    "history": "^1.12.4",
+    "query-string": "^3.0.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-mdl": "^0.15.0",
+    "react-redux": "^3.1.0",
+    "react-router": "^1.0.0-rc3",
+    "redux": "^3.0.2",
+    "redux-logger": "^2.0.3",
+    "redux-thunk": "^1.0.0",
+    "whatwg-fetch": "^0.10.1"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "*",
+    "babel": "5.*",
+    "babel-core": "5.*",
+    "babel-eslint": "^4.1.1",
+    "babel-loader": "5.*",
+    "babel-plugin-react-autoprefix": "^0.2.6",
+    "css-loader": "^0.22.0",
+    "eslint": "^1.9.0",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-react": "^3.8.0",
+    "file-loader": "^0.8.4",
+    "json-loader": "^0.5.3",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
