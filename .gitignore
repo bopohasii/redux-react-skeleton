@@ -1,6 +1,5 @@
 node_modules/
-public/static/build/
-public/static/config.js
+public/
 npm-debug.log
 src/templates/
 etc/client-config.json
