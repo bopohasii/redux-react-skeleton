@@ -5,8 +5,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { loadMovies } from '../../actions/movies';
-import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
-import history from '../../history';
+import connectDataFetchers from '../../utils/connectDataFetchers.jsx';
+import history from '../../config/appHistory';
 
 import MoviesPage from '../../components/pages/MoviesPage.jsx';
 

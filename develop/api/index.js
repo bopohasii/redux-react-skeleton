@@ -1,7 +1,7 @@
 'use strict';
 
-import ApiClient      from './ApiClient';
-import MoviesAPI       from './Movies';
+import ApiClient from './ApiClient';
+import MoviesAPI from './Movies';
 
 export default function({apiPrefix} = {}) {
     if (!apiPrefix) {
