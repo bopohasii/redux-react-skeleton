@@ -1,6 +1,6 @@
 'use strict';
 
-import api                  from '../apiSingleton';
+import api                  from '../config/apiSingleton';
 
 export const LOAD_MOVIES_SUCCESS = 'LOAD_MOVIES_SUCCESS';
 export const LOAD_MOVIES_REQUEST = 'LOAD_MOVIES_REQUEST';
