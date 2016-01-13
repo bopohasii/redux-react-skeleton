@@ -1,6 +1,6 @@
 'use strict';
 
-import 'babel-core/polyfill';
+import '../node_modules/babel-core/polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -8,9 +8,9 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import 'whatwg-fetch';
 
-import configureStore from '../shared/store/configureStore';
-import routes from '../shared/routes.jsx';
-import history from '../shared/history.js';
+import configureStore from './store/configureStore';
+import routes from './config/appRoutes.jsx';
+import history from './config/appHistory.js';
 
 const initialState = {};
 const store = configureStore(initialState);
