@@ -1,9 +1,6 @@
 node_modules/
 public/
 npm-debug.log
-src/templates/
-etc/client-config.json
-lang/*.mo
 .idea/
 
 .DS_Store

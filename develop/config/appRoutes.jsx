@@ -7,7 +7,7 @@ import App from './../containers/App.jsx';
 
 import MainLayout from './../containers/layouts/MainLayout.jsx';
 
-import MoviesPageContainer from './../containers/pages/MoviesPage.jsx';
+import MoviesPageContainer from './../containers/pages/TodosPage.jsx';
 
 export default (
     <Route path="/" component={App} >

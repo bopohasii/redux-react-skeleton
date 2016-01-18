@@ -3,11 +3,11 @@
 import { combineReducers } from 'redux';
 
 // reducers
-import movies from './movies.reducer';
+import todos from './todos.reducer';
 
 
 const rootReducer = combineReducers({
-    movies
+    todos
 });
 
 export default rootReducer;
