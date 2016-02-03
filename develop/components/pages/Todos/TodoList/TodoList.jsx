@@ -40,18 +40,23 @@ class TodoList extends React.Component {
 
         return (
             <div className='TodoList'>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>check</th>
-                            <th>todo</th>
-                            <th>date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <Table
+                    fixedHeader = {true}
+                >
+                    <TableHeader
+                        displaySelectAll  = {false}
+                        adjustForCheckbox = {false}
+                    >
+                        <TableRow>
+                            <TableHeaderColumn><b>Check</b></TableHeaderColumn>
+                            <TableHeaderColumn><b>Todo</b></TableHeaderColumn>
+                            <TableHeaderColumn><b>Date</b></TableHeaderColumn>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
                         {rows}
-                    </tbody>
-                </table>
+                    </TableBody>
+                </Table>
             </div>
         );
     }

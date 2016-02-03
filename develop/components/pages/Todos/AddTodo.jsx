@@ -4,7 +4,7 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 
 import TextField    from 'material-ui/lib/text-field';
-import RaisedButton from 'material-ui/lib/raised-button';
+import FlatButton   from 'material-ui/lib/flat-button';
 
 import './TodosPage.less';
 
@@ -39,16 +39,22 @@ class AddTodo extends React.Component {
     }
 
     render() {
+        const textFieldStyle = {
+            margin: '0 20px'
+        };
+
         return (
             <div className='AddTodo'>
                 <TextField
-                    ref       ='todoNode'
-                    hintText  ='Enter todo'
+                    ref       = 'todoNode'
+                    hintText  = 'Enter todo'
+                    style     = {textFieldStyle}
                     onChange  = {this.handleChange.bind(this)}
                     onKeyDown = {this.handleChange.bind(this)}
                 />
-                <RaisedButton
+                <FlatButton
                     label    = 'Add'
+                    secondary= {true}
                     onClick  = {this.handleAdTodo.bind(this)}
                     disabled = {this.state.isDisabled}
                 />

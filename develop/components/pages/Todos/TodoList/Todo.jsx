@@ -20,16 +20,16 @@ class Todo extends React.Component {
         const tableRow = classNames({'completed': todo.completed});
 
         return (
-            <tr className={tableRow} key={key}>
-                <td>
+            <TableRow key={key} className={tableRow}>
+                <TableRowColumn>
                     <input
-                        type="checkbox"
-                        onChange={handleTodoComplete.bind(this, todo.id)}
+                        type     = "checkbox"
+                        onChange = {handleTodoComplete.bind(this, todo.id)}
                     />
-                </td>
-                <td>{todo.value}</td>
-                <td>{todo.date}</td>
-            </tr>
+                </TableRowColumn>
+                <TableRowColumn>{todo.value}</TableRowColumn>
+                <TableRowColumn>{todo.date}</TableRowColumn>
+            </TableRow>
         );
     }
 }
