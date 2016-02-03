@@ -1,36 +1,39 @@
 'use strict';
 
 import apiResponseFormatter from '../utils/apiResponseFormatter';
-import { ADD_TODO }         from '../actions/todos.type';
+import {
+    ADD_TODO,
+    COMPLETE_TODO
+} from '../actions/todos.type';
 
-function todos(state = {}, action) {
+function todos(state = [], action) {
     switch (action.type) {
         case ADD_TODO: {
             return [
                 ...state,
-                todo(undefined, action)
-            ]
+                simpleTodo(undefined, action)
+            ];
         } break;
 
         case COMPLETE_TODO: {
-            return state.map(todo => todo(todo, action))
+            return state.map((todo) => simpleTodo(todo, action));
         } break;
 
         default:
             return state;
     }
-};
+}
 
 
-const todo = (state, action) => {
+function simpleTodo(state, action) {
     switch (action.type) {
         case ADD_TODO: {
             return {
                 id    : Date.now(),
-                value : action.value,
-                date  : new Date(),
+                value : action.todo,
+                date  : (new Date).toLocaleDateString('en-US', {hour: '2-digit', minute:'2-digit'}),
                 completed : false
-            }
+            };
         } break;
 
         case COMPLETE_TODO: {
@@ -39,16 +42,13 @@ const todo = (state, action) => {
             return {
                 ...state,
                 completed: !state.completed
-            }
+            };
         } break;
 
         default:
             return state;
     }
-};
-
-
-
+}
 
 export default todos;
 

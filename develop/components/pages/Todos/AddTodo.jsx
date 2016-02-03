@@ -19,13 +19,19 @@ class AddTodo extends React.Component {
 
     };
 
-    handleChange() {
-        const isTodoEmpty = (this.refs.todoNode.getValue().length === 0);
+    handleChange(event) {
+        if (event.keyCode === 13) {
+            this.handleAdTodo();
+        }
+
+        const isTodoEmpty = !this.refs.todoNode.getValue().length;
         this.setState({ isDisabled: isTodoEmpty });
     }
 
     handleAdTodo() {
         const addTodo = this.refs.todoNode;
+
+        if (!addTodo.getValue().length) return false;
 
         this.props.handleAddTodo(addTodo.getValue());
 
@@ -36,14 +42,15 @@ class AddTodo extends React.Component {
         return (
             <div className='AddTodo'>
                 <TextField
-                    hintText='Enter todo'
-                    ref='todoNode'
-                    onChange={this.handleChange.bind(this)}
+                    ref       ='todoNode'
+                    hintText  ='Enter todo'
+                    onChange  = {this.handleChange.bind(this)}
+                    onKeyDown = {this.handleChange.bind(this)}
                 />
                 <RaisedButton
-                    label='Add'
-                    onClick={this.handleAdTodo.bind(this)}
-
+                    label    = 'Add'
+                    onClick  = {this.handleAdTodo.bind(this)}
+                    disabled = {this.state.isDisabled}
                 />
             </div>
         );

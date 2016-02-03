@@ -2,7 +2,10 @@
 
 import api from '../config/apiSingleton';
 
-import { ADD_TODO } from './todos.type';
+import {
+    ADD_TODO,
+    COMPLETE_TODO
+} from './todos.type';
 
 export function addTodo(params = {}, query = {}) {
     return (dispatch) => {
@@ -10,21 +13,21 @@ export function addTodo(params = {}, query = {}) {
 
         dispatch({
             type: ADD_TODO,
-            todo: params
+            todo: params.todo
         });
-    }
-};
+    };
+}
 
 export function completeTodo(params = {}, query = {}) {
     return (dispatch) => {
-        //const search = query.search || '';
+        const search = query.search || '';
 
         dispatch({
             type   : COMPLETE_TODO,
-            todoId : params
+            todoId : params.todoId
         });
-    }
-};
+    };
+}
 
 
 
