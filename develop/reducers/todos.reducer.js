@@ -1,13 +1,9 @@
 'use strict';
 
 import apiResponseFormatter from '../utils/apiResponseFormatter';
+import { ADD_TODO }         from '../actions/todos.type';
 
-import {
-    ADD_TODO
-} from '../actions/todos';
-
-export default function todos(state = {}, action) {
-    console.log(state);
+function todos(state = {}, action) {
     switch (action.type) {
         case ADD_TODO:
             return Object.assign({}, state, {
@@ -18,3 +14,6 @@ export default function todos(state = {}, action) {
             return state;
     }
 }
+
+export default todos;
+

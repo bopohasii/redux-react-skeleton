@@ -4,13 +4,13 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { loadMovies } from '../../actions/todos';
+import { loadMovies } from '../../actions/todos.action';
 import connectDataFetchers from '../../utils/connectDataFetchers.jsx';
 import history from '../../config/appHistory';
 
 import TodosPage from '../../components/pages/Todos/TodosPage.jsx';
 
-import { addTodo } from '../../actions/todos';
+import { addTodo } from '../../actions/todos.action';
 
 class TodosPageContainer extends React.Component {
 

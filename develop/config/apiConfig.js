@@ -2,6 +2,6 @@
 
 module.exports = {
     apiPrefix: 'http://inabi.pp.ciklum.com:8080',
-    staticUrl: 'http://localhost:8051'
+    staticUrl: 'http://localhost:3030'
 };
 

@@ -2,7 +2,7 @@
 
 import api from '../config/apiSingleton';
 
-export const ADD_TODO = 'ADD_TODO';
+import { ADD_TODO } from './todos.type';
 
 export function addTodo(params = {}, query = {}) {
     return (dispatch) => {

@@ -2,7 +2,9 @@
 
 import { combineReducers } from 'redux';
 
-// reducers
+/**
+ * Reducers
+ */
 import todos from './todos.reducer';
 
 
