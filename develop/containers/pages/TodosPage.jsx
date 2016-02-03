@@ -18,20 +18,24 @@ class TodosPageContainer extends React.Component {
         this.props.dispatch(addTodo(todo));
     };
 
+    handleTodoComplete = (todoId) => {
+        this.props.dispatch(completeTodo(todoId));
+    };
+
     render() {
         return (
             <TodosPage
-                todos         = {this.props.todos}
-                handleAddTodo = {this.handleAddTodo}
+                todos              = {this.props.todos}
+                handleAddTodo      = {this.handleAddTodo}
+                handleTodoComplete = {this.handleTodoComplete}
             />
         );
     }
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
-        todos: state.todos.entities || []
+        todos: state.todos || []
     };
 }
 

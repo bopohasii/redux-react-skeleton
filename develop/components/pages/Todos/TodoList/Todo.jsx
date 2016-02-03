@@ -2,31 +2,37 @@
 
 import React from 'react';
 
-import TableRow from 'material-ui/lib/table/table-row';
+import TableRow       from 'material-ui/lib/table/table-row';
 import TableRowColumn from 'material-ui/lib/table/table-row-column';
+
+import classNames from 'classnames'
 
 import './../TodosPage.less';
 
-
-export default class TodoList extends React.Component {
+class TodoList extends React.Component {
     static propTypes = {
-        todo: React.PropTypes.object
+        todo               : React.PropTypes.object,
+        handleTodoComplete : React.PropTypes.func
     };
 
     static defaultProps = {
         todo: {}
     };
 
-
     render() {
-        const { todo } = this.props;
+        const { todo, handleTodoComplete } = this.props;
+
+        const tableRow = classNames({'completed': todo.completed});
 
         return (
-            <TableRow>
+            <TableRow onClick={handleTodoComplete.bind(this, todo.id)} className={tableRow}>
                 <TableRowColumn>{todo.value}</TableRowColumn>
                 <TableRowColumn>{todo.date}</TableRowColumn>
             </TableRow>
         );
     }
 }
+
+export default TodoList;
+
 
