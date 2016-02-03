@@ -28,10 +28,10 @@ class TodoList extends React.Component {
     render() {
         const { todos, handleTodoComplete } = this.props;
 
-        const rows = todos.map((todo, index) => {
+        const rows = todos.map((todo, idx) => {
             return (
                 <Todo
-                    key  = {todo.id + index}
+                    key  = {idx}
                     todo = {todo}
                     handleTodoComplete = {handleTodoComplete}
                 />
@@ -40,18 +40,18 @@ class TodoList extends React.Component {
 
         return (
             <div className='TodoList'>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHeaderColumn>Todo</TableHeaderColumn>
-                            <TableHeaderColumn>Date</TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>check</th>
+                            <th>todo</th>
+                            <th>date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {rows}
-                    </TableBody>
-                </Table>
-
+                    </tbody>
+                </table>
             </div>
         );
     }
