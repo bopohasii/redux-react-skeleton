@@ -33,7 +33,6 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "fbjs": "^0.2.1",
-    "history": "^1.13.1",
     "isomorphic-fetch": "^2.2.0",
     "material-ui": "^0.13.4",
     "query-string": "^3.0.0",
@@ -54,6 +53,7 @@
     "babel-loader": "5.*",
     "babel-plugin-react-autoprefix": "^0.2.6",
     "css-loader": "^0.22.0",
+    "escope": "^3.3.0",
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
     "eslint-plugin-react": "^3.8.0",
@@ -72,6 +72,7 @@
     "redux-mock-store": "0.0.4",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
+    "webpack": "^1.12.12",
     "webpack-dev-server": "^1.12.1"
   }
 }

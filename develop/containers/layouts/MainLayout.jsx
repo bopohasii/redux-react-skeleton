@@ -1,13 +1,11 @@
-import React from 'react';
+'use strict';
 
-import Layout, { Header, HeaderRow, HeaderTabs, Content } from 'react-mdl/lib/layout/Layout';
-import Textfield from 'react-mdl/lib/Textfield';
-import history   from '../../config/appHistory';
+import React   from 'react';
 
-export default class MainLayout extends React.Component {
+class MainLayout extends React.Component {
 
     handleTabClick(type) {
-        history.push(null, `/${type}`);
+        history.pushState(null, `/${type}`);
     }
 
     render() {
@@ -18,3 +16,5 @@ export default class MainLayout extends React.Component {
         );
     }
 }
+
+export default MainLayout;

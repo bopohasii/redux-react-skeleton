@@ -1,63 +1,62 @@
 'use strict';
 
-import React from 'react';
+import React    from 'react';
 import ReactDOM from 'react-dom';
 
-import Table from 'material-ui/lib/table/table';
-import TableBody from 'material-ui/lib/table/table-body';
-import TableHeader from 'material-ui/lib/table/table-header';
+import Table             from 'material-ui/lib/table/table';
+import TableBody         from 'material-ui/lib/table/table-body';
+import TableHeader       from 'material-ui/lib/table/table-header';
+import TableRow          from 'material-ui/lib/table/table-row';
 import TableHeaderColumn from 'material-ui/lib/table/table-header-column';
-import TableRow from 'material-ui/lib/table/table-row';
+import TableRowColumn from 'material-ui/lib/table/table-row-column';
 
 import Todo from './Todo.jsx';
 
 import './../TodosPage.less';
 
 
-export default class TodoList extends React.Component {
+class TodoList extends React.Component {
     static propTypes = {
-        todos: React.PropTypes.array
+        todos              : React.PropTypes.array,
+        handleTodoComplete : React.PropTypes.func
     };
 
     static defaultProps = {
         todos: []
     };
 
-    handleCheckTodo(selectedRows) {
-        console.log(selectedRows);
-    }
-
     render() {
-        const { todos } = this.props;
+        const { todos, handleTodoComplete } = this.props;
 
-        const rows = todos.map((todo, index) => {
+        const rows = todos.map((todo, idx) => {
             return (
                 <Todo
-                    key  = {todo.id + index}
+                    key  = {idx}
                     todo = {todo}
+                    handleTodoComplete = {handleTodoComplete}
                 />
             );
         });
 
-        console.log(rows);
-
         return (
             <div className='TodoList'>
-                <Table
-                    onRowSelection={this.handleCheckTodo}
-                >
-                    <TableHeader>
-                        <TableRow>
-                            <TableHeaderColumn>Todo</TableHeaderColumn>
-                            <TableHeaderColumn>Date</TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody selectable={true}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>check</th>
+                            <th>todo</th>
+                            <th>date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {rows}
-                    </TableBody>
-                </Table>
+                    </tbody>
+                </table>
             </div>
         );
     }
 }
+
+export default TodoList;
+
 

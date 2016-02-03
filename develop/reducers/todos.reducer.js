@@ -1,14 +1,49 @@
 'use strict';
 
 import apiResponseFormatter from '../utils/apiResponseFormatter';
-import { ADD_TODO }         from '../actions/todos.type';
+import {
+    ADD_TODO,
+    COMPLETE_TODO
+} from '../actions/todos.type';
 
-function todos(state = {}, action) {
+function todos(state = [], action) {
     switch (action.type) {
-        case ADD_TODO:
-            return Object.assign({}, state, {
-                entities: [...state, action.todo]
-            });
+        case ADD_TODO: {
+            return [
+                ...state,
+                simpleTodo(undefined, action)
+            ];
+        } break;
+
+        case COMPLETE_TODO: {
+            return state.map((todo) => simpleTodo(todo, action));
+        } break;
+
+        default:
+            return state;
+    }
+}
+
+
+function simpleTodo(state, action) {
+    switch (action.type) {
+        case ADD_TODO: {
+            return {
+                id    : Date.now(),
+                value : action.todo,
+                date  : (new Date).toLocaleDateString('en-US', {hour: '2-digit', minute:'2-digit'}),
+                completed : false
+            };
+        } break;
+
+        case COMPLETE_TODO: {
+            if (state.id !== action.todoId) return state;
+
+            return {
+                ...state,
+                completed: !state.completed
+            };
+        } break;
 
         default:
             return state;
