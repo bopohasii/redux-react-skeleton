@@ -8,13 +8,9 @@ import {
 } from './todos.type';
 
 export function addTodo(params = {}, query = {}) {
-    return (dispatch) => {
-        const search = query.search || '';
-
-        dispatch({
-            type: ADD_TODO,
-            todo: params.todo
-        });
+    return {
+        type: ADD_TODO,
+        todo: params.todo
     };
 }
 
@@ -22,10 +18,10 @@ export function completeTodo(params = {}, query = {}) {
     return (dispatch) => {
         const search = query.search || '';
 
-        dispatch({
+        return {
             type   : COMPLETE_TODO,
             todoId : params.todoId
-        });
+        };
     };
 }
 
