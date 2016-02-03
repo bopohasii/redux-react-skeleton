@@ -1,16 +1,14 @@
 'use strict';
 
 import ApiClient from './ApiClient';
-import MoviesAPI from './Todos';
+import TodosAPI  from './Todos';
 
 export default function({apiPrefix} = {}) {
-    if (!apiPrefix) {
-        throw '[apiPrefix] required';
-    }
+    if (!apiPrefix) throw '[apiPrefix] is required';
 
     const api = new ApiClient({ prefix: apiPrefix });
 
     return {
-        movies: new MoviesAPI({ apiClient: api })
+        todos: new TodosAPI({ apiClient: api })
     };
 }

@@ -1,5 +1,5 @@
 'use strict';
 
-const {createHistory} = require('history');
+import {createHistory} from 'history';
 
 module.exports = createHistory();

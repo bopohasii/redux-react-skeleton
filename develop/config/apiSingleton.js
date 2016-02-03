@@ -1,8 +1,8 @@
 'use strict';
 
-import config     from './appConfig';
-import apiFactory from '../api';
+import {apiPrefix} from './apiConfig';
+import apiFactory  from '../api';
 
 export default apiFactory({
-    apiPrefix: config.apiPrefix
+    apiPrefix
 });
