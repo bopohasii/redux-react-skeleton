@@ -18,7 +18,6 @@ class TodosPageContainer extends React.Component {
     };
 
     handleTodoComplete = (todoId) => {
-        console.log(todoId);
         this.props.dispatch(completeTodo({todoId}));
     };
 
