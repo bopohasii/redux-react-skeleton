@@ -2,8 +2,10 @@
 
 import queryString from 'query-string';
 
-export default class ApiClient {
-    constructor( {prefix = 'api/v1'} = {} ) {
+require('isomorphic-fetch');
+
+class ApiClient {
+    constructor({ prefix }) {
         this.prefix = prefix;
     }
 
@@ -48,10 +50,16 @@ export default class ApiClient {
     }
 
     request({ url, method, params = {}, body }) {
+        /**
+         * Set Auth token to 'query params'
+         */
         if (this.authToken) {
             params.token = this.authToken;
         }
 
+        /**
+         * Set 'query params' to GET request
+         */
         const urlWithQuery = `${url}?${queryString.stringify(params)}`;
 
         const init = {
@@ -66,22 +74,27 @@ export default class ApiClient {
             init.body = body;
         }
 
-        return fetch(`${this.prefix}/${urlWithQuery}`, init).then( res => {
-            if (res.status >= 400) {
-                throw new Error('Bad response from server');
-            }
+        return fetch(`${this.prefix}/${urlWithQuery}`, init)
+            .then(checkStatus)
+            .then((response) => response.json())
+            .then((data) => data)
+            .catch((error) => Promise.reject(error));
 
-            return res.json();
-        }).then( data => {
-            if (data && data.status === 1) {
-                return data;
+        function checkStatus(response) {
+            if (response.status >= 200 && response.status < 300) {
+                return response;
+            } else {
+                const error = new Error(response.statusText);
+                error.response = response;
+                throw error;
             }
-
-            return Promise.reject(data.error);
-        });
+        }
     }
 
     setAuthToken(authToken) {
         this.authToken = authToken;
     }
 }
+
+export default ApiClient;
+

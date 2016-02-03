@@ -1,4 +1,6 @@
-import React   from 'react';
+'use strict';
+
+import React from 'react';
 
 export default function connectDataFetchers(Component, actionCreators) {
     return class DataFetchersWrapper extends React.Component {

@@ -2,15 +2,14 @@
 
 import '../node_modules/babel-core/polyfill';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React        from 'react';
+import ReactDOM     from 'react-dom';
+import { Router }   from 'react-router';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
-import 'whatwg-fetch';
 
-import configureStore from './store/configureStore';
-import routes from './config/appRoutes.jsx';
-import history from './config/appHistory.js';
+import routes         from './config/appRoutes.jsx';
+import history        from './config/appHistory.js';
+import configureStore from './store/root.store';
 
 const initialState = {};
 const store = configureStore(initialState);
