@@ -18,10 +18,10 @@ export function completeTodo(params = {}, query = {}) {
     return (dispatch) => {
         const search = query.search || '';
 
-        return {
+        dispatch({
             type   : COMPLETE_TODO,
             todoId : params.todoId
-        };
+        });
     };
 }
 
