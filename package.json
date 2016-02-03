@@ -4,18 +4,19 @@
   "description": "boilerplate for quick start with Redux, React",
   "main": "app.js",
   "scripts": {
-    "start": "webpack -d --watch --colors",
-    "build": "webpack -p",
-    "devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 3030 --host 0.0.0.0",
-    "lint": "eslint develop test",
-    "lint:watch": "watch 'npm run lint' develop",
-    "test": "mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
-    "test:watch": "npm test -- --watch",
-    "clear": "rm -rf public/ node_modules/"
+    "start"        : "webpack -d --watch --colors",
+    "build"        : "webpack -p",
+    "devserver"    : "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 3030 --host 0.0.0.0",
+    "lint"         : "eslint develop test",
+    "lint:watch"   : "watch 'npm run lint' develop",
+    "test"         : "mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",
+    "test:watch"   : "npm test -- --watch",
+    "test:TeamCity": "mocha --reporter mocha-teamcity-reporter test",
+    "clear"        : "rm -rf public/ node_modules/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Noxwille/redux-react-skeleton.git"
+    "url" : "git+https://github.com/Noxwille/redux-react-skeleton.git"
   },
   "keywords": [
     "Flux",
@@ -27,7 +28,7 @@
     "Webpack"
   ],
   "author": {
-    "name": "Bogdan Pohasii",
+    "name" : "Bogdan Pohasii",
     "email": "bogdanpogasiy@gmail.com"
   },
   "license": "ISC",
