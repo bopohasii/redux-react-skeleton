@@ -1,5 +1,4 @@
 # Redux React Skeleton
-### keywords: [`#Flux`](https://facebook.github.io/flux/) [`#Redux`](https://github.com/rackt/redux) [`#React`](https://facebook.github.io/react/) [`#Meterial-UI`](http://www.material-ui.com/) [`#ES2015`](http://www.ecma-international.org/ecma-262/6.0/) [`#Webpack`](https://webpack.github.io) [`#Babel`](https://babeljs.io) [`#Mocha`](https://mochajs.org) [`#Chai`](http://chaijs.com)
 This skeleton is designed to get up and running with a bunch of awesome new front-end technologies, all on top of a configurable, feature-rich webpack build system that's already setup to provide hot reloading, CSS modules with Sass support, unit testing, code coverage reports, bundle splitting, and a whole lot more.
 
 ## Requirements
@@ -41,3 +40,5 @@ $ npm install
 
 ## Contribution
 Before push commit make sure that all modules are added in package.json
+
+##### keywords: [`#Flux`](https://facebook.github.io/flux/) [`#Redux`](https://github.com/rackt/redux) [`#React`](https://facebook.github.io/react/) [`#Meterial-UI`](http://www.material-ui.com/) [`#ES2015`](http://www.ecma-international.org/ecma-262/6.0/) [`#Webpack`](https://webpack.github.io) [`#Babel`](https://babeljs.io) [`#Mocha`](https://mochajs.org) [`#Chai`](http://chaijs.com)
