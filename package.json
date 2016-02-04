@@ -25,7 +25,9 @@
     "Meterial-UI",
     "ES2015",
     "Babel",
-    "Webpack"
+    "Webpack",
+    "Mocha",
+    "Chai"
   ],
   "author": {
     "name" : "Bogdan Pohasii",
