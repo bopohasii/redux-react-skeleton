@@ -18,16 +18,18 @@ class TodosPage extends React.Component {
     };
 
     render() {
-        const { todos, handleAddTodo, handleTodoComplete } = this.props;
+        const { todos, handleAddTodo, handleClearAll, handleTodoComplete } = this.props;
 
         return (
             <div className='TodosPage'>
                 <AppBar
-                    style={{padding: 0}}
-                    title="Todos"
+                    style={{padding: 0, textAlign: 'center'}}
+                    title="< Todo key='react-redux' />"
                 />
                 <AddTodo
-                    handleAddTodo = {handleAddTodo}
+                    handleAddTodo   = {handleAddTodo}
+                    handleClearAll  = {handleClearAll}
+                    isClearDisabled = {!todos.length}
                 />
                 <TodoList
                     todos              = {todos}
