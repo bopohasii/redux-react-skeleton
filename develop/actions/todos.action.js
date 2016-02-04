@@ -4,6 +4,7 @@ import api from '../config/apiSingleton';
 
 import {
     ADD_TODO,
+    CLEAR_ALL,
     COMPLETE_TODO
 } from './todos.type';
 
@@ -11,6 +12,12 @@ export function addTodo(params = {}, query = {}) {
     return {
         type: ADD_TODO,
         todo: params.todo
+    };
+}
+
+export function clearAll(params = {}, query = {}) {
+    return {
+        type: CLEAR_ALL
     };
 }
 

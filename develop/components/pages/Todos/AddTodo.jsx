@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 import TextField    from 'material-ui/lib/text-field';
 import FlatButton   from 'material-ui/lib/flat-button';
+import FontIcon     from 'material-ui/lib/font-icon';
 
 import './TodosPage.less';
 
@@ -16,7 +17,9 @@ class AddTodo extends React.Component {
     }
 
     static propTypes = {
-
+        isClearDisabled : React.PropTypes.bool,
+        handleClearAll  : React.PropTypes.func,
+        handleAddTodo   : React.PropTypes.func
     };
 
     handleChange(event) {
@@ -43,8 +46,16 @@ class AddTodo extends React.Component {
             margin: '0 20px'
         };
 
+        const { isClearDisabled, handleClearAll } = this.props;
+
         return (
             <div className='AddTodo'>
+                <FlatButton
+                    label    = 'Add'
+                    secondary= {true}
+                    onClick  = {this.handleAdTodo.bind(this)}
+                    disabled = {this.state.isDisabled}
+                />
                 <TextField
                     ref       = 'todoNode'
                     hintText  = 'Enter todo'
@@ -53,10 +64,10 @@ class AddTodo extends React.Component {
                     onKeyDown = {this.handleChange.bind(this)}
                 />
                 <FlatButton
-                    label    = 'Add'
-                    secondary= {true}
-                    onClick  = {this.handleAdTodo.bind(this)}
-                    disabled = {this.state.isDisabled}
+                    label     = 'clear all'
+                    secondary = {true}
+                    onClick   = {handleClearAll}
+                    disabled  = {isClearDisabled}
                 />
             </div>
         );

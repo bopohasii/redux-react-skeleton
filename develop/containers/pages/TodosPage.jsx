@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 
 import connectDataFetchers from '../../utils/connectDataFetchers.jsx';
 
-import TodosPage                 from '../../components/pages/Todos/TodosPage.jsx';
-import { addTodo, completeTodo } from '../../actions/todos.action';
+import TodosPage           from '../../components/pages/Todos/TodosPage.jsx';
+import { addTodo, clearAll, completeTodo } from '../../actions/todos.action';
 
 class TodosPageContainer extends React.Component {
     static propTypes = {
@@ -15,6 +15,10 @@ class TodosPageContainer extends React.Component {
 
     handleAddTodo = (todo) => {
         this.props.dispatch(addTodo({todo}));
+    };
+
+    handleClearAll = () => {
+        this.props.dispatch(clearAll());
     };
 
     handleTodoComplete = (todoId) => {
@@ -26,6 +30,7 @@ class TodosPageContainer extends React.Component {
             <TodosPage
                 todos              = {this.props.todos}
                 handleAddTodo      = {this.handleAddTodo}
+                handleClearAll     = {this.handleClearAll}
                 handleTodoComplete = {this.handleTodoComplete}
             />
         );

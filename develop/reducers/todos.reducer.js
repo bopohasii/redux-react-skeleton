@@ -3,6 +3,7 @@
 import apiResponseFormatter from '../utils/apiResponseFormatter';
 import {
     ADD_TODO,
+    CLEAR_ALL,
     COMPLETE_TODO
 } from '../actions/todos.type';
 
@@ -13,6 +14,10 @@ function todos(state = [], action) {
                 ...state,
                 simpleTodo(undefined, action)
             ];
+        } break;
+
+        case CLEAR_ALL: {
+            return [];
         } break;
 
         case COMPLETE_TODO: {
