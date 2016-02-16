@@ -43,25 +43,25 @@ class AddTodo extends React.Component {
 
     render() {
         const textFieldStyle = {
-            margin: '0 20px'
+            margin: '0 20px 0 0'
         };
 
         const { isClearDisabled, handleClearAll } = this.props;
 
         return (
             <div className='AddTodo'>
-                <FlatButton
-                    label    = 'Add'
-                    secondary= {true}
-                    onClick  = {this.handleAdTodo.bind(this)}
-                    disabled = {this.state.isDisabled}
-                />
                 <TextField
                     ref       = 'todoNode'
                     hintText  = 'Enter todo'
                     style     = {textFieldStyle}
                     onChange  = {this.handleChange.bind(this)}
                     onKeyDown = {this.handleChange.bind(this)}
+                />
+                <FlatButton
+                    label    = 'Add'
+                    secondary= {true}
+                    onClick  = {this.handleAdTodo.bind(this)}
+                    disabled = {this.state.isDisabled}
                 />
                 <FlatButton
                     label     = 'clear all'
