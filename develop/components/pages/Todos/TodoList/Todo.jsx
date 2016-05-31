@@ -24,7 +24,7 @@ class Todo extends React.Component {
                 <TableRowColumn>
                     <input
                         type     = "checkbox"
-                        onChange = {handleTodoComplete.bind(this, todo.id)}
+                        onChange = {handleTodoComplete.bind(this, {todoId: todo.id})}
                     />
                 </TableRowColumn>
                 <TableRowColumn>{todo.value}</TableRowColumn>

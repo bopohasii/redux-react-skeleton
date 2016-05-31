@@ -1,37 +1,30 @@
 'use strict';
 
 import React       from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-import connectDataFetchers from '../../utils/connectDataFetchers.jsx';
-
-import TodosPage           from '../../components/pages/Todos/TodosPage.jsx';
+import TodosPage from '../../components/pages/Todos/TodosPage.jsx';
 import { addTodo, clearAll, completeTodo } from '../../actions/todos.action';
 
 class TodosPageContainer extends React.Component {
     static propTypes = {
         todos: React.PropTypes.array
     };
-
-    handleAddTodo = (todo) => {
-        this.props.dispatch(addTodo({todo}));
-    };
-
-    handleClearAll = () => {
-        this.props.dispatch(clearAll());
-    };
-
-    handleTodoComplete = (todoId) => {
-        this.props.dispatch(completeTodo({todoId}));
-    };
+    
+    componentDidMount() {
+        // Use for pre-loading component data
+    }
 
     render() {
+        const {todos, handleAddTodo, handleClearAll, handleTodoComplete} = this.props;
+        
         return (
             <TodosPage
-                todos              = {this.props.todos}
-                handleAddTodo      = {this.handleAddTodo}
-                handleClearAll     = {this.handleClearAll}
-                handleTodoComplete = {this.handleTodoComplete}
+                todos              = {todos}
+                handleAddTodo      = {handleAddTodo}
+                handleClearAll     = {handleClearAll}
+                handleTodoComplete = {handleTodoComplete}
             />
         );
     }
@@ -43,7 +36,13 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(
-    connectDataFetchers(TodosPageContainer, [  ])
-);
+function mapDispatchToProps(dispatch) {
+    return {
+        handleAddTodo: bindActionCreators(addTodo, dispatch),
+        handleClearAll: bindActionCreators(clearAll, dispatch),
+        handleTodoComplete: bindActionCreators(completeTodo, dispatch)
+    }
+}
+
+export default connect(mapStateToProps)(TodosPageContainer);
 
