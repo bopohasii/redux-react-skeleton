@@ -36,9 +36,9 @@
   "license": "ISC",
   "homepage": "https://github.com/Noxwille/redux-react-skeleton#readme",
   "dependencies": {
+    "axios": "^0.11.1",
     "classnames": "^2.2.1",
     "fbjs": "^0.2.1",
-    "isomorphic-fetch": "^2.2.0",
     "material-ui": "^0.13.4",
     "query-string": "^3.0.0",
     "react": "^0.14.7",
