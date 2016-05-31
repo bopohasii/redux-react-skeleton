@@ -36,7 +36,7 @@ class AddTodo extends React.Component {
 
         if (!addTodo.getValue().length) return false;
 
-        this.props.handleAddTodo(addTodo.getValue());
+        this.props.handleAddTodo({todo: addTodo.getValue()});
 
         addTodo.setValue('');
     }

@@ -5,7 +5,7 @@ import {
     ADD_TODO,
     CLEAR_ALL,
     COMPLETE_TODO
-} from '../actions/todos.type';
+} from '../actions/types/todos.types.js';
 
 function todos(state = [], action) {
     switch (action.type) {

@@ -1,8 +1,8 @@
 'use strict';
 
 import { expect }   from 'chai';
-import types        from '../../develop/actions/todos.type';
-import * as actions from '../../develop/actions/todos.action';
+import types        from '../../develop/actions/types/todos.types.js';
+import * as actions from '../../develop/actions/todos.actions.js';
 
 import configureStore from 'redux-mock-store';
 

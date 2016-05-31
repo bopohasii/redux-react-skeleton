@@ -1,18 +1,16 @@
 'use strict';
 
-import '../node_modules/babel-core/polyfill';
+// import '../node_modules/babel-core/polyfill';
 
 import React        from 'react';
 import ReactDOM     from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { Router, useRouterHistory } from 'react-router';
-import { createHashHistory }        from 'history';
+import { Router } from 'react-router';
 
 import routes         from './config/appRoutes.jsx';
 import configureStore from './store/root.store';
-
-const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
+import appHistory     from './config/appHistory';
 
 const initialState = {};
 const store = configureStore(initialState);

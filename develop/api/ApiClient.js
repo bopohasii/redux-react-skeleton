@@ -1,15 +1,15 @@
 'use strict';
 
+import axios from 'axios';
 import queryString from 'query-string';
-
-require('isomorphic-fetch');
+import LocalStorage from '../api/LocalStorage';
 
 class ApiClient {
     constructor({ prefix }) {
         this.prefix = prefix;
     }
 
-    get(requestUrl, payload = {}, params = {} ) {
+    get(requestUrl, payload = {}, params = {}) {
         return this.request({
             url: requestUrl,
             method: 'get',
@@ -19,14 +19,6 @@ class ApiClient {
     }
 
     put(requestUrl, payload = {}) {
-        return this.request({
-            url: requestUrl,
-            method: 'put',
-            body: payload
-        });
-    }
-
-    patch(requestUrl, payload = {}) {
         return this.request({
             url: requestUrl,
             method: 'put',
@@ -49,50 +41,36 @@ class ApiClient {
         });
     }
 
-    request({ url, method, params = {}, body }) {
-        /**
-         * Set Auth token to 'query params'
-         */
-        if (this.authToken) {
-            params.token = this.authToken;
-        }
-
-        /**
-         * Set 'query params' to GET request
-         */
-        const urlWithQuery = `${url}?${queryString.stringify(params)}`;
-
-        const init = {
+    request({ url, method, params = {}, headers, body }) {
+        const config = {
             method,
+            baseURL: `${this.prefix}`,
+            url: params && Object.keys(params).length ? `${url}?${queryString.stringify(params)}` : `${url}`,
             headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         };
 
-        if (method !== 'get' && method !== 'head') {
-            init.body = body;
-        }
-
-        return fetch(`${this.prefix}/${urlWithQuery}`, init)
-            .then(checkStatus)
-            .then((response) => response.json())
-            .then((data) => data)
-            .catch((error) => Promise.reject(error));
-
-        function checkStatus(response) {
-            if (response.status >= 200 && response.status < 300) {
-                return response;
-            } else {
-                const error = new Error(response.statusText);
-                error.response = response;
-                throw error;
+        axios.interceptors.request.use((config) => {
+            
+            const auth_token = LocalStorage.get('auth_token');
+            // Append 'auth header' for restriction pages
+            if (auth_token) {
+                // Custom security header
+                config.headers[ 'x-wsse' ] = auth_token;
             }
-        }
-    }
 
-    setAuthToken(authToken) {
-        this.authToken = authToken;
+            return config;
+        });
+
+        const isPayloadMethod = !~['get', 'head', 'delete'].indexOf(method);
+        // Append 'payload' for data methods
+        if (isPayloadMethod) { config.data = body; }
+
+
+        return axios(config)
+            .then(({data}) => Promise.resolve(data))
+            .catch((error) => Promise.reject(error));
     }
 }
 

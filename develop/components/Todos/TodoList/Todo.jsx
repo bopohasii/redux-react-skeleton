@@ -7,7 +7,7 @@ import TableRowColumn from 'material-ui/lib/table/table-row-column';
 
 import classNames from 'classnames';
 
-import './../TodosPage.less';
+import '../TodosPage.less';
 
 class Todo extends React.Component {
     static propTypes = {
@@ -24,7 +24,7 @@ class Todo extends React.Component {
                 <TableRowColumn>
                     <input
                         type     = "checkbox"
-                        onChange = {handleTodoComplete.bind(this, todo.id)}
+                        onChange = {handleTodoComplete.bind(this, {todoId: todo.id})}
                     />
                 </TableRowColumn>
                 <TableRowColumn>{todo.value}</TableRowColumn>

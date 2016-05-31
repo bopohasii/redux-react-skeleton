@@ -12,7 +12,7 @@ import TableRowColumn from 'material-ui/lib/table/table-row-column';
 
 import Todo from './Todo.jsx';
 
-import './../TodosPage.less';
+import '../TodosPage.less';
 
 
 class TodoList extends React.Component {
