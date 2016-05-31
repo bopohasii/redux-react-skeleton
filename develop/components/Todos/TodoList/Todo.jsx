@@ -7,7 +7,7 @@ import TableRowColumn from 'material-ui/lib/table/table-row-column';
 
 import classNames from 'classnames';
 
-import './../TodosPage.less';
+import '../TodosPage.less';
 
 class Todo extends React.Component {
     static propTypes = {

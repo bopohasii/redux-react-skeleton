@@ -6,7 +6,7 @@ import {
     ADD_TODO,
     CLEAR_ALL,
     COMPLETE_TODO
-} from './todos.type';
+} from './types/todos.types.js';
 
 export function addTodo(params = {}, query = {}) {
     return {
