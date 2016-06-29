@@ -1,11 +1,9 @@
 'use strict';
 
-import React    from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
-import TextField    from 'material-ui/lib/text-field';
-import FlatButton   from 'material-ui/lib/flat-button';
-import FontIcon     from 'material-ui/lib/font-icon';
+import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
 
 import './TodosPage.less';
 
@@ -38,7 +36,7 @@ class AddTodo extends React.Component {
 
         this.props.handleAddTodo({todo: addTodo.getValue()});
 
-        addTodo.setValue('');
+        addTodo.value = '';
     }
 
     render() {

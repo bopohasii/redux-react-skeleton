@@ -1,15 +1,8 @@
 'use strict';
 
-import React    from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
-import Table             from 'material-ui/lib/table/table';
-import TableBody         from 'material-ui/lib/table/table-body';
-import TableHeader       from 'material-ui/lib/table/table-header';
-import TableRow          from 'material-ui/lib/table/table-row';
-import TableHeaderColumn from 'material-ui/lib/table/table-header-column';
-import TableRowColumn from 'material-ui/lib/table/table-row-column';
-
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow} from 'material-ui/Table';
 import Todo from './Todo.jsx';
 
 import '../TodosPage.less';

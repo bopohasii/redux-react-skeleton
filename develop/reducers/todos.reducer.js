@@ -1,26 +1,21 @@
 'use strict';
 
-import apiResponseFormatter from '../utils/apiResponseFormatter';
-import {
-    ADD_TODO,
-    CLEAR_ALL,
-    COMPLETE_TODO
-} from '../actions/types/todos.types.js';
+import types from '../actions/types/todos.types.js';
 
 function todos(state = [], action) {
     switch (action.type) {
-        case ADD_TODO: {
+        case types.ADD_TODO: {
             return [
                 ...state,
                 simpleTodo(undefined, action)
             ];
         } break;
 
-        case CLEAR_ALL: {
+        case types.CLEAR_ALL: {
             return [];
         } break;
 
-        case COMPLETE_TODO: {
+        case types.COMPLETE_TODO: {
             return state.map((todo) => simpleTodo(todo, action));
         } break;
 
@@ -32,7 +27,7 @@ function todos(state = [], action) {
 
 function simpleTodo(state, action) {
     switch (action.type) {
-        case ADD_TODO: {
+        case types.ADD_TODO: {
             return {
                 id    : Date.now(),
                 value : action.todo,
@@ -41,7 +36,7 @@ function simpleTodo(state, action) {
             };
         } break;
 
-        case COMPLETE_TODO: {
+        case types.COMPLETE_TODO: {
             if (state.id !== action.todoId) return state;
 
             return {

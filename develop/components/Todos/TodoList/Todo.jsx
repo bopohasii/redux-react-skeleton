@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-import TableRow       from 'material-ui/lib/table/table-row';
-import TableRowColumn from 'material-ui/lib/table/table-row-column';
+import {TableRow, TableRowColumn} from 'material-ui/Table';
 
 import classNames from 'classnames';
 
