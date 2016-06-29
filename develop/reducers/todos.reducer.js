@@ -9,15 +9,15 @@ function todos(state = [], action) {
                 ...state,
                 simpleTodo(undefined, action)
             ];
-        } break;
+        }
 
         case types.CLEAR_ALL: {
             return [];
-        } break;
+        }
 
         case types.COMPLETE_TODO: {
             return state.map((todo) => simpleTodo(todo, action));
-        } break;
+        }
 
         default:
             return state;
@@ -31,10 +31,10 @@ function simpleTodo(state, action) {
             return {
                 id    : Date.now(),
                 value : action.todo,
-                date  : (new Date).toLocaleDateString('en-US', {hour: '2-digit', minute:'2-digit'}),
+                date  : (new Date()).toLocaleDateString('en-US', {hour: '2-digit', minute:'2-digit'}),
                 completed : false
             };
-        } break;
+        }
 
         case types.COMPLETE_TODO: {
             if (state.id !== action.todoId) return state;
@@ -43,7 +43,7 @@ function simpleTodo(state, action) {
                 ...state,
                 completed: !state.completed
             };
-        } break;
+        }
 
         default:
             return state;
