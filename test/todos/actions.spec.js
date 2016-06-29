@@ -51,6 +51,6 @@ describe('Actions:sync', () => {
 
         store.dispatch(action);
 
-        //expect(actions.completeTodo({todoId})()).to.deep.equal(expectedAction);
+        // expect(actions.completeTodo({todoId})()).to.deep.equal(expectedAction);
     });
 });

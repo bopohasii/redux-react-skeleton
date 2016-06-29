@@ -51,21 +51,22 @@ class ApiClient {
             }
         };
 
-        axios.interceptors.request.use((config) => {
-            
-            const auth_token = LocalStorage.get('auth_token');
+        axios.interceptors.request.use((nextConfig) => {
+            const authToken = LocalStorage.get('auth_token');
             // Append 'auth header' for restriction pages
-            if (auth_token) {
+            if (authToken) {
                 // Custom security header
-                config.headers[ 'x-wsse' ] = auth_token;
+                nextConfig.headers[ 'x-wsse' ] = authToken;
             }
 
             return config;
         });
 
-        const isPayloadMethod = !~['get', 'head', 'delete'].indexOf(method);
+        const isPayloadMethod = !['get', 'head', 'delete'].includes(method);
         // Append 'payload' for data methods
-        if (isPayloadMethod) { config.data = body; }
+        if (isPayloadMethod) {
+            config.data = body;
+        }
 
 
         return axios(config)

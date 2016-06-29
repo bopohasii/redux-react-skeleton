@@ -12,4 +12,4 @@ export default {
     remove(property) {
         window.localStorage.removeItem(property);
     }
-}
+};
