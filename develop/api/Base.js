@@ -1,8 +1,6 @@
-'use strict';
-
 class Base {
-    constructor({apiClient}) {
-        if (!apiClient) throw '[apiClient] is required';
+    constructor({ apiClient }) {
+        if (!apiClient) throw new Error('[apiClient] is required');
 
         this.apiClient = apiClient;
     }

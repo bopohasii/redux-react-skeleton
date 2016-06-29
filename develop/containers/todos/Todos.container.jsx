@@ -1,8 +1,6 @@
-'use strict';
-
-import React       from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import TodosPage from '../../components/todos/Todos.page.jsx';
 import { addTodo, clearAll, completeTodo } from '../../actions/todos.actions.js';
