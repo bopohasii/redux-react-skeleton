@@ -1,11 +1,9 @@
-'use strict';
-
-import { expect }  from 'chai';
-import types       from '../../develop/actions/types/todos.types.js';
-import todoReducer     from '../../develop/reducers/todos.reducer';
+import { expect } from 'chai';
+import types from '../../develop/actions/types/todos.types.js';
+import todoReducer from '../../develop/reducers/todos.reducer';
 import rootReducer from '../../develop/reducers/root.reducer';
 
-const should = require('chai').should();
+// const should = require('chai').should();
 
 
 describe('Root reducer', () => {
@@ -13,7 +11,7 @@ describe('Root reducer', () => {
         expect(
             rootReducer(undefined, {})
         ).to.deep.equal({
-            todos: []
+            todos: [],
         });
     });
 });
@@ -28,7 +26,7 @@ describe('Reducers:todos', () => {
     it('ADD_TODO', () => {
         const expectedTodos = todoReducer([], {
             type: types.ADD_TODO,
-            todo: 'mochaTest'
+            todo: 'mochaTest',
         });
 
         expectedTodos.should.have.length(1);
@@ -45,13 +43,13 @@ describe('Reducers:todos', () => {
     it('CLEAR_ALL', () => {
         const expectedTodos = todoReducer([
             {
-                id       : 1,
-                value    : 'add more one',
-                date     : '23/10/1993',
-                completed: true
-            }
+                id: 1,
+                value: 'add more one',
+                date: '23/10/1993',
+                completed: true,
+            },
         ], {
-            type: types.CLEAR_ALL
+            type: types.CLEAR_ALL,
         });
 
         expectedTodos.should.have.length(0);
@@ -60,14 +58,14 @@ describe('Reducers:todos', () => {
     it('COMPLETE_TODO', () => {
         const expectedTodos = todoReducer([
             {
-                id       : 1,
-                value    : 'add more one',
-                date     : '23/10/1993',
-                completed: true
-            }
+                id: 1,
+                value: 'add more one',
+                date: '23/10/1993',
+                completed: true,
+            },
         ], {
-            type  : types.COMPLETE_TODO,
-            todoId: 1
+            type: types.COMPLETE_TODO,
+            todoId: 1,
         });
 
         expectedTodos.should.have.length(1);

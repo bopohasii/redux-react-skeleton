@@ -1,6 +1,4 @@
-'use strict';
-
-import { useRouterHistory }  from 'react-router';
+import { useRouterHistory } from 'react-router';
 import { createHashHistory } from 'history';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });

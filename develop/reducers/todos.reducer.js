@@ -1,5 +1,3 @@
-'use strict';
-
 import types from '../actions/types/todos.types.js';
 
 function todos(state = [], action) {
@@ -7,7 +5,7 @@ function todos(state = [], action) {
         case types.ADD_TODO: {
             return [
                 ...state,
-                simpleTodo(undefined, action)
+                simpleTodo(undefined, action),
             ];
         }
 
@@ -29,10 +27,10 @@ function simpleTodo(state, action) {
     switch (action.type) {
         case types.ADD_TODO: {
             return {
-                id    : Date.now(),
-                value : action.todo,
-                date  : (new Date()).toLocaleDateString('en-US', {hour: '2-digit', minute:'2-digit'}),
-                completed : false
+                id: Date.now(),
+                value: action.todo,
+                date: (new Date()).toLocaleDateString('en-US', { hour: '2-digit', minute: '2-digit' }),
+                completed: false,
             };
         }
 
@@ -41,7 +39,7 @@ function simpleTodo(state, action) {
 
             return {
                 ...state,
-                completed: !state.completed
+                completed: !state.completed,
             };
         }
 
