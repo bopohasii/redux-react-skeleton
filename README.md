@@ -16,7 +16,6 @@ $ npm install
 
 
 ## Development
-- ``` $ npm run start ``` - Provides **compiled** bundles to 'public' directory.
 
 - ``` $ npm run devserver ``` - Runs the project in development mode with hot-reloading of 'public' folder. Open your browser at http://localhost:3030.
 
@@ -25,10 +24,6 @@ $ npm install
 - ``` npm run test ``` - Runs tests **once** with Mocha(server side interpretation). Entry point: **'test/setup.js'**.  
 
 - ``` npm run test:watch ``` - **Continuously** watch changes and run tests immediately after changes. 
-
-
-- ``` npm run test:TeamCity ``` - Provides tests coverage report to TeamCity build system. 
-
 
 - ``` npm run lint ``` - Runs eslint checker **once**. Entry point: **'.eslintrc'**.  
 

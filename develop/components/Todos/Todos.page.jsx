@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-
-import AppBar   from 'material-ui/lib/app-bar';
+import AppBar from 'material-ui/AppBar';
 import AddTodo  from './AddTodo.jsx';
 import TodoList from './TodoList/TodoList.jsx';
 
