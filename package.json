@@ -25,7 +25,6 @@
   "keywords": [
     "Redux",
     "React",
-    "Meterial-UI",
     "ES2015",
     "Babel",
     "Webpack",
@@ -41,6 +40,7 @@
   "dependencies": {
     "axios": "^0.11.1",
     "babel-polyfill": "^6.9.1",
+    "bootstrap": "^4.0.0-alpha.2",
     "query-string": "^3.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
