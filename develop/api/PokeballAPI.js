@@ -2,10 +2,10 @@ import Base from './Base';
 
 import ep from '../constants/endPoints.constant';
 
-class PokemonsAPI extends Base {
-    getPokemons({ limit = 12, offset = 0 } = {}) {
+class PokeballAPI extends Base {
+    getPokemons({ limit, offset }) {
         const url = ep.pokeball.getPokemons();
-        const queryParams = offset
+        const queryParams = (offset !== undefined)
             ? { limit, offset: (offset + limit) }
             : { limit };
 
@@ -13,4 +13,4 @@ class PokemonsAPI extends Base {
     }
 }
 
-export default PokemonsAPI;
+export default PokeballAPI;

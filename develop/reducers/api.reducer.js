@@ -1,7 +1,7 @@
 import types from '../actions/types/api.types';
 
 const DEFAULT_STATE = {
-    paginators: {},
+    paginator: {},
 };
 
 export default (state = DEFAULT_STATE, action) => {
@@ -16,8 +16,8 @@ export default (state = DEFAULT_STATE, action) => {
 function setPaginator(state, action) {
     return {
         ...state,
-        paginators: {
-            ...state.paginators,
+        paginator: {
+            ...state.paginator,
             ...action.paginator,
         },
     };

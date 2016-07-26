@@ -12,13 +12,21 @@ class PokemonsPage extends Component {
     };
 
     render() {
-        const { pokemons } = this.props;
+        const { pokemons, handleGetPokemons } = this.props;
 
         return pokemons.isLoading
             ? <span className="text-center">Loading...</span>
             : (
                 <div className="row">
                     { this.renderPokemonsList(pokemons.entities) }
+
+                    <button
+                        type="button"
+                        className="btn btn-primary btn-sm btn-block"
+                        onClick={handleGetPokemons}
+                    >
+                        Load more
+                    </button>
                 </div>
             );
     }

@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getPokemons } from '../../actions/pokeball.actions';
+import pTypes from '../../actions/types/pokeball.types';
 
 import PokemonsPage from '../../components/pages/pokemons/Pokemons.page.jsx';
 
@@ -11,15 +12,18 @@ import PokemonsPage from '../../components/pages/pokemons/Pokemons.page.jsx';
 class PokemonsContainer extends Component {
     static propTypes = {
         pokemons: PropTypes.object,
+        paginator: PropTypes.object,
         handleGetPokemons: PropTypes.func,
     };
 
     componentDidMount() {
-        this.props.handleGetPokemons();
+        this.props.handleGetPokemons({ limit: 12 });
     }
 
     handleGetPokemonsNext() {
-        this.props.handleGetPokemons();
+        const { paginator, handleGetPokemons } = this.props;
+
+        handleGetPokemons({ ...paginator[pTypes.GET_POKEMONS_SUCCESS] });
     }
 
     render() {
@@ -28,14 +32,15 @@ class PokemonsContainer extends Component {
         return (
             <PokemonsPage
                 pokemons = {pokemons}
-                handleGetPokemons = {this.handleGetPokemonsNext}
+                handleGetPokemons = {this.handleGetPokemonsNext.bind(this)}
             />
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    pokemons: state.pokeball.pokemons
+    pokemons: state.pokeball.pokemons,
+    paginator: state.api.paginator,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -4,7 +4,7 @@ import pTypes from './types/pokeball.types';
 import normalizr from '../utils/mappers/pokemons.mapper';
 
 export const getPokemons = (params) => (dispatch) => {
-    // todo: loading request
+
     dispatch(apiActions.request(pTypes.GET_POKEMONS_REQUEST));
 
     return api.pokeball.getPokemons(params).then(
@@ -17,18 +17,4 @@ export const getPokemons = (params) => (dispatch) => {
             dispatch(apiActions.failure(pTypes.GET_POKEMONS_FAILURE, error));
         }
     );
-
-    // const request = () => ({
-    //     type: pTypes.GET_POKEMONS_REQUEST,
-    // });
-    //
-    // const success = (payload) => ({
-    //     type: pTypes.GET_POKEMONS_SUCCESS,
-    //     payload,
-    // });
-    //
-    // const fail = (error) => ({
-    //     type: pTypes.GET_POKEMONS_FAILURE,
-    //     error,
-    // });
 };
