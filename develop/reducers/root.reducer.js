@@ -3,11 +3,13 @@ import { combineReducers } from 'redux';
 /**
  * Reducers
  */
-import pokemons from './pokemons.reducer';
+import pokeball from './pokeball.reducer';
+import api from './api.reducer';
 
 
 const rootReducer = combineReducers({
-    pokemons,
+    pokeball,
+    api,
 });
 
 export default rootReducer;

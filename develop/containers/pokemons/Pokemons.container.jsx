@@ -3,38 +3,45 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { getPokemons } from '../../actions/pokeball.actions';
 
 import PokemonsPage from '../../components/pages/pokemons/Pokemons.page.jsx';
 
 
 class PokemonsContainer extends Component {
     static propTypes = {
-
+        pokemons: PropTypes.object,
+        handleGetPokemons: PropTypes.func,
     };
 
     componentDidMount() {
-        // Use for pre-loading component data
+        this.props.handleGetPokemons();
+    }
+
+    handleGetPokemonsNext() {
+        this.props.handleGetPokemons();
     }
 
     render() {
+        const { pokemons } = this.props;
+
         return (
-            <PokemonsPage />
+            <PokemonsPage
+                pokemons = {pokemons}
+                handleGetPokemons = {this.handleGetPokemonsNext}
+            />
         );
     }
 }
 
-function mapStateToProps(state) {
-    return {
+const mapStateToProps = (state) => ({
+    pokemons: state.pokeball.pokemons
+});
 
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        // handleAddTodo: bindActionCreators(addTodo, dispatch),
+const mapDispatchToProps = (dispatch) => ({
+    handleGetPokemons: bindActionCreators(getPokemons, dispatch),
         // handleClearAll: bindActionCreators(clearAll, dispatch),
         // handleTodoComplete: bindActionCreators(completeTodo, dispatch)
-    }
-}
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonsContainer);

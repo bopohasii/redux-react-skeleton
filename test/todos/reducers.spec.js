@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import types from '../../develop/actions/types/pokemons.types';
-import pokemonsReducer from '../../develop/reducers/pokemons.reducer';
+import types from '../../develop/actions/types/pokeball.types';
+import pokemonsReducer from '../../develop/reducers/pokeball.reducer';
 import rootReducer from '../../develop/reducers/root.reducer';
 
 // const should = require('chai').should();

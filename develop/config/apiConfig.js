@@ -1,5 +1,5 @@
 module.exports = {
-    apiPrefix: 'http://inabi.pp.ciklum.com:8080',
-    staticUrl: 'http://localhost:3030',
+    apiPrefix: 'http://pokeapi.co/api/v1',
+    staticUrl: 'http://localhost:3031',
 };
 

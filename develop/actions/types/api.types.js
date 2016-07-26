@@ -1,0 +1,5 @@
+// Naming: ACTION_ENTITY_RESULT
+export default {
+    GET_PAGINATOR: 'GET_PAGINATOR',
+    SET_PAGINATOR: 'SET_PAGINATOR',
+};

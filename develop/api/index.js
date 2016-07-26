@@ -1,5 +1,5 @@
 import ApiClient from './ApiClient';
-import PokemonsAPI from './PokemonsAPI';
+import PokeballAPI from './PokeballAPI';
 
 export default function ({ apiPrefix } = {}) {
     if (!apiPrefix) throw new Error('[apiPrefix] is required');
@@ -7,6 +7,6 @@ export default function ({ apiPrefix } = {}) {
     const api = new ApiClient({ prefix: apiPrefix });
 
     return {
-        pokemons: new PokemonsAPI({ apiClient: api }),
+        pokeball: new PokeballAPI({ apiClient: api }),
     };
 }
