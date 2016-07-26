@@ -17,7 +17,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.css$/, loader: 'style!css' },
-            { test: /\.sass$/, loader: 'style!css!resolve-url!sass?sourceMap' },
+            { test: /\.(sass|scss)/, loader: 'style!css!resolve-url!sass?sourceMap' },
 
             { test: /\.gif$/, loader: 'url?limit=16000&mimetype=image/gif' },
             { test: /\.jpg$/, loader: 'url?limit=16000&mimetype=image/jpg' },
