@@ -1,4 +1,4 @@
-import types from '../actions/types/todos.types.js';
+import types from '../actions/types/pokemons.types';
 
 function todos(state = [], action) {
     switch (action.type) {

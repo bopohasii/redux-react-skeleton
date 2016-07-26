@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import types from '../../develop/actions/types/todos.types.js';
-import todoReducer from '../../develop/reducers/todos.reducer';
+import types from '../../develop/actions/types/pokemons.types';
+import pokemonsReducer from '../../develop/reducers/pokemons.reducer';
 import rootReducer from '../../develop/reducers/root.reducer';
 
 // const should = require('chai').should();
@@ -18,13 +18,13 @@ describe('Root reducer', () => {
 
 describe('Reducers:todos', () => {
     it('init action: should return the initial state', () => {
-        const expectedTodos = todoReducer(undefined, {});
+        const expectedTodos = pokemonsReducer(undefined, {});
 
         expect(expectedTodos).to.deep.equal([]);
     });
 
     it('ADD_TODO', () => {
-        const expectedTodos = todoReducer([], {
+        const expectedTodos = pokemonsReducer([], {
             type: types.ADD_TODO,
             todo: 'mochaTest',
         });
@@ -41,7 +41,7 @@ describe('Reducers:todos', () => {
     });
 
     it('CLEAR_ALL', () => {
-        const expectedTodos = todoReducer([
+        const expectedTodos = pokemonsReducer([
             {
                 id: 1,
                 value: 'add more one',
@@ -56,7 +56,7 @@ describe('Reducers:todos', () => {
     });
 
     it('COMPLETE_TODO', () => {
-        const expectedTodos = todoReducer([
+        const expectedTodos = pokemonsReducer([
             {
                 id: 1,
                 value: 'add more one',

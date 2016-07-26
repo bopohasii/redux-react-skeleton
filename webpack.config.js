@@ -3,11 +3,11 @@ const path = require('path');
 
 module.exports = {
     entry: './develop/app.js',
-    contentBase: './public',
     devServer: {
         inline: true,
         host: '0.0.0.0',
-        port: 3030,
+        port: 3031,
+        contentBase: './public',
     },
     output: {
         path: path.join(__dirname, '/public/static/build/'),
@@ -28,7 +28,7 @@ module.exports = {
             { test: /\.jsx$/, loader: 'react-hot!babel', exclude: [/node_modules/, /public/] },
             { test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /public/] },
 
-            { test: /\.json$/, loader: 'json'},
+            { test: /\.json$/, loader: 'json' },
         ],
     },
     plugins: [

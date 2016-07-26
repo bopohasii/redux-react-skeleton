@@ -1,5 +1,5 @@
 import ApiClient from './ApiClient';
-import TodosAPI from './TodosAPI';
+import PokemonsAPI from './PokemonsAPI';
 
 export default function ({ apiPrefix } = {}) {
     if (!apiPrefix) throw new Error('[apiPrefix] is required');
@@ -7,6 +7,6 @@ export default function ({ apiPrefix } = {}) {
     const api = new ApiClient({ prefix: apiPrefix });
 
     return {
-        todos: new TodosAPI({ apiClient: api }),
+        pokemons: new PokemonsAPI({ apiClient: api }),
     };
 }

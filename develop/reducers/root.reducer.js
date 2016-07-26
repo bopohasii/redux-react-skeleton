@@ -3,11 +3,11 @@ import { combineReducers } from 'redux';
 /**
  * Reducers
  */
-import todos from './todos.reducer';
+import pokemons from './pokemons.reducer';
 
 
 const rootReducer = combineReducers({
-    todos,
+    pokemons,
 });
 
 export default rootReducer;

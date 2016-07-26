@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "webpack -p",
     "build": "webpack -d",
-    "devserver": "webpack-dev-server --history-api-fallback --debug --devtool eval-source-map --output-pathinfo  --hot --inline --watch",
+    "devserver": "webpack-dev-server --history-api-fallback --debug --devtool eval-source-map --output-pathinfo --hot --inline --watch",
     "lint": "eslint develop test --fix --cache --ignore-pattern .gitignore",
     "lint:watch": "watch 'npm run lint' develop",
     "test": "mocha --compilers js:babel-core/register --recursive --require ./test/setup.js",

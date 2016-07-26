@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class MainLayout extends React.Component {
+import LayoutPage from '../../components/pages/layouts/Layout.page.jsx';
 
-    handleTabClick(type) {
-        history.pushState(null, `/${type}`);
-    }
+class Layout extends Component {
 
     render() {
         return (
-            <div>
-                {this.props.children}
-            </div>
+            <LayoutPage
+                {...this.props}
+                {...this.state}
+            />
         );
     }
 }
 
-export default MainLayout;
+export default Layout;

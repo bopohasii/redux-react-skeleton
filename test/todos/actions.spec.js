@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import types from '../../develop/actions/types/todos.types.js';
-import * as actions from '../../develop/actions/todos.actions.js';
+import types from '../../develop/actions/types/pokemons.types';
+import * as actions from '../../develop/actions/pokemons.actions';
 
 import configureStore from 'redux-mock-store';
 
