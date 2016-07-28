@@ -4,7 +4,6 @@ import pTypes from './types/pokeball.types';
 import normalizr from '../utils/mappers/pokemons.mapper';
 
 export const getPokemons = (params) => (dispatch) => {
-
     dispatch(apiActions.request(pTypes.GET_POKEMONS_REQUEST));
 
     return api.pokeball.getPokemons(params).then(
