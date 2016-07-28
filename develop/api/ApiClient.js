@@ -65,9 +65,10 @@ class ApiClient {
         // Append 'payload' for data methods
         if (isPayloadMethod) { config.data = body; }
 
-        return axios(config)
-            .then(({ data }) => Promise.resolve(data))
-            .catch((error) => Promise.reject(error));
+        return axios(config).then(
+            ({ data }) => Promise.resolve(data),
+            (error) => Promise.reject(error)
+        );
     }
 }
 
