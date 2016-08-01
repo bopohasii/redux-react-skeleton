@@ -3,6 +3,7 @@ import Pokemon from '../../pokemons/Pokemon.jsx';
 
 class PokemonsPage extends Component {
     static propTypes = {
+        apiMeta: PropTypes.object,
         pokemons: PropTypes.object,
         handleGetPokemons: PropTypes.func,
     };
@@ -12,9 +13,9 @@ class PokemonsPage extends Component {
     };
 
     render() {
-        const { pokemons, handleGetPokemons } = this.props;
+        const { apiMeta, pokemons, handleGetPokemons } = this.props;
 
-        return pokemons.isLoading
+        return apiMeta.isLoading
             ? <span className="text-center">Loading...</span>
             : (
                 <div className="row">

@@ -12,7 +12,7 @@ import PokemonsPage from '../../components/pages/pokemons/Pokemons.page.jsx';
 class PokemonsContainer extends Component {
     static propTypes = {
         pokemons: PropTypes.object,
-        paginator: PropTypes.object,
+        apiMeta: PropTypes.object,
         handleGetPokemons: PropTypes.func,
     };
 
@@ -21,16 +21,17 @@ class PokemonsContainer extends Component {
     }
 
     handleGetPokemonsNext() {
-        const { paginator, handleGetPokemons } = this.props;
+        const { apiMeta: { paginator }, handleGetPokemons } = this.props;
 
-        handleGetPokemons({ ...paginator[pTypes.GET_POKEMONS_SUCCESS] });
+        handleGetPokemons({ ...paginator });
     }
 
     render() {
-        const { pokemons } = this.props;
+        const { apiMeta, pokemons } = this.props;
 
         return (
             <PokemonsPage
+                apiMeta = {apiMeta}
                 pokemons = {pokemons}
                 handleGetPokemons = {this.handleGetPokemonsNext.bind(this)}
             />
@@ -39,8 +40,9 @@ class PokemonsContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
+    // todo: set initializing for apiMeta
+    apiMeta: state.api[pTypes.GET_POKEMONS] || {},
     pokemons: state.pokeball.pokemons,
-    paginator: state.api.paginator,
 });
 
 const mapDispatchToProps = (dispatch) => ({
