@@ -4,10 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import '../../../assets/boot_scss/bootstrap.scss';
 
 class LayoutPage extends Component {
-    static propTypes = {
-        children: PropTypes.element
-    };
-
     render() {
         const { children } = this.props;
 
@@ -24,5 +20,9 @@ class LayoutPage extends Component {
         );
     }
 }
+
+LayoutPage.propTypes = {
+    children: PropTypes.element,
+};
 
 export default LayoutPage;

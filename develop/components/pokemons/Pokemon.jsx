@@ -1,12 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
 class Pokemon extends Component {
-    static propTypes = {
-        pokemon: PropTypes.object
-    };
 
     renderPokemonTypes(types = []) {
-        return types.map(type => <span className="label label-info">{type.name}</span>)
+        return types.map(type => <span className="label label-info">{type.name}</span>);
     }
 
     render() {
@@ -26,7 +23,10 @@ class Pokemon extends Component {
             </div>
         );
     }
-
 }
+
+Pokemon.propTypes = {
+    pokemon: PropTypes.object,
+};
 
 export default Pokemon;

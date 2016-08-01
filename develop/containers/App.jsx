@@ -1,10 +1,6 @@
 import React from 'react';
 
-export default class App extends React.Component {
-    static propTypes = {
-        children: React.PropTypes.element
-    };
-    
+class App extends React.Component {
     render() {
         return (
             <div id="app-view">
@@ -13,3 +9,9 @@ export default class App extends React.Component {
         );
     }
 }
+
+App.propTypes = {
+    children: React.PropTypes.element,
+};
+
+export default App;

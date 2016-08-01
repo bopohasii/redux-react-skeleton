@@ -7,8 +7,8 @@ class Layout extends Component {
     render() {
         return (
             <LayoutPage
-                {...this.props}
-                {...this.state}
+              {...this.props}
+              {...this.state}
             />
         );
     }
