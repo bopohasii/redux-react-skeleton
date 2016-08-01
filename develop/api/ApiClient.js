@@ -3,8 +3,8 @@ import queryString from 'query-string';
 import LocalStorage from '../api/LocalStorage';
 
 class ApiClient {
-    constructor({ prefix }) {
-        this.prefix = prefix;
+    constructor({ baseURL }) {
+        this.baseURL = baseURL;
     }
 
     get(requestUrl, payload = {}, params = {}) {
@@ -42,7 +42,7 @@ class ApiClient {
     request({ url, method, params = {}, body }) {
         const config = {
             method,
-            baseURL: `${this.prefix}`,
+            baseURL: this.baseURL,
             url: params && Object.keys(params).length ? `${url}?${queryString.stringify(params)}` : `${url}`,
             headers: {
                 'Content-Type': 'application/json',
@@ -57,6 +57,14 @@ class ApiClient {
                 // Custom security header
                 nextConfigShallow.headers['x-wsse'] = authToken;
             }
+
+            return nextConfigShallow;
+        });
+
+        axios.interceptors.response.use((nextConfig) => {
+            const nextConfigShallow = { ...nextConfig };
+
+            // ...handle post apiCall data
 
             return nextConfigShallow;
         });

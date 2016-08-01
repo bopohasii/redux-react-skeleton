@@ -1,4 +1,4 @@
-import api from '../config/apiSingleton';
+import api from '../api';
 import apiActions from './api.actions';
 import pTypes from './types/pokeball.types';
 import normalizr from '../utils/mappers/pokemons.mapper';
