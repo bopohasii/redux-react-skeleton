@@ -10,6 +10,6 @@ const appHistory = browserHistory;
 // import { useRouterHistory } from 'react-router';
 // import { createHashHistory } from 'history';
 
-//const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
+// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
 export default appHistory;
