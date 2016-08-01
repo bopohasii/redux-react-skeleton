@@ -1,0 +1,57 @@
+image: node:argon
+
+before_script:
+  - apt-get -qq update
+  - apt-get -qq install -y python2.7 python2.7-dev build-essential make gcc g++ libicu-dev
+  - npm -g install npm --silent
+  - "echo -e \"export default {CLIENT_ID: '$CLIENT_ID'}\" > app/scripts/settings.js"
+  - npm set progress=false
+  - npm install --silent
+
+stages:
+  - test
+  - build
+  - deploy
+  - clean
+
+test_job:
+  stage: test
+  script:
+    - npm run test
+
+build_job:
+  stage: build
+  script:
+    - npm run build
+    - mkdir  dist/build
+    - tar czfC dist/build/latest.tar.gz dist/$CI_BUILD_REF_NAME/ .
+    - tar czfC dist/build/$CI_BUILD_REF.tar.gz dist/$CI_BUILD_REF_NAME/ .
+    - apt-get install -yqq ruby ruby-dev
+    - gem install dpl
+    - dpl --skip_cleanup --provider=s3 --region=eu-west-1 --access-key-id=$AWS_ACCESS_KEY --secret-access-key=$AWS_SECRET_KEY --bucket=$AWS_BUCKET --local-dir=dist/build/ --upload-dir=$CI_BUILD_REF_NAME
+  artifacts:
+    paths:
+      - dist/$CI_BUILD_REF_NAME/
+  only:
+    - master
+    - develop
+
+deploy_job:
+  stage: deploy
+  script:
+    - apt-get install -yqq ruby ruby-dev
+    - gem install dpl
+    - dpl --skip_cleanup --provider=s3 --region=eu-west-1 --access-key-id=$AWS_ACCESS_KEY --secret-access-key=$AWS_SECRET_KEY --bucket=$AWS_BUCKET --local-dir=dist/build/ --upload-dir=$CI_BUILD_REF_NAME
+  artifacts:
+    paths:
+      - dist/$CI_BUILD_REF_NAME/
+  only:
+    - master
+    - develop
+
+clean_job:
+  stage: clean
+  script:
+    - rm -rf node_modules
+    - rm -rf ~/.node-gyp
+  when: on_failure
