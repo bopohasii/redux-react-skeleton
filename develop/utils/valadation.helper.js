@@ -1,3 +1,3 @@
 export const mandatory = (param) => {
-    throw new Error(`Parameter {${param}} is required.`);
+    throw new Error(`Parameter(s) {${param}} is required.`);
 };
