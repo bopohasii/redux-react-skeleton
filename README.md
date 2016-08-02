@@ -73,4 +73,7 @@ The optional `meta` property MAY be any type of value. It is intended for any ex
 ## Contribution
 Before push commit make sure that all modules are added in package.json
 
+### Git branching stategy
+![Git branching stategy](https://s32.postimg.org/3t15v0lhx/Git_branching_model.jpg)
+
 ##### keywords:  [`#Redux`](https://github.com/rackt/redux) [`#React`](https://facebook.github.io/react/) [`#ES2015`](http://www.ecma-international.org/ecma-262/6.0/) [`#Webpack`](https://webpack.github.io) [`#Babel`](https://babeljs.io) [`#Mocha`](https://mochajs.org) [`#Chai`](http://chaijs.com)
