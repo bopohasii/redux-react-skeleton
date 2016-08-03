@@ -1,7 +1,7 @@
-class Base {
-    constructor({ apiClient }) {
-        if (!apiClient) throw new Error('[apiClient] is required');
+import { mandatory } from '../utils/valadation.helper';
 
+class Base {
+    constructor({ apiClient = mandatory('apiClient') }) {
         this.apiClient = apiClient;
     }
 }
