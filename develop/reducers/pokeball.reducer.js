@@ -7,7 +7,9 @@ const DEFAULT_STATE = {
     },
     pokemons: {
         isEmpty: false,
-        entities: [],
+        result: [],
+        entities: {},
+        types: {},
     },
 };
 
@@ -21,11 +23,27 @@ export default (state = DEFAULT_STATE, action) => {
 };
 
 function getPokemons(state, action) {
+    // action.payload = {
+    //     entities: {
+    //         pokemons: {...},
+    //         types: {...}
+    //     },
+    //     result: [...]
+    // }
+
     return {
         ...state,
         pokemons: {
             ...state.pokemons,
-            entities: [...state.pokemons.entities, ...action.payload],
+            result: [...state.pokemons.result, ...action.payload.result],
+            entities: {
+                ...state.pokemons.entities,
+                ...action.payload.entities.pokemons,
+            },
+            types: {
+                ...state.pokemons.types,
+                ...action.payload.entities.types,
+            },
         },
     };
 }

@@ -45,8 +45,8 @@ function setError(state, action) {
     return {
         ...state,
         [action.error.key]: {
-            ...state[action.payload.key],
-            paginator: action.payload.value,
+            ...state[action.error.key],
+            error: action.error.value,
         },
     };
 }

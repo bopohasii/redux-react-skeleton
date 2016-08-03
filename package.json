@@ -40,6 +40,7 @@
   "dependencies": {
     "axios": "^0.11.1",
     "babel-polyfill": "^6.9.1",
+    "normalizr": "^2.2.1",
     "query-string": "^3.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
