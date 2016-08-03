@@ -1,9 +1,7 @@
-'use strict';
-
 import React, { Component, PropTypes } from 'react';
 import '../../../assets/boot_scss/bootstrap.scss';
 
-class LayoutPage extends Component {
+export default class LayoutPage extends Component {
     render() {
         const { children } = this.props;
         const headerStyle = { textAlign: 'center', paddingTop: '15px' };
@@ -25,5 +23,3 @@ class LayoutPage extends Component {
 LayoutPage.propTypes = {
     children: PropTypes.element,
 };
-
-export default LayoutPage;
