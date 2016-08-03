@@ -15,6 +15,7 @@ export default (state = {}, action) => {
         case types.SET_LOADING: return setLoading(state, action);
         case types.SET_PAGINATOR: return setPaginator(state, action);
         case types.SET_ERROR: return setError(state, action);
+        case types.CLEAR_API_STATE: return clearState(state, action);
 
         default:
             return state;
@@ -49,5 +50,13 @@ function setError(state, action) {
             error: action.error.value,
         },
     };
+}
+
+function clearState(state, action) {
+    const shallowState = { ...state };
+
+    delete shallowState[action.payload.key];
+
+    return shallowState;
 }
 
