@@ -27,3 +27,27 @@ export const getPokemons = (params) => (dispatch) => {
         }
     );
 };
+
+export const getPokemon = (params) => (dispatch) => {
+    dispatch(apiActions.request(pTypes.GET_POKEMON));
+
+    return api.pokeball.getPokemon(params).then(
+        (data) => {
+            // todo: Implement common mechanism for handle API response
+            // Map API response
+            const mResponse = normalizr.res.getOne(data);
+
+            // Normalize API response
+            const nResponse = normalize(mResponse, sc.pokeball.getPokemon());
+
+            dispatch(apiActions.success(pTypes.GET_POKEMON, nResponse));
+        },
+        (error) => {
+            dispatch(apiActions.failure(pTypes.GET_POKEMON, error));
+        }
+    );
+};
+
+export const clearDataState = () => ({
+    type: pTypes.CLEAR_DATA_STATE,
+});

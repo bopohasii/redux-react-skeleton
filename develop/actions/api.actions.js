@@ -52,4 +52,13 @@ export default {
 
         return action;
     },
+
+    clearState(key) {
+        const action = {
+            type: apiTypes.CLEAR_API_STATE,
+            payload: { key },
+        };
+
+        return action;
+    },
 };
