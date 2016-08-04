@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Waypoint from 'react-waypoint';
 import Pokemon from '../../pokemons/Pokemon.jsx';
 
 class PokemonsPage extends Component {
@@ -12,29 +13,34 @@ class PokemonsPage extends Component {
         ));
     }
 
+    renderWaypoint() {
+        const { apiMeta, handleGetPokemons } = this.props;
+
+        if (apiMeta.isLoading) {
+            return (
+                <div className="col-xs-12 col-sm-12 col-md-12">
+                    <p className="text-center">Loading...</p>
+                </div>
+            );
+        }
+
+        // todo: need investigation
+        return [
+            <div
+              style={{ width: '100%', border: '1px dashed black', height: 10, background: 'yellow', clear: 'both' }}
+            > Warning: Be carefull with css float: 'left' </div>,
+            <Waypoint threshold={0.2} onEnter={handleGetPokemons} />,
+        ];
+    }
+
     render() {
-        const { apiMeta, pokemons, handleGetPokemons } = this.props;
+        const { pokemons } = this.props;
+        const style = { height: 500, overflowY: 'auto', position: 'relative', outline: '1px solid red' };
 
         return (
-            <div className="row">
+            <div className="row" style={style}>
                 {this.renderPokemonsList(pokemons)}
-
-                {
-                    apiMeta.isLoading
-                        ?
-                        <div className="col-xs-12 col-sm-12 col-md-12">
-                            <p className="text-center">Loading...</p>
-                        </div>
-                        : (
-                        <button
-                          type="button"
-                          className="btn btn-primary btn-sm btn-block"
-                          onClick={handleGetPokemons}
-                        >
-                            Load more
-                        </button>
-                    )
-                }
+                {this.renderWaypoint()}
             </div>
         );
     }
