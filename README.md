@@ -32,6 +32,11 @@ $ npm install
 - ``` npm run clear ``` - Remove 'public' and 'node_modules' folders.
 
 
+## Libs
+- [`react-waypoint`](https://github.com/brigade/react-waypoint) - A React component to execute a function whenever you scroll to an element. Works in all containers that can scroll, including the window. Can be used to build features like lazy loading content, infinite scroll, scrollspies, or docking elements to the viewport on scroll. More info [`here`](http://brigade.github.io/react-waypoint/), and [`here`](https://medium.com/brigade-engineering/to-infinity-and-beyond-with-react-waypoint-cb5ba46a9150#.ox4qn8r6n)
+
+
+
 ## Code standart
 ### Types
 A single type must be a string.
