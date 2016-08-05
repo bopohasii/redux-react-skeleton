@@ -29,7 +29,7 @@ class PokemonsPage extends Component {
             <div
               style={{ width: '100%', border: '1px dashed black', height: 10, background: 'yellow', clear: 'both' }}
             > Warning: Be carefull with css float: 'left' </div>,
-            <Waypoint threshold={0.2} onEnter={handleGetPokemons} />,
+            <Waypoint threshold={0.2} onEnter={() => {}} />,
         ];
     }
 
