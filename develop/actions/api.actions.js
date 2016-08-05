@@ -1,5 +1,5 @@
 import apiTypes from './types/api.types';
-
+import { httpStatusHandler } from '../constants/httpErrors.constant';
 
 // * Actions structure *
 //
@@ -36,7 +36,13 @@ export default {
 
             const action = {
                 type: apiTypes.SET_ERROR,
-                error: { key, value: error },
+                error: {
+                    key,
+                    value: {
+                        ...error,
+                        ...httpStatusHandler(error.status),
+                    },
+                },
             };
 
             dispatch(action);
