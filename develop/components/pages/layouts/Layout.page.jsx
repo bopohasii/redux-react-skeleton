@@ -1,7 +1,24 @@
 import React, { Component, PropTypes } from 'react';
+
+import ModalContainer from '../../../containers/modal/Modal.container.jsx';
+
 import '../../../assets/boot_scss/bootstrap.scss';
 
 export default class LayoutPage extends Component {
+    renderContainerModal() {
+        const { windowWidth, isModalOpen, containerModalData, handleKeyDown } = this.props;
+
+        return !isModalOpen
+            ? null
+            : (
+                <ModalContainer
+                  onKeyDown={handleKeyDown}
+                  windowWidth={windowWidth}
+                  containerModalData={containerModalData}
+                />
+            );
+    }
+
     render() {
         const { children } = this.props;
         const headerStyle = { textAlign: 'center', paddingTop: '15px' };
@@ -15,6 +32,8 @@ export default class LayoutPage extends Component {
                 </div>
                 <hr />
                 {children}
+
+                {this.renderContainerModal()}
             </div>
         );
     }
@@ -22,4 +41,8 @@ export default class LayoutPage extends Component {
 
 LayoutPage.propTypes = {
     children: PropTypes.element,
+    windowWidth: PropTypes.number,
+    handleKeyDown: PropTypes.func,
+    containerModalData: PropTypes.object,
+    isModalOpen: PropTypes.bool,
 };
