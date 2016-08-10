@@ -33,11 +33,20 @@ $ npm install
 
 
 ## Libs
+- [`normalizr`](https://github.com/paularmstrong/normalizr) - Normalizes deeply nested JSON API responses according to a schema for Flux and Redux apps.
+Kudos to Jing Chen for suggesting this approach.
+- [`reselect`](https://github.com/reactjs/reselect) - Simple “selector” library for Redux.
+Selectors can compute derived data, allowing Redux to store the minimal possible state.
+Selectors are efficient. A selector is not recomputed unless one of its arguments change.
+Selectors are composable. They can be used as input to other selectors.
 - [`react-waypoint`](https://github.com/brigade/react-waypoint) - A React component to execute a function whenever you scroll to an element. Works in all containers that can scroll, including the window. Can be used to build features like lazy loading content, infinite scroll, scrollspies, or docking elements to the viewport on scroll. More info [`here`](http://brigade.github.io/react-waypoint/), and [`here`](https://medium.com/brigade-engineering/to-infinity-and-beyond-with-react-waypoint-cb5ba46a9150#.ox4qn8r6n)
 
 
 
 ## Code standart
+### Common (es2015, React, Sass)
+- [`AirBnb code style`](https://github.com/airbnb/javascript)
+
 ### Types
 A single type must be a string.
 Type string  should consist information about `action` (GET, SET, ...) and entity to which this action influences.
