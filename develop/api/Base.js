@@ -1,9 +1,7 @@
-'use strict';
+import { mandatory } from '../utils/valadation.helper';
 
 class Base {
-    constructor({apiClient}) {
-        if (!apiClient) throw '[apiClient] is required';
-
+    constructor({ apiClient = mandatory('apiClient') }) {
         this.apiClient = apiClient;
     }
 }

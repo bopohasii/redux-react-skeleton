@@ -1,12 +1,10 @@
-'use strict';
-
 import axios from 'axios';
 import queryString from 'query-string';
 import LocalStorage from '../api/LocalStorage';
 
 class ApiClient {
-    constructor({ prefix }) {
-        this.prefix = prefix;
+    constructor({ baseURL }) {
+        this.baseURL = baseURL;
     }
 
     get(requestUrl, payload = {}, params = {}) {
@@ -14,7 +12,7 @@ class ApiClient {
             url: requestUrl,
             method: 'get',
             body: payload,
-            params
+            params,
         });
     }
 
@@ -22,7 +20,7 @@ class ApiClient {
         return this.request({
             url: requestUrl,
             method: 'put',
-            body: payload
+            body: payload,
         });
     }
 
@@ -30,47 +28,55 @@ class ApiClient {
         return this.request({
             url: requestUrl,
             method: 'post',
-            body: payload
+            body: payload,
         });
     }
 
     delete(requestUrl) {
         return this.request({
             url: requestUrl,
-            method: 'delete'
+            method: 'delete',
         });
     }
 
-    request({ url, method, params = {}, headers, body }) {
+    request({ url, method, params = {}, body }) {
         const config = {
             method,
-            baseURL: `${this.prefix}`,
+            baseURL: this.baseURL,
             url: params && Object.keys(params).length ? `${url}?${queryString.stringify(params)}` : `${url}`,
             headers: {
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+            },
         };
 
-        axios.interceptors.request.use((config) => {
-            
-            const auth_token = LocalStorage.get('auth_token');
+        axios.interceptors.request.use((nextConfig) => {
+            const nextConfigShallow = { ...nextConfig };
+            const authToken = LocalStorage.get('auth_token');
             // Append 'auth header' for restriction pages
-            if (auth_token) {
+            if (authToken) {
                 // Custom security header
-                config.headers[ 'x-wsse' ] = auth_token;
+                nextConfigShallow.headers['x-wsse'] = authToken;
             }
 
-            return config;
+            return nextConfigShallow;
         });
 
-        const isPayloadMethod = !~['get', 'head', 'delete'].indexOf(method);
+        axios.interceptors.response.use((nextConfig) => {
+            const nextConfigShallow = { ...nextConfig };
+
+            // ...handle post apiCall data
+
+            return nextConfigShallow;
+        });
+
+        const isPayloadMethod = !['get', 'head', 'delete'].includes(method);
         // Append 'payload' for data methods
         if (isPayloadMethod) { config.data = body; }
 
-
-        return axios(config)
-            .then(({data}) => Promise.resolve(data))
-            .catch((error) => Promise.reject(error));
+        return axios(config).then(
+            ({ data }) => Promise.resolve(data),
+            (error) => Promise.reject(error)
+        );
     }
 }
 

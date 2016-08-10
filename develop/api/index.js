@@ -1,14 +1,15 @@
-'use strict';
-
+import { baseUrl } from '../config/apiConfig';
 import ApiClient from './ApiClient';
-import TodosAPI  from './TodosAPI';
+import { mandatory } from '../utils/valadation.helper';
 
-export default function({apiPrefix} = {}) {
-    if (!apiPrefix) throw '[apiPrefix] is required';
+import PokeballAPI from './PokeballAPI';
 
-    const api = new ApiClient({ prefix: apiPrefix });
+function apiFactory({ baseURL = mandatory('baseURL') } = {}) {
+    const api = new ApiClient({ baseURL });
 
     return {
-        todos: new TodosAPI({ apiClient: api })
+        pokeball: new PokeballAPI({ apiClient: api }),
     };
 }
+
+export default apiFactory({ baseURL: baseUrl });

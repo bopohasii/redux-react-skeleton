@@ -1,7 +1,4 @@
-'use strict';
-
 import { jsdom } from 'jsdom';
-
 
 /**
  * Setup the simplest DOM mock up

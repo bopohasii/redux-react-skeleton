@@ -1,15 +1,17 @@
-'use strict';
-
 import { combineReducers } from 'redux';
 
 /**
  * Reducers
  */
-import todos from './todos.reducer';
+import pokeball from './pokeball.reducer';
+import common from './common.reducer';
+import api from './api.reducer';
 
 
 const rootReducer = combineReducers({
-    todos
+    pokeball,
+    common,
+    api,
 });
 
 export default rootReducer;

@@ -1,5 +1,3 @@
-'use strict';
-
 export default {
     set(property, value) {
         window.localStorage.setItem(property, JSON.stringify(value));
@@ -11,5 +9,5 @@ export default {
 
     remove(property) {
         window.localStorage.removeItem(property);
-    }
-}
+    },
+};
