@@ -39,20 +39,6 @@
   "homepage": "https://github.com/Noxwille/redux-react-skeleton#readme",
   "dependencies": {
     "axios": "^0.11.1",
-<<<<<<< HEAD
-    "classnames": "^2.2.1",
-    "fbjs": "^0.2.1",
-    "history": "^2.0.0",
-    "material-ui": "^0.14.0",
-    "query-string": "^3.0.0",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-redux": "^4.4.5",
-    "react-tap-event-plugin": "^0.2.1",
-    "redux": "^3.5.0",
-    "redux-logger": "^2.4.0",
-    "redux-thunk": "^1.0.0"
-=======
     "babel-polyfill": "^6.9.1",
     "normalizr": "^2.2.1",
     "query-string": "^3.0.0",
@@ -64,7 +50,6 @@
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3"
->>>>>>> develop
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
