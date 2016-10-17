@@ -1,6 +1,5 @@
 import axios from 'axios';
 import queryString from 'query-string';
-import LocalStorage from '../api/LocalStorage';
 
 class ApiClient {
     constructor({ baseURL }) {
@@ -11,7 +10,7 @@ class ApiClient {
         return this.request({
             url: requestUrl,
             method: 'get',
-            body: payload,
+            data: payload,
             params,
         });
     }
@@ -20,7 +19,7 @@ class ApiClient {
         return this.request({
             url: requestUrl,
             method: 'put',
-            body: payload,
+            data: payload,
         });
     }
 
@@ -28,7 +27,26 @@ class ApiClient {
         return this.request({
             url: requestUrl,
             method: 'post',
-            body: payload,
+            data: payload,
+        });
+    }
+
+    postFormData(requestUrl, formData) {
+        return this.request({
+            url: requestUrl,
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            data: formData,
+        });
+    }
+
+    patch(requestUrl, payload = {}) {
+        return this.request({
+            url: requestUrl,
+            method: 'patch',
+            data: payload,
         });
     }
 
@@ -39,43 +57,34 @@ class ApiClient {
         });
     }
 
-    request({ url, method, params = {}, body }) {
+    request({ url, method, params = {}, headers, data }) {
         const config = {
+            url,
             method,
             baseURL: this.baseURL,
-            url: params && Object.keys(params).length ? `${url}?${queryString.stringify(params)}` : `${url}`,
-            headers: {
-                'Content-Type': 'application/json',
+            params,
+            paramsSerializer(p) {
+                return queryString.stringify(p, { encode: true });
             },
+            headers: headers || { 'Content-Type': 'application/json' },
+            data,
         };
 
-        axios.interceptors.request.use((nextConfig) => {
-            const nextConfigShallow = { ...nextConfig };
-            const authToken = LocalStorage.get('auth_token');
-            // Append 'auth header' for restriction pages
-            if (authToken) {
-                // Custom security header
-                nextConfigShallow.headers['x-wsse'] = authToken;
-            }
+        // Add a request interceptor
+        axios.interceptors.request.use(
+            (request) => request,
+            (error) => Promise.reject(error)
+        );
 
-            return nextConfigShallow;
-        });
-
-        axios.interceptors.response.use((nextConfig) => {
-            const nextConfigShallow = { ...nextConfig };
-
-            // ...handle post apiCall data
-
-            return nextConfigShallow;
-        });
-
-        const isPayloadMethod = !['get', 'head', 'delete'].includes(method);
-        // Append 'payload' for data methods
-        if (isPayloadMethod) { config.data = body; }
+        // Add a response interceptor
+        axios.interceptors.response.use(
+            (response) => response,
+            (error) => Promise.reject(error)
+        );
 
         return axios(config).then(
-            ({ data }) => Promise.resolve(data),
-            (error) => Promise.reject(error)
+            (response) => Promise.resolve(response.data),
+            (response) => Promise.reject(response.data)
         );
     }
 }
