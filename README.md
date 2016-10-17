@@ -17,9 +17,9 @@ $ npm install
 
 ## Development
 
-- ``` $ npm run devserver ``` - Runs the project in development mode with hot-reloading of 'public' folder. Open your browser at http://localhost:3031.
+- ``` $ develop:build ``` - Provide **compiled**, and **minified** bundles to 'public' directory.
 
-- ``` $ npm run build ``` - Provide **compiled**, and **minified** bundles to 'public' directory.
+- ``` $ npm run develop:devserver ``` - Runs the project in development mode with hot-reloading of 'public' folder. Open your browser at http://localhost:3030.
 
 - ``` npm run test ``` - Runs tests **once** with Mocha(server side interpretation). Entry point: **'test/setup.js'**.
 
