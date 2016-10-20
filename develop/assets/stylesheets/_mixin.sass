@@ -1,0 +1,435 @@
+@import variables
+
+
+
+
+// Clearfix
+=clearfix ()
+    *zoom: 1
+    &:before,
+    &:after
+        display: table
+        content: ""
+        // Fixes Opera/contenteditable bug
+        line-height: 0
+    &:after
+        clear: both
+
+
+=font-face($font_name, $font_name_type)
+    //src: url($PATH_Font + $font_name + '/' + $font_name_type + '.eot')
+    //src: local('☺'), url($PATH_Font + $font_name + '/' + $font_name_type + '.woff') format('woff'), url($PATH_Font + $font_name + '/' + $font_name_type + '.ttf') format('truetype'), url($PATH_Font + $font_name + '/' + $font_name_type + '.svg') format('svg')
+    src: url($PATH_Font + $font_name + '/' + $font_name_type + '.eot?#iefix') format('embedded-opentype'), url($PATH_Font + $font_name + '/' + $font_name_type + '.woff') format('woff'), url($PATH_Font + $font_name + '/' + $font_name_type + '.ttf')  format('truetype'), url($PATH_Font + $font_name + '/' + $font_name_type + '.svg#' + $font_name_type) format('svg')
+
+
+
+// Round
+=round ($radius:6px, $position-corner:all)
+    @if $position-corner == top
+        -webkit-border-top-left-radius:     $radius
+        -webkit-border-top-right-radius:    $radius
+        -moz-border-radius:                 $radius $radius 0 0
+        border-radius:                      $radius $radius 0 0
+
+    @else if $position-corner == right
+        -webkit-border-top-right-radius:    $radius
+        -webkit-border-bottom-right-radius: $radius
+        -moz-border-radius:                 0 $radius $radius 0
+        border-radius:                      0 $radius $radius 0
+
+    @else if $position-corner == bottom
+        -webkit-border-bottom-left-radius:  $radius
+        -webkit-border-bottom-right-radius: $radius
+        -moz-border-radius:                 0 0 $radius $radius
+        border-radius:                      0 0 $radius $radius
+
+    @else if $position-corner == left
+        -webkit-border-top-left-radius:     $radius
+        -webkit-border-bottom-left-radius:  $radius
+        -moz-border-radius:                 $radius 0 0 $radius
+        border-radius:                      $radius 0 0 $radius
+
+    @else
+        -moz-border-radius:    $radius
+        -webkit-border-radius: $radius
+        -o-border-radius:      $radius
+        -khtml-border-radius:  $radius
+        -ms-border-radius:     $radius
+        border-radius:         $radius
+
+
+
+// User select
+=user-select ($select:none)
+    -webkit-user-select: $select
+    -moz-user-select:    $select
+    -ms-user-select:     $select
+    -o-user-select:      $select
+    user-select:         $select
+
+
+//=user-select($index)
+//    -webkit-touch-callout: $index
+//    -webkit-user-select: $index
+//    -khtml-user-select: $index
+//    -moz-user-select: $index
+//    -ms-user-select: $index
+//    user-select: $index
+
+
+//// User select
+//=size ($font-size: 17px)
+//    font-size: ($font-size/$BaseFontSize)*1em
+
+
+// Content columns
+=content-columns ($columnCount, $columnGap)
+    -webkit-column-count:   $columnCount
+    -moz-column-count:      $columnCount
+    column-count:           $columnCount
+    -webkit-column-gap:     $columnGap
+    -moz-column-gap:        $columnGap
+    column-gap:             $columnGap
+
+
+=box-sizing ($type : border-box)
+    -webkit-box-sizing: $type
+    -moz-box-sizing: $type
+    box-sizing: $type
+
+// Placeholder text
+=placeholder ($color: $placeholder_color)
+    &:-moz-placeholder
+        color: $color
+    &:-ms-input-placeholder
+        color: $color
+    &::-webkit-input-placeholder
+        color: $color
+
+
+// Shadows
+=box-shadow ($shadow)
+    -moz-box-shadow:    $shadow
+    -webkit-box-shadow: $shadow
+    box-shadow:         $shadow
+
+
+
+// Transitions
+=transition ($transition)
+    -webkit-transition: $transition
+    -moz-transition:    $transition
+    -o-transition:      $transition
+    transition:         $transition
+
+// Transformations
+=rotate ($degrees)
+    transform:          rotate($degrees)
+    -webkit-transform:  rotate($degrees)
+    -moz-transform:     rotate($degrees)
+    -ms-transform:      rotate($degrees)
+    -o-transform:       rotate($degrees)
+
+=scale ($ratio)
+    -webkit-transform:  scale($ratio)
+    -moz-transform:     scale($ratio)
+    -ms-transform:      scale($ratio)
+    -o-transform:       scale($ratio)
+    transform:          scale($ratio)
+
+=translate ($x, $y)
+    -webkit-transform:  translate($x, $y)
+    -moz-transform:     translate($x, $y)
+    -ms-transform:      translate($x, $y)
+    -o-transform:       translate($x, $y)
+    transform:          translate($x, $y)
+
+=skew ($x, $y)
+    -webkit-transform:  skew($x, $y)
+    -moz-transform:     skew($x, $y)
+    -ms-transform:      skew($x, $y)
+    -o-transform:       skew($x, $y)
+    transform:          skew($x, $y)
+
+=translate3d ($x, $y, $z)
+    -webkit-transform:  translate3d($x, $y, $z)
+    -moz-transform:     translate3d($x, $y, $z)
+    -o-transform:       translate3d($x, $y, $z)
+    transform:          translate3d($x, $y, $z)
+
+
+
+// Content columns
+=content-columns ($columnCount, $columnGap)
+    -webkit-column-count:   $columnCount
+    -moz-column-count:      $columnCount
+    column-count:           $columnCount
+    -webkit-column-gap:     $columnGap
+    -moz-column-gap:        $columnGap
+    column-gap:             $columnGap
+
+
+
+// Shadows
+=background-size ($type: cover)
+    -webkit-background-size: $type
+    -moz-background-size: $type
+    -o-background-size: $type
+    background-size: $type
+
+
+// Center Box
+=boxcenter ($width  : auto, $height : auto)
+    position:       absolute
+    top:            50%
+    left:           50%
+    margin-top:    -($height/2)
+    margin-left:   -($width/2)
+    margin-right:   0
+    margin-bottom:  0
+    width:          $width
+    //height:   $height
+
+
+// Opacity
+=opacity ($opacity)
+    opacity: $opacity / 100
+    filter : alpha(opacity = $opacity)
+
+
+
+
+// BACKGROUNDS
+// --------------------------------------------------
+
+
+// Horizontal
+=gradient-horizontal ($startColor: #555555, $endColor: #333333)
+    background-color: $endColor
+    background-image: -moz-linear-gradient(left, $startColor, $endColor)
+    // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor))
+    // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor)
+    // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, $startColor, $endColor)
+    // Opera 11.10
+    background-image: linear-gradient(to right, $startColor, $endColor)
+    // Standard, IE10
+    background-repeat: repeat-x
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{darken($startColor, 1%)}', endColorstr='#{darken($endColor, 1%)}', GradientType=1)
+    // IE9 and down
+
+
+// Vertical
+=gradient-vertical ($startColor: #555555, $endColor: #333333)
+    background-color: mix($startColor, $endColor, 62.5%)
+    background-image: -moz-linear-gradient(top, $startColor, $endColor)
+    // FF 3.6+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor))
+    // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor)
+    // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, $startColor, $endColor)
+    // Opera 11.10
+    background-image: linear-gradient(to bottom, $startColor, $endColor)
+    // Standard, IE10
+    background-repeat: repeat-x
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{darken($startColor, 1%)}', endColorstr='#{darken($endColor, 1%)}', GradientType=0)
+    // IE9 and down
+
+
+//  Directional
+=gradient-directional ($startColor: #555555, $endColor: #333333, $deg: 45deg)
+    background-color: $endColor
+    background-repeat: repeat-x
+    background-image: -moz-linear-gradient($deg, $startColor, $endColor)
+    // FF 3.6+
+    background-image: -webkit-linear-gradient($deg, $startColor, $endColor)
+    // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient($deg, $startColor, $endColor)
+    // Opera 11.10
+    background-image: linear-gradient($deg, $startColor, $endColor)
+    // Standard, IE10
+
+
+=gradient-vertical-three-colors ($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f)
+    background-color: mix($midColor, $endColor, 80%)
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor))
+    background-image: -webkit-linear-gradient($startColor, $midColor $colorStop, $endColor)
+    background-image: -moz-linear-gradient(top, $startColor, $midColor $colorStop * 100%, $endColor)
+    background-image: -o-linear-gradient($startColor, $midColor $colorStop, $endColor)
+    background-image: linear-gradient($startColor, $midColor $colorStop, $endColor)
+    background-repeat: no-repeat
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{darken($startColor, 1%)}', endColorstr='#{darken($endColor, 1%)}', GradientType=0)
+    // IE9 and down, gets no color-stop at all for proper fallback
+
+
+=gradient-radial ($innerColor: #555555, $outerColor: #333333)
+    background-color: $outerColor
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor))
+    background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor)
+    background-image: -moz-radial-gradient(circle, $innerColor, $outerColor)
+    background-image: -o-radial-gradient(circle, $innerColor, $outerColor)
+    background-repeat: no-repeat
+
+
+=gradient-striped ($color, $angle: 45deg)
+    background-color: $color
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent))
+    background-image: -webkit-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+    background-image: -moz-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+    background-image: -o-linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+    background-image: linear-gradient($angle, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+
+
+
+
+
+
+
+
+
+
+
+
+//  GRID SYSTEM
+//  ________________________________________
+//  Generator grid for dinamick window width
+
+=gridSystem ($columns : $gridColumns, $columnWidth : $gridColumnWidth, $gutterWidth : $gridGutterWidth)
+    .row
+        margin-left: $gutterWidth * -1
+
+    .row > [class*="span"]
+        margin-left: $gutterWidth
+
+    @for $i from 1 through $columns
+        @if $i == $columns
+            .span#{$i},
+            .container
+                width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
+        @else
+            .span#{$i}
+                width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
+
+
+    @for $i from 1 through $columns
+        @if $i != $columns
+            .offset#{$i}
+                margin-left: ($columnWidth * $i) + ($gutterWidth * ($i - 1)) + ($gutterWidth * 2)
+
+
+
+
+
+=showgrid ($gridColumnWidth, $gridGutterWidth)
+    background-image: -moz-linear-gradient( 0, rgba(217,229,250, 0.3) $gridColumnWidth, transparent 1px ), -moz-linear-gradient( 0, rgba(210,210,210, 0.8) 1px,  transparent 1px )
+    background-image: -webkit-linear-gradient(0, rgba(74,255,255, 0.15) $gridColumnWidth, transparent 0),  -webkit-linear-gradient(0, rgba(74,255,255, 0.8) 1px,  transparent 0)
+    background-size: ($gridColumnWidth + $gridGutterWidth) $gridColumnWidth, ($gridColumnWidth + $gridGutterWidth) $gridColumnWidth
+    background-position: 0 0, 0 0
+
+
+//  GRID SYSTEM
+//  ________________________________________
+//  Generator grid form
+
+=gridForm($columns : $gridColumns/2, $columnWidth : $gridColumnWidth, $gutterWidth : $gridGutterWidth)
+    @for $i from 1 through $columns
+
+        .grid-span#{$i} .label
+            width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
+
+        .grid-span#{$i} .input,
+        .grid-span#{$i} .select,
+        .grid-span#{$i} .indent
+            margin-left: ($columnWidth * $i) + ($gutterWidth * ($i))
+
+//=button($color: $btn__color , $background: $btn__background)
+//    display: inline-block
+//    text-align: center
+//    margin: 0
+//    padding: 4px 10px
+//    border: 0 none
+//    //font:
+//    //    size:       14px
+//    //    family:     Arial, Helvetica, sans-serif
+//    //line-height:     $baseLineHeight
+//    color: $color
+//    background: $background
+//    white-space:     nowrap
+//    vertical-align:  middle
+//    outline:         0 none
+//    +round(2px)
+//
+//    //-webkit-transition: border linear 0.075s
+//    //-moz-transition: border linear 0.075s
+//    //transition: border linear 0.075s
+//    text-decoration: none
+//    +user-select
+//    cursor: pointer
+
+
+//  ARROW
+//  ________________________________________
+
+=arrow($position: top, $arrow-width: 5px, $arrow-color: #000 )
+    width:       0
+    height:      0
+    font-size:   0
+    line-height: 0
+    border:      0 dashed transparent
+
+    @if $position == top
+        top:           $arrow-width * -1
+        border-bottom: $arrow-width solid $arrow-color
+        border-left:   $arrow-width dashed transparent
+        border-right:  $arrow-width solid transparent
+
+    @else if $position == left
+        left:          $arrow-width * -1
+        border-right:  $arrow-width solid $arrow-color
+        border-bottom: $arrow-width dashed transparent
+        border-top:    $arrow-width solid transparent
+
+    @else if $position == bottom
+        border-top:   $arrow-width solid $arrow-color
+        border-left:  $arrow-width dashed transparent
+        border-right: $arrow-width solid transparent
+        bottom:       $arrow-width * -1
+
+    @else if $position == right
+        right:         $arrow-width * -1
+        border-left:   $arrow-width solid $arrow-color
+        border-bottom: $arrow-width dashed transparent
+        border-top:    $arrow-width solid transparent
+
+
+=mobile-small
+    @media (max-width: #{$mobile-width})
+        @content
+
+=mobile
+    @media (max-width: #{$tablet-width - 1px})
+        @content
+
+=tablet-and-mobile
+    @media (max-width: #{$desktop-width})
+        @content
+
+=tablet
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width})
+        @content
+
+=desktop
+    @media (min-width: #{$desktop-width + 1px}) and (max-width: #{$large-desktop - 1px})
+        @content
+
+=large-desktop
+    @media (min-width: #{$large-desktop})
+        @content
+
+
+=pixel-ratio
+    @media (-Webkit-min-device-pixel-ratio: 1.3), only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.3), only screen and (-moz-min-device-pixel-ratio: 1.3)
+        @content

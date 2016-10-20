@@ -1,0 +1,131 @@
+//  Variables.scss
+    Variables to customize the look
+    -----------------------------------------------------
+
+$mobile-width:  380px
+$mobile-xs:     480px
+$tablet-width:  769px
+$desktop-width: 1024px
+$large-desktop: 1280px
+
+
+$FontFamily : 'HelveticaNeue', Arial, sans-serif
+$FontFamily-medium : 'HelveticaNeue-Medium', Arial, sans-serif
+
+//------
+
+// BASE Font
+$BaseFontSize   : 14px
+$BaseLineHeight : 1.6
+//$BaseLineHeight : 1.4286
+
+$text-large  : 16px
+$text-middle : 14px
+$text-small  : 12px
+
+
+
+$Font : ''
+$Wallpaper : #efefef
+
+//  BASE color
+$color-text   : #4a4a4a
+$color-light  : #808080
+$color-grey   : #afb0b3
+$color-white  : #efefef
+$color-border : #d4d4d4
+$color-orange : #ffc107
+$color_link   : #ff6f00
+$color_link   : #ff6f00
+$color_warning : #e83e2e
+
+// Alert
+$warning__background : #fffaf3
+$succes__background  : #d1eed1
+$error__background   : #fddfde
+$info__background    : #ddf4fb
+
+$warning__color : #686868
+$succes__color  : #264409
+$error__color   : #8a1f11
+$info__color    : #514721
+
+// Grid: default 940px
+$gridColumns     : 12
+$gridColumnWidth : 60px
+$gridGutterWidth : 20px
+
+
+$container-main__width : 736px
+
+// PATH Images
+$PATH      : '../assets/images/'
+
+
+$PATH_LOGO      : $PATH + 'logo-kijiji.svg'
+$PATH_LOGO_DARK      : $PATH + 'logo-kijiji-dark.svg'
+$PATH_AUTH_BG   : $PATH + 'auth/auth.jpeg'
+$PATH_AUTH_BG_M : $PATH + 'auth/auth.jpeg'
+$PATH_AUTH      : $PATH + 'auth/auth-header.jpg'
+$PATH_MENU      : $PATH + 'icons/menu.svg'
+$PATH_ICONS     : $PATH + 'icons/icons.svg'
+
+$PATH_noFeedLogo   :  $PATH + 'common/no-feed.svg'
+$PATH_noFeedLogo_large :  $PATH + 'common/no-feed-large.svg'
+$PATH_noBackground :  $PATH + 'background3.jpg'
+$PATH_ICON_empty   :  $PATH + 'icons/empty.svg'
+
+
+
+@mixin logo
+    background-image: url($PATH_logo)
+    background-repeat: no-repeat
+
+    +pixel-ratio
+        background-image: url($PATH_logo_x2)
+        background-size: 195px 40px
+
+
+//@mixin loader
+//    background-image: url($PATH_loader)
+//    background-repeat: no-repeat
+//
+//    +pixel-ratio
+//        background-image: url($PATH_loader_x2)
+//        background-size: 24px 24px
+
+
+// Form
+$form__color        : #fff
+$form__background   : #fff
+$form__border       : #fff
+$form__color-border : #efefef
+$form__shadow       : rgba(50, 185, 240, 0.1 )
+$form__shadow_hover : rgba(50, 185, 240, 0.75)
+
+$color__placeholder  : #d4d4d4
+
+$options__color      : $color-text
+$options__background : #fff
+$options__border     : $color-border
+
+//BUTTON
+$btn__color      : #5e5e5e
+$btn__background : #f4f4f4
+$btn__hover_background : #eee
+$btn__focus_background : #eee
+
+
+//BUTTON Primary
+$btn_primary__color      : #4d4013
+$btn_primary__background : #ffc107
+$btn_primary__hover_background : #ffa408
+$btn_primary__disabled_background : #90c4e6
+
+
+//BUTTON Danger
+$btn_danger__color      : #fff
+$btn_danger__background : #ae1917
+$btn_danger__hover_background : #c9302c
+$btn_danger__focus_background : #c9302c
+$btn_danger__disabled_background : #90c4e6

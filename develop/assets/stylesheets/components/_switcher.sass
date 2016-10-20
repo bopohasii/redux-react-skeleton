@@ -1,0 +1,30 @@
+.switcher
+
+    .btn
+        font-size: 14px
+
+        min-width: 95px
+
+        border: 1px solid $color-border
+
+        border-left: 0 none
+        border-right: 0 none
+
+        margin: 0
+        padding: 10px 20px
+
+        +round(0)
+
+
+        &:first-child
+            border-left: 1px solid $color-border
+            +round(6px, left)
+
+        &:last-child
+            border-right: 1px solid $color-border
+            +round(6px, right)
+
+        &.active
+            border-color: $color_orange
+            background-color: $color_orange
+

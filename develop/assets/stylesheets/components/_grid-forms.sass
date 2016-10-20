@@ -1,0 +1,246 @@
+
+/** 
+ *  grid-form.css [snippet]
+ *  Version: 1.0.0
+ *  date modification
+ *  ----------------------------------
+ */
+
+form
+    .hidden
+        display: block
+        position: relative
+        height: 0
+        overflow: hidden
+        visibility: hidden
+        line-height: 0
+        font-size: 0
+
+
+
+
+
+
+
+
+.form-grid
+    display: block
+
+    .item-row
+        margin-bottom: 20px
+
+    .label-row
+        display: block
+        color: $color-light
+        margin-bottom: 10px
+
+    .field-line
+        width: 100%
+        padding: 0 0 5px
+        border:
+            top: 0 none
+            left: 0 none
+            right: 0 none
+
+    .sun-info
+        margin: 10px 0 0
+        color: $color-grey
+
+    .field-textarea
+        width: 100%
+
+    .field-description
+        width: 100%
+
+    [disabled],
+    [readonly]
+        background-color: transparent
+
+
+
+
+
+
+//.grid
+//    .rows
+//        display: block
+//        margin: 15px 0
+//
+//    .label
+//        float: left
+//        width: 95px
+//        padding-top: 10px
+//        line-height: $BaseLineHeight
+//
+//    .label-b
+//        display: block
+//        margin-bottom: 6px
+//
+//    .indent
+//        display: block
+//        margin-left: 100px
+//
+//    .rows-button
+//        display: block
+//        margin-top: 20px
+//        margin-bottom: 20px
+//
+//    .button,
+//    .button-primary,
+//    .button-danger
+//        margin-right: 5px
+//
+//    .sub
+//        font-size: 11px
+//
+//    ins
+//        color: #ae1917
+//        border: 0 none
+//        text-decoration: none
+//        margin-right: -8px
+//
+//
+//    .delim
+//        margin: 0 15px
+//
+//    .field-datepicker
+//        width: 150px
+//
+//    .field-id
+//        width: 150px
+
+
+.button-group
+    display: table
+    list-style: none
+
+
+    .item
+        display: table-cell
+        padding: 0 10px
+        vertical-align: middle
+
+        &:first-child
+            padding-left: 0
+
+        &:last-child
+            padding-right: 0
+
+    .button-cancel,
+    .button-primary
+        width: 100%
+
+    +mobile
+
+        .button-primary
+            white-space: normal
+            word-break: break-all
+            word-break: break-word
+
+
+
+
+
+.group-form
+
+    display: inline-block
+    white-space: nowrap
+    vertical-align: middle
+
+    .elem
+        padding: 3px 4px
+
+    .elem,
+    .add-on,
+    .button,
+    input,
+    select
+        float: left
+        margin-right: -1px
+        line-height: 20px
+        +round(1px)
+
+        &:first-child
+            +round(3px, left)
+
+        &:last-child
+            +round(3px, right)
+
+    &.show-error
+
+        .elem,
+        .add-on,
+        input,
+        select
+            border-color: $warning__color
+            +box-shadow(0 0 7px -2px $warning__color)
+
+
+
+
+
+.flex-group-form
+    display: table
+    width: 100%
+    white-space: normal
+    +box-sizing()
+
+    .small,
+    .mini,
+    .middle,
+    .item
+        display: table-cell
+        padding-right: 4px
+        +box-sizing()
+
+    .mini
+        width: 30%
+        &:last-child
+            padding-right: 0
+
+    .small
+        width: 40%
+
+    .middle
+        width: 50%
+
+    .elem
+        width: 100%
+        line-height: 16px
+
+
+.field-price-bar
+    display: table
+    width: 100%
+
+    .price-bar
+        display: table-cell
+        width: 1%
+        vertical-align: top
+
+    .field-price
+        display: table-cell
+        vertical-align: top
+
+
+
+
+.field-add-picture
+    position: relative
+    display: inline-block
+    width: 200px
+    height: 40px
+    overflow: hidden
+
+    .input-file
+
+        position: absolute
+        top: 0
+        left: 0
+        padding: 0
+        width: 100%
+        height: 100%
+        opacity: 0
+
+    .button-add-picture
+        width: 100%

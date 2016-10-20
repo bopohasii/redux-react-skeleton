@@ -1,0 +1,272 @@
+.rc-tooltip
+    position: absolute
+    z-index: 1100
+    display: block
+    font-size: 14px
+    visibility: visible
+    opacity: 1
+
+.rc-tooltip-hidden
+    display: none
+
+.rc-tooltip-placement-top,
+.rc-tooltip-placement-topLeft,
+.rc-tooltip-placement-topRight
+    padding: 5px 0 9px 0
+
+.rc-tooltip-placement-right,
+.rc-tooltip-placement-rightTop,
+.rc-tooltip-placement-rightBottom
+    padding: 0 5px 0 9px
+
+.rc-tooltip-placement-bottom,
+.rc-tooltip-placement-bottomLeft,
+.rc-tooltip-placement-bottomRight
+    padding: 9px 0 5px 0
+
+.rc-tooltip-placement-left,
+.rc-tooltip-placement-leftTop,
+.rc-tooltip-placement-leftBottom
+    padding: 0 9px 0 5px
+
+.rc-tooltip-inner
+    +box-shadow(  0 2px 2px 0 rgba(171, 171, 171, 0.8) )
+    +round( 6px )
+    background: #efefef
+    border: 0 none
+    min-height: 34px
+    padding: 2px 0
+    //overflow: hidden
+    text-align: left
+
+.rc-tooltip-placement-bottom .rc-tooltip-inner,
+.rc-tooltip-placement-top .rc-tooltip-inner
+    text-align: center
+
+.rc-tooltip-arrow
+    position: absolute
+    width: 0
+    height: 0
+    border-color: transparent
+    border-style: solid
+
+.rc-tooltip-placement-top .rc-tooltip-arrow,
+.rc-tooltip-placement-topLeft .rc-tooltip-arrow,
+.rc-tooltip-placement-topRight .rc-tooltip-arrow
+    bottom: 2px
+    border-width: 8px 7px 0
+    border-top-color: #efefef
+
+.rc-tooltip-placement-top .rc-tooltip-arrow
+    left: 15px
+    margin-left: -7px
+
+.rc-tooltip-placement-topLeft .rc-tooltip-arrow
+    left: 15px
+    margin-left: -7px
+
+.rc-tooltip-placement-topRight .rc-tooltip-arrow
+    right: 15px
+    margin-right: -7px
+
+.rc-tooltip-placement-right .rc-tooltip-arrow,
+.rc-tooltip-placement-rightTop .rc-tooltip-arrow,
+.rc-tooltip-placement-rightBottom .rc-tooltip-arrow
+    left: 2px
+    border-width: 7px 8px 7px 0
+    border-right-color: #efefef
+
+.rc-tooltip-placement-right .rc-tooltip-arrow
+    top: 50%
+    margin-top: -7px
+
+.rc-tooltip-placement-rightTop .rc-tooltip-arrow
+    top: 15px
+    margin-top: -7px
+
+.rc-tooltip-placement-rightBottom .rc-tooltip-arrow
+    bottom: 15px
+    margin-bottom: -7px
+
+.rc-tooltip-placement-left .rc-tooltip-arrow,
+.rc-tooltip-placement-leftTop .rc-tooltip-arrow,
+.rc-tooltip-placement-leftBottom .rc-tooltip-arrow
+    right: 2px
+    border-width: 7px 0 7px 8px
+    border-left-color: #efefef
+
+.rc-tooltip-placement-left .rc-tooltip-arrow
+    top: 50%
+    margin-top: -7px
+
+.rc-tooltip-placement-leftTop .rc-tooltip-arrow
+    top: 15px
+    margin-top: -7px
+
+.rc-tooltip-placement-leftBottom .rc-tooltip-arrow
+    bottom: 15px
+    margin-bottom: -7px
+
+.rc-tooltip-placement-bottom .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomRight .rc-tooltip-arrow
+    top: 2px
+    border-width: 0 7px 8px
+    border-bottom-color: #efefef
+
+.rc-tooltip-placement-bottom .rc-tooltip-arrow
+    left: 50%
+    margin-left: -7px
+
+.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow
+    left: 15px
+    margin-left: -7px
+
+.rc-tooltip-placement-bottomRight .rc-tooltip-arrow
+    right: 15px
+    margin-right: -7px
+
+.rc-tooltip.rc-tooltip-zoom-enter,
+.rc-tooltip.rc-tooltip-zoom-leave
+    display: block
+
+.rc-tooltip-zoom-enter,
+.rc-tooltip-zoom-appear
+    opacity: 0
+    -webkit-animation-duration: 0.3s
+    animation-duration: 0.3s
+    -webkit-animation-fill-mode: both
+    animation-fill-mode: both
+    -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28)
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28)
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+
+.rc-tooltip-zoom-leave
+    -webkit-animation-duration: 0.3s
+    animation-duration: 0.3s
+    -webkit-animation-fill-mode: both
+    animation-fill-mode: both
+    -webkit-animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05)
+    animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05)
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+
+.rc-tooltip-zoom-enter.rc-tooltip-zoom-enter-active,
+.rc-tooltip-zoom-appear.rc-tooltip-zoom-appear-active
+    -webkit-animation-name: rcToolTipZoomIn
+    animation-name: rcToolTipZoomIn
+    -webkit-animation-play-state: running
+    animation-play-state: running
+
+.rc-tooltip-zoom-leave.rc-tooltip-zoom-leave-active
+    -webkit-animation-name: rcToolTipZoomOut
+    animation-name: rcToolTipZoomOut
+    -webkit-animation-play-state: running
+    animation-play-state: running
+
+@-webkit-keyframes rcToolTipZoomIn
+    0%
+        opacity: 0
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(0, 0)
+        transform: scale(0, 0)
+
+    100%
+        opacity: 1
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(1, 1)
+        transform: scale(1, 1)
+
+
+@keyframes rcToolTipZoomIn
+    0%
+        opacity: 0
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(0, 0)
+        transform: scale(0, 0)
+
+    100%
+        opacity: 1
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(1, 1)
+        transform: scale(1, 1)
+
+
+@-webkit-keyframes rcToolTipZoomOut
+    0%
+        opacity: 1
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(1, 1)
+        transform: scale(1, 1)
+
+    100%
+        opacity: 0
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(0, 0)
+        transform: scale(0, 0)
+
+@keyframes rcToolTipZoomOut
+    0%
+        opacity: 1
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(1, 1)
+        transform: scale(1, 1)
+
+    100%
+        opacity: 0
+        -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+        -webkit-transform: scale(0, 0)
+        transform: scale(0, 0)
+
+
+// customization
+.rc-tooltip--menu
+    list-style: none
+    margin: 0
+    padding: 0
+
+    [class*=" icon-"],
+    [class^="icon-"]
+        margin: -4px 14px -2px -2px
+
+    a
+        &:hover
+            text-decoration: none
+
+    li,
+    .item-menu
+        +transition( background-color 150ms ease )
+        border-top: 1px solid #d4d4d4
+        cursor: pointer
+        color: #4a4a4a
+        line-height: 1.4
+        padding: 10px 20px
+        white-space: nowrap
+        position: relative
+
+        &:first-child
+            border-top: 0 none
+
+        &:hover,
+        &:focus
+            background-color: darken( #efefef, 4% )
+            outline: none
+            text-decoration: none
+
+        button
+            background: none
+            line-height: 1.4
+            margin: 0
+            padding: 0
+
+    .remove
+        color: $color-warning

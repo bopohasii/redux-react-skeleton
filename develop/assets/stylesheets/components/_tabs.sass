@@ -1,0 +1,74 @@
+.filter-tabs
+    display: block
+    white-space: nowrap
+
+    .inner-wrap
+        display: block
+
+    .tab
+        display: inline-block
+        color: $color-light
+        padding: 10px 60px
+        +round(6px, top)
+        border: 1px solid transparent
+        border-bottom: 0 none
+        cursor: pointer
+
+    .tinyicon
+        margin: 0 10px
+
+    .active
+        position: relative
+        background-color: #fff
+        border-color: $color-border
+        font-family: $FontFamily-medium
+        color: $color-text
+        cursor: default
+
+        &:before
+            position: absolute
+            top: 100%
+            left: 0
+            right: 0
+            height: 6px
+            background-color: #fff
+            content: ''
+
+        &:first-child
+            &:before
+                left: -1px
+                border-left: 1px solid $color-border
+
+
+    +mobile
+        padding:
+            top: 10px
+            left: 15px
+            right: 15px
+        margin-bottom: 20px
+        background: #fff
+
+        .inner-wrap
+            display: table
+            width: 100%
+            table-layout: fixed
+
+        .tab
+            display: table-cell
+            padding: 10px 0 6px
+            border: 0 none
+            text-align: center
+            border-bottom: 4px solid transparent
+
+            max-width: 50%
+
+            &:before
+                display: none
+
+            &.active
+                border-bottom-color: $color-orange
+
+
+
+
+
