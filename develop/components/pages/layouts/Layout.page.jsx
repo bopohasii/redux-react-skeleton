@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import ModalContainer from '../../../containers/modal/Modal.container.jsx';
 
-import '../../../assets/boot_scss/bootstrap.scss';
+import '../../../assets/stylesheets/index.sass';
 
 export default class LayoutPage extends Component {
     renderContainerModal() {
