@@ -1,0 +1,36 @@
+.dropdown
+    display: inline-block
+    position: relative
+    width: auto
+
+    &:after
+        border-right: 5px solid transparent
+        border-left: 5px solid transparent
+        border-top: 6px solid #ff6f00
+        content: ''
+        position: absolute
+        right: 8px
+        top: 16px
+
+    .form-control
+        border: 1px solid #efefef
+        +box-shadow( none )
+        background: #fff
+        cursor: pointer
+        color: #ff6f00
+        line-height: 1.6
+        padding: 4px 25px 4px 5px
+        height: 36px
+        -webkit-appearance: none
+        -moz-appearance: none
+        width: 100%
+
+        &:focus
+            border-color: #ff6f00
+
+        &::-ms-expand
+            display: none
+
+        option
+            padding: 4px 8px
+            line-height: 1.6

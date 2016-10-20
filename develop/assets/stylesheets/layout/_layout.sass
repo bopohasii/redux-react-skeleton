@@ -1,0 +1,125 @@
+//@font-face
+//    font:
+//        family: 'HelveticaNeue'
+//        weight: normal
+//        style: normal
+//    src: url('../fonts/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue.ttf') format('truetype')
+//
+//
+//@font-face
+//    font:
+//        family: 'HelveticaNeue-Medium'
+//        weight: normal
+//        style: normal
+//    src: url('../fonts/HelveticaNeueMedium.ttf') format('truetype')
+//
+//
+
+@font-face
+    font-family: 'HelveticaNeue'
+    src: local('☺')
+
+*
+    +box-sizing()
+
+
+html,
+body
+    width: 100%
+    //height: 100%
+    padding: 0
+    margin: 0
+
+html
+    height: 100%
+
+body
+    font:
+        weight: normal
+        style: normal
+        size: $BaseFontSize
+        family: $FontFamily
+
+    line-height: $BaseLineHeight
+    color: $color-text
+    //min-width: 940px
+    min-height: 100%
+
+    background: $Wallpaper
+
+
+    overflow: auto
+
+    //overflow: hidden
+    //height: 100%
+
+    cursor: default
+
+    //text-rendering: optimizeSpeed        // -> сделает приоритет на максимально быстрый рендеринг. Будут отключены лигатуры и кернинг
+    text-rendering: optimizeLegibility  //-> приведет к разрешению использовать лигатуры и кернинг, а также увеличению времени отрисовки текста.
+    //text-rendering: optimizeSpeed
+    // -> optimizeLegibility + уделяет большее внимание геометрическим пропорциями букв.
+
+
+
+
+.container:after,
+.row:after,
+.u-cf
+    content: ""
+    display: table
+    clear: both
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-app
+    min-height: 100%
+    padding: 0
+    margin: 0
+    vertical-align: top
+    //+box-sizing()
+
+
+
+//@include tablet
+//    overflow: auto
+//    -webkit-overflow-scrolling: touch
+
+
+
+.container
+    width: auto
+    max-width: 1060px
+    padding:
+        left: 0
+        right: 0
+    margin: 0 auto
+
+    +box-sizing(content-box)
+
+
+    +desktop
+        padding:
+            left: 20px
+            right: 20px
+
+    +tablet
+        padding:
+            left: 20px
+            right: 20px

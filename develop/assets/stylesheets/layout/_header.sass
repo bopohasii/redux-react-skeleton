@@ -1,0 +1,458 @@
+.header-app
+    +clearfix()
+    background-color: #ffc107
+    display: inline-block
+    vertical-align: top
+    padding: 0
+
+    +box-shadow( 0 2px 2px 0 rgba( 123, 53, 0, 0.1 ) )
+    +user-select( none )
+    position: relative
+    width: 100%
+    z-index: 500
+
+    .head-app
+        max-height: 70px
+
+    +mobile
+        .container
+            padding: 0 10px
+
+    +desktop-only
+
+        .search-bar
+            background-color: transparent
+            position: absolute
+            top: 3px
+            right: 30px
+            width: 300px
+
+            .panel-search
+                .field-control
+                    +round( 20px, left )
+
+                .button-primary
+                    +round( 20px, right )
+                    min-width: 0
+
+
+.i-logo
+    display: block
+    width: 300px
+    height: 90px
+    margin: 0 auto
+    background: url($PATH_LOGO) 50% 50% no-repeat
+    background-size: 100%
+
+    @media (max-width: 380px)
+        width: 100%
+
+
+.header--logo
+    display: block
+    float: left
+    margin: 10px 20px 10px 0
+    width: 160px
+
+    &:active,
+    &:focus
+        outline: none
+
+    img
+        display: block
+        width: 100%
+
+    +large-desktop-header
+        position: relative
+        left: -20px
+        margin-left: -160px
+        margin-right: 0
+
+    +mobile
+        display: none
+
+
+.head-app
+    +clearfix()
+    background-color: #ffa000
+    padding: 10px 0
+    text-align: center
+
+    a
+        color: #fff
+
+    .header--logo
+        display: inline-block
+        vertical-align: top
+        margin: 0 0 0 40px
+        left: 0
+
+    +mobile
+        .header--logo
+            float: none
+            width: 140px
+            margin: 0
+
+.header--search
+    float: left
+    padding-bottom: 12px
+    padding-top: 12px
+    width: 200px
+
+    +large-desktop-header
+        margin-right: 20px
+        margin-left: 100px
+
+    +large-desktop
+        margin-right: 20px
+        margin-left: 20px
+
+    .panel-search
+        .item-field
+            display: table-cell
+
+        .field-control
+            +round( 20px, left )
+
+        .button-primary
+            +round( 20px, right )
+            min-width: 0
+
+    +tablet-and-mobile
+        display: none
+
+    +desktop
+        display: none
+
+
+.header--account
+    position: relative
+    float: right
+    padding-bottom: 10px
+    padding-top: 10px
+
+
+    +large-desktop-header
+        padding-left: 44px
+        margin-right: -90px
+
+    +large-desktop
+        padding-left: 44px
+        margin-right: -90px
+
+    +desktop
+        padding-left: 15px
+
+    .avatar
+        cursor: pointer
+        display: block
+        border: 3px solid #fff
+        height: 40px
+        width: 40px
+        margin: 0 auto
+
+        &:active,
+        &:focus
+            outline: none
+
+        img
+            height: 40px
+            width: 40px
+
+    .icon-stars
+        top: -2px
+        right: -2px
+
+    +mobile
+        display: none
+
+
+.main-nav,
+.main-user-menu
+    float: left
+    display: table
+    table-layout: fixed
+    width: auto
+    padding: 0
+    position: relative
+
+    .nav-item
+        cursor: pointer
+        display: table-cell
+        vertical-align: middle
+        padding-bottom: 10px
+        padding-top: 10px
+        text-align: center
+        white-space: nowrap
+
+        &:active,
+        &:focus
+            outline: none
+
+        &:hover
+            text-decoration: none
+
+        &.active
+            background-color: #fff
+
+            .nav-title
+                color: #ffc107
+
+        [class*=" icon-"],
+        [class^="icon-"]
+            position: relative
+
+    .nav-title
+        color: #fff
+        display: block
+
+
+    .nav-badge
+        +round( 50% )
+        background-color: #e83e2e
+        position: absolute
+        height: 8px
+        right: 2px
+        top: 0
+        width: 8px
+
+    +mobile
+        float: none
+        width: 100%
+
+        .-desktop-only
+            display: none !important
+
+        .nav-title
+            display: none
+
+    +desktop-only
+        .-mobile-only
+            display: none !important
+
+    +large-desktop
+        .-large-desktop-hide
+            display: none !important
+
+
+.main-nav
+    .nav-item
+        border-right: 1px solid #ffc107
+
+        +large-desktop
+            width: 100px
+
+        +desktop
+            width: 94px
+
+        +tablet
+            width: 90px
+
+.main-user-menu
+    float: right
+    margin: 0
+
+    .nav-item
+        padding-left: 15px
+        padding-right: 15px
+
+    +tablet-and-mobile
+        display: none
+
+
+
+
+// nav items icons
+.active
+    .icon-email
+        background-position: -25px 0
+
+    .icon-home
+        background-position: -25px -25px
+
+    .icon-menu
+        background-position: -25px -50px
+
+    .icon-notifications
+        background-position: -25px -75px
+
+    .icon-people
+        background-position: -25px -100px
+
+    .icon-search
+        background-position: -25px -125px
+
+    .icon-add-group
+        background-position: -25px -175px
+
+    .icon-add-note
+        background-position: -25px -200px
+
+
+
+// header dropdowns
+.header--dropdown-menu,
+.header--notification-dropdown
+    +box-shadow(  0 2px 2px 0 rgba(171, 171, 171, 0.7) )
+    +round( 6px )
+    background-color: #fff
+    border: 0 none
+    position: absolute
+    text-align: left
+    top: 99%
+    z-index: 99
+
+.header--dropdown-menu
+    right: 0
+    min-width: 230px
+    padding: 5px 0
+    text-align: left
+    list-style: none
+    white-space: nowrap
+
+    &:before
+        border-bottom: 7px solid #fff
+        border-left: 6px solid transparent
+        border-right: 6px solid transparent
+        content: ""
+        position: absolute
+        bottom: 100%
+        right: 16px
+
+    .h-dropdown-header
+        padding: 10px 15px 15px
+
+        .el-link
+            font-size: 12px
+
+    .title
+        display: block
+        margin-bottom: 0
+
+    .h-dropdown-menu
+        border-top: 1px solid #efefef
+        list-style: none
+        margin: 0
+        padding: 0
+
+        [class^="icon-"]
+            margin-right: 15px
+
+        a.link-item
+            +transition( all 150ms ease )
+            color: #4a4a4a
+            display: block
+            padding: 10px 15px
+
+            &:hover,
+            &:active
+                background-color: rgba( 254, 213, 64, 0.2 )
+                outline: none
+                text-decoration: none
+
+            &:focus
+                outline: none
+
+            &.link-logout
+                color: #e83e2e
+
+
+
+.header--notification-dropdown
+    left: 0
+    width: 304px
+    margin-top: -1px
+    padding: 0
+    overflow: hidden
+
+    .page-header-inner
+        border-bottom: 1px solid #efefef
+        margin-bottom: 0
+        padding: 15px
+        position: absolute
+        top: 0
+        width: 100%
+
+    a.btn-show-more
+        position: absolute
+        bottom: 0
+        width: 100%
+
+    .container
+        padding-left: 0
+        padding-right: 0
+
+    .notifications--container
+        +box-shadow( none )
+        +round( 0 )
+        border-width: 0
+        margin-bottom: 0
+        padding: 0
+        position: static
+
+        .btn-show-more
+            display: none
+
+    .notifications-list
+        max-height: 550px
+        max-height: 72vh
+        margin-top: 60px
+        margin-bottom: 45px
+        overflow-y: auto
+        -webkit-overflow-scrolling: touch
+
+        .title,
+        .time
+            font-size: 12px
+
+        .title
+            &:hover
+                color: $color_link
+                cursor: pointer
+
+        .invited-by
+            margin-left: -88px
+
+        @media (max-height: 690px)
+            max-height: 350px
+            max-height: 60vh
+
+    +mobile
+        display: none
+
+
+.header--src-block
+    margin: 6px 48px 0 15px
+    float: right
+
+    +mobile
+        margin-left: -40px
+        margin-right: 5px
+
+    .button-primary
+        background-color: transparent
+        height: 34px
+        padding: 5px
+        min-width: 0
+
+        [class^="icon-"]
+            margin-right: 0
+            margin-left: 0
+
+        +desktop-only
+            &:hover
+                background-color: #ffc107
+
+
+.unregirster-panel
+    +clearfix()
+    text-align: right
+
+    +mobile
+        background-color: #FFC107
+        padding: 5px 15px
+
+    +desktop-only
+        position: absolute
+        top: 15px
+        right: 110px

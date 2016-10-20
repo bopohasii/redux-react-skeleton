@@ -1,0 +1,399 @@
+.modal
+
+    display: flex
+    width: 100%
+
+
+    +desktop-only
+        position: fixed
+        align-items: center
+        left: 0
+        top: 0
+        padding: 50px 0
+
+        height: 100%
+        overflow: auto
+        background: rgba(74,74,74,.8)
+        z-index: 1000
+
+    +mobile
+        position: relative
+        min-height: 100%
+        height: auto
+        padding: 0
+
+    &.hide
+        display: none
+        opacity: 0
+
+    .header-app
+        color: #fff
+        +box-shadow(0 0 0 #fff)
+
+        +desktop-only
+            +round(6px, top)
+
+
+    .infinite-scroll-component
+        //padding-right: 20px
+        //margin-right: -20px
+
+        +mobile
+            display: block
+            margin-left: 0
+            margin-right: 0
+            padding-left: 0
+            padding-right: 0
+
+
+    .container-modal
+        position: relative
+        padding: 0
+        margin: 0 auto
+        width: 600px
+
+        background-color: #fff
+
+        border: 0 none
+        z-index: 1
+
+        +desktop-only
+            +round(8px)
+            +box-shadow(0 5px 8px 0 rgba(0, 0, 0, 0.5))
+
+
+    &.message-new__modal
+        .container-modal
+            +desktop-only
+                overflow: hidden
+
+    &.create-post__modal,
+    &.edit-photo__modal
+        display: block
+
+
+
+    &.image-viewer-modal
+        .container-modal
+            +box-shadow(0 0 0 #000)
+            background: transparent
+
+    //+mobile
+    //    position: fixed
+    //    display: block
+    //    top: 0
+    //    left: 0
+    //    height: 100%
+    //    overflow: hidden
+    //
+    //    .container-modal
+    //        display: block
+    //        width: 100%
+    //        height: 100%
+    //
+    //    .flex-modal
+    //        display: flex
+    //        flex-direction: column
+    //        width: 100%
+    //        height: 100%
+    //
+    //    .content-modal
+    //        flex: 1 0 auto
+    //        overflow-y: auto
+    //        overflow-x: hidden
+    //        -webkit-overflow-scrolling: touch
+    //        height: calc(100% - 200px)
+    //
+
+
+    +mobile
+        display: flex !important
+        flex: auto !important
+        overflow: visible
+
+        .container-modal
+            display: flex
+            flex: auto
+            width: 100%
+
+        .flex-modal
+            display: flex
+            flex-direction: column
+            width: 100%
+            -webkit-overflow-scrolling: touch
+
+        .content-modal
+            width: 100%
+            flex: 1 0 auto
+
+
+
+.group-members__modal
+
+    +desktop-only
+
+        .container-modal
+            width: 700px
+
+
+.users-list__modal
+
+    +desktop-only
+
+        .container-modal
+            width: 635px
+
+
+.modal.authorization
+
+    .container-modal
+        width: 840px
+        color: #fff
+
+    .i-logo
+        margin-top: 40px
+        margin-bottom: 200px
+        background-image: url($PATH_LOGO_DARK)
+
+    .content-modal
+        padding: 15px 40px
+        height: 510px
+        background: #fff url($PATH_AUTH_BG) center bottom no-repeat
+        background-size: 100%
+
+    +mobile
+
+        .i-logo
+            margin-top: 0
+            margin-bottom: 150px
+
+        .container-modal
+            margin: 0
+            width: 100%
+
+
+        .button-facebook
+            max-width: 300px
+
+        .content-modal
+            display: flex
+            width: 100%
+            height: calc(100% - 60px)
+            background: #fff url($PATH_AUTH_BG_M) center bottom no-repeat
+            flex-direction: column
+            //align-items: center
+            justify-content: center
+            background-size: cover
+
+
+
+
+.close-modal
+    position: absolute
+    top: 18px
+    right: 18px
+    cursor: pointer
+
+    width: 24px
+    height: 24px
+    background-repeat: no-repeat
+    background-image: url($PATH_ICONS)
+    background-position: 0 -250px
+
+    //&:before,
+    //&:after
+    //    display: block
+    //    position: relative
+    //    background-color: #fff
+    //    height: 2px
+    //    width: 20px
+    //    content: ''
+    //
+    //&:hover
+    //    &:before,
+    //    &:after
+    //        background-color: #fff
+    //
+    //&:before
+    //    left: 0
+    //    top: 9px
+    //    +rotate(45deg)
+    //
+    //&:after
+    //    left: 0
+    //    top: 7px
+    //    +rotate(-45deg)
+
+
+.header-modal
+    background: #ffa000
+    color: #fff
+    font-size: 16px
+    text-align: center
+    line-height: 60px
+
+    +desktop-only
+        +round(8px, top)
+
+    a
+        text-decoration: none
+        color: #ffffff
+
+        &:hover
+            text-decoration: none
+            color: #ffffff
+
+    .title
+        margin: 0
+
+    +mobile
+        padding: 0 50px
+
+        .title
+            width: 100%
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap
+
+
+
+
+.container-modal
+    h1.title
+        font-size: 60px
+        text-align: center
+        margin: 100px 0 100px
+        color: #fff
+
+        +mobile
+            margin-top: 0
+
+    .panel-ad-message-wrp
+        .panel-textarea
+            margin:  20px 15px
+
+        +desktop-only
+
+            .panel-textarea
+                margin-left: 40px
+                margin-right: 40px
+
+.footer-modal
+    padding: 20px 15px
+    background: #efefef
+
+    +desktop-only
+        +round(6px, bottom)
+
+    +mobile
+
+        &.pressed
+            height: 80px
+            padding: 0
+            background: transparent
+
+            .sub-wrap
+                position: fixed
+                bottom: 0
+                left: 0
+                right: 0
+                padding: 20px 15px
+                background: #efefef
+                z-index: 500
+
+
+
+
+
+.section-content
+    padding: 20px 40px
+
+    +mobile
+        padding: 20px 15px
+
+.container-modal
+    //padding: 20px
+
+    .content
+        margin-bottom: 20px
+
+    .button-group
+        width: 100%
+
+    .button-primary
+        white-space: normal
+        word-break: break-all
+        word-break: break-word
+
+
+.ReactModal__Content
+
+    .footer-button
+        font-size: $text-small
+        text-align: center
+        padding: 20px 0
+        margin: 20px -20px -20px
+        border-top: 1px solid $color-white
+
+
+
+//share__modal
+
+.share__modal
+
+    padding: 0
+
+    +desktop-only
+
+        .invite-to-groups
+            padding-bottom: 0
+
+    .no-messages
+
+        .no-msg-logo
+            margin: 30px 0 25px
+            width: 200px
+
+        .description
+            padding: 0
+            margin: 0 auto 20px
+
+        .no-messages-separator
+            margin: 0
+
+
+    @media (max-height: 500px)
+        .field-textarea
+            height: 60px
+
+    @media (min-height: 501px) and (max-height: 700px)
+        .field-textarea
+            height: 80px
+
+.share-groups-list
+
+    +desktop-only
+
+        padding-bottom: 0
+
+        .infinite-scroll-component
+            margin-right: -20px
+            padding-right: 20px
+
+.modal
+
+    +desktop-only
+
+        .infinite-scroll-component
+
+            @media (max-height: 500px)
+                    max-height: 200px
+
+            @media (min-height: 501px) and (max-height: 700px)
+                    max-height: 250px
+
+            @media (min-height: 701px) and (max-height: 900px)
+                    max-height: 350px
+
+            @media (min-height: 901px)
+                    max-height: 450px

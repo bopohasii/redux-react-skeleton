@@ -1,0 +1,207 @@
+.datepicker
+    position: relative
+    display: inline-block
+    vertical-align: middle
+
+    &:after
+        position: absolute
+        top: 11px
+        right: 15px
+        width: 20px
+        height: 20px
+        @include icons
+        background-position: 0 -20px
+        content: ''
+        z-index: -1
+
+    .field-datepicker
+        background: transparent
+        cursor: pointer
+
+        &:focus
+            border-color: #dbdbdb
+
+    .alert-error
+        margin-right: -200px
+
+
+.uib-datepicker-popup
+    position: absolute
+    width: 300px
+    min-width: 200px
+    border: 1px solid #9a0000
+    padding: 0
+
+    &.dropdown-menu
+        li:hover
+            background: transparent
+
+    &:focus
+        outline: none
+
+    :focus
+        outline: 0 none
+
+    //&.dropdown-menu
+    //    width: auto
+
+    .btn
+        display: block
+        background: transparent
+        font-size: 13px
+        font-weight: normal
+        border: 0 none
+        -webkit-appearance: none
+        width: 100%
+        height: 100%
+        background: #fff
+        padding: 0
+        +user-select()
+        cursor: pointer
+
+        &:hover
+            color: #fff
+            background: $btn_danger__hover_background
+
+        &.active
+            color: #fff
+            background: #ae1917
+            cursor: default
+
+        &[disabled]
+            background: #f9f9f9
+            color: #ddd
+            cursor: default
+
+            &:hover
+                background: #f9f9f9
+
+
+    li
+        padding: 0
+        margin: 0
+
+
+    em
+        font-style: normal
+
+    thead
+
+
+
+        .btn
+            padding: 8px 0
+            height: 36px
+            background: #ae1917
+            color: #fff
+
+
+            &:hover
+                background: $btn_danger__hover_background
+                text-decoration: none
+
+            &:focus,
+            &:active
+                background: $btn_danger__focus_background
+
+
+            &[disabled]
+                background: #ae1917
+                color: #fff
+
+                &:hover,
+                &:focus
+                    background: #ae1917
+
+    th
+        font-weight: normal
+        text-align: center
+        cursor: default
+        line-height: 30px
+        padding: 0
+        +user-select()
+
+    thead
+        tr:first-child
+            th
+                border: 1px solid #9a0000
+    tbody
+        .btn
+            &.active,
+            &:hover
+                outline: 1px solid #9a0000
+
+            &[disabled],
+            &[disabled]:hover
+                outline: none
+
+
+
+
+    td
+        padding: 0
+        cursor: default
+
+    .h6
+        font-size: 12px
+        color: #ddd
+        width: 40px
+        text-align: center
+        +user-select()
+        cursor: default
+
+
+    .uib-daypicker,
+    .uib-monthpicker,
+    .uib-yearpicker
+        width: 100%
+        border-collapse: collapse
+        border-spacing: 0
+
+    .uib-daypicker
+        table-layout: fixed
+
+    .uib-year,
+    .uib-month,
+    .uib-day
+        padding: 0
+        margin: 0
+        height: 35px
+        border: 1px solid #f1f1f1
+        border:
+            right: 0 none
+            bottom: 0 none
+
+    .uib-day
+        width: 30px
+
+    .uib-month
+        width: 33%
+
+    .uib-year
+        width: 20%
+
+    .uib-button-bar
+        display: none
+
+    .btn.uib-left,
+    .btn.uib-right
+        min-width: 36px
+        width: 100%
+
+.glyphicon-chevron-right
+    display: inline-block
+    width: 10px
+    height: 20px
+    @include icons
+    background-position: -50px -20px
+    margin-right: -4px
+
+.glyphicon-chevron-left
+    display: inline-block
+    width: 10px
+    height: 20px
+    @include icons
+    +rotate(180deg)
+    background-position: -50px -20px
+    margin-left: -4px

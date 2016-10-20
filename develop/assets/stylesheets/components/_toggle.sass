@@ -1,0 +1,60 @@
+// toggle
+.toggle-wrp
+    display: inline-block
+    cursor: pointer
+    width: 62px
+    height: 31px
+    line-height: 1.4
+
+    &.disabled
+        cursor: default
+        opacity: 0.5
+        pointer-events: none
+
+    .toggle
+        height: 31px
+        position: relative
+        width: 62px
+
+        &:before,
+        &:after
+            +box-sizing( border-box )
+            +transition( all 0.2s linear )
+            display: block
+            position: absolute
+
+        &:before
+            background-color: #f1f1f1
+            border: 1px solid #ddd
+            border-radius: 16px
+            content: 'No'
+            color: #c4c4c4
+            font-size: 12px
+            height: 100%
+            padding: 0 8px
+            right: 0
+            left: 0
+            line-height: 30px
+            text-align: right
+
+        &:after
+            +round( 50% )
+            +box-shadow( 0 2px 3px 0 rgba(0, 0, 0, 0.2) )
+            background-color: #fff
+            content: ""
+            top: 1px
+            left: 1px
+            height: 28px
+            width: 28px
+
+        &.checked
+            &:before
+                background-color: #ffa000
+                border: 1px solid #ff6f00
+                content: 'Yes'
+                color: #fff
+                text-align: left
+
+            &:after
+                margin-left: 32px
+

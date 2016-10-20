@@ -1,0 +1,353 @@
+
+[class*=" icon-"],
+[class^="icon-"]
+    display: inline-block
+    width: 24px
+    height: 24px
+    overflow: hidden
+    text-indent: -40px
+    text-align: left
+    vertical-align: middle
+
+    background-repeat: no-repeat
+    background-image: url($PATH_ICONS)
+
+
+
+.icon-email
+    background-position: 0 0
+
+.icon-home
+    background-position: 0 -25px
+
+
+.icon-menu
+    background-position: 0 -50px
+
+.icon-notifications
+    background-position: 0 -75px
+
+.icon-people
+    background-position: 0 -100px
+
+.icon-search
+    background-position: 0 -125px
+
+.icon-collections
+    background-position: 0 -150px
+
+.icon-add-group
+    background-position: 0 -175px
+
+.icon-add-note
+    background-position: 0 -200px
+
+.icon-more-v
+    background-position: 0 -225px
+    +rotate(90deg)
+
+.icon-close
+    background-position: 0 -250px
+    cursor: pointer
+
+    +desktop-only
+        &:hover
+            background-position: -25px -250px
+
+
+.icon-close-active
+    background-position: -25px -250px
+    cursor: pointer
+
+.icon-check-circle
+    background-position: 0 -275px
+
+.icon-fb
+    background-position: 0 -300px
+
+.icon-facebook
+    background-position: 0 -325px
+
+.icon-edit-photo
+    background-position: 0 -350px
+    opacity: .6
+
+    +desktop-only
+        width: 40px
+        height: 40px
+        background-position: -125px -100px
+
+.icon-arrow-left
+    background-position: 0 -375px
+
+
+// Base.css
+//.icon-photo-large
+//    width: 40px
+//    height: 40px
+//    background-position: -125px -100px
+
+
+// Column 2 ( 25 0 )
+.icon-email-active
+    background-position: -25px 0
+
+.icon-home-active
+    background-position: -25px -25px
+
+.icon-menu-active
+    background-position: -25px -50px
+
+.icon-notifications-active
+    background-position: -25px -75px
+
+.icon-people-active
+    background-position: -25px -100px
+
+.icon-search-active
+    background-position: -25px -125px
+
+.icon-camera
+    background-position: -25px -150px
+
+.icon-add-note-active
+    background-position: -25px -200px
+
+.icon-add-group-active
+    background-position: -25px -225px
+
+
+// Column 3 ( 50 0 )
+.icon-mail
+    background-position: -50px 0
+
+.icon-favorite
+    background-position: -50px -25px
+    cursor: pointer
+
+    &.active
+        background-position: -75px -25px
+
+$revers : -1, 1
+
+.icon-reply,
+.icon-share
+    background-position: -50px -50px
+    +scale($revers)
+
+.icon-more
+    background-position: -50px -75px
+
+.icon-attention
+    background-position: -50px -100px
+
+.icon-message
+    background-position: -50px -125px
+
+.icon-repost
+    background-position: -50px -150px
+
+.icon-check
+    background-position: -50px -175px
+
+.icon-invite
+    background-position: -50px -200px
+
+.icon-add-email
+    background-position: -50px -225px
+
+
+.icon-account
+    background-position: -50px -250px
+
+.icon-person-add
+    background-position: -50px -275px
+
+.icon-add-note-gray
+    background-position: -50px -300px
+
+.icon-ads-posts
+    background-position: -50px -325px
+
+.icon-person
+    background-position: -50px -350px
+
+.icon-add-group-gray
+    background-position: -50px -375px
+
+.icon-settings
+    background-position: -50px -400px
+
+.icon-delete
+    background-position: -50px -425px
+
+// Column 4 ( 75 0 )
+
+.icon-triangle
+    width: 9px
+    height: 6px
+    background-position: -75px 0
+
+.icon-favorite-active
+    background-position: -75px -25px
+    cursor: pointer
+
+.icon-edit
+    background-position: -75px -50px
+
+
+.icon-stars-small
+    width: 10px
+    height: 10px
+    background-position: -75px -75px
+
+.icon-stars
+    width: 15px
+    height: 15px
+    background-position: -75px -100px
+
+
+
+.icon-uarr
+    width: 12px
+    height: 12px
+    background-position: -75px -125px
+
+
+
+
+.icon-logout
+    background-position: -75px -175px
+
+.icon-edit-gray
+    background-position: -75px -200px
+
+.icon-people-gray
+    background-position: -75px -225px
+
+.icon-chat
+    background-position: -75px -250px
+
+.icon-warning
+    background-position: -75px -275px
+
+.icon-key
+    background-position: -75px -300px
+
+.icon-description
+    background-position: -75px -325px
+
+// Position - X 100
+
+.icon-watch
+    background-position: -100px 0
+.icon-call
+    background-position: -100px -25px
+.icon-web
+    background-position: -100px -50px
+.icon-profile
+    background-position: -100px -75px
+.icon-map
+    background-position: -100px -100px
+
+.icon-message-active
+    background-position: -100px -150px
+// Position - X 125
+
+
+.icon-add-photo
+    width: 44px
+    height: 44px
+    background-position: -125px 0
+
+
+
+.icon-shevron-up,
+.icon-shevron-down
+    background: none
+    text-indent: 0
+    text-align: center
+    height: 24px
+    width: 24px
+
+    &:before
+        transform: rotate(-45deg)
+        display: inline-block
+        content: ''
+        position: relative
+        height: 6px
+        width: 6px
+
+.icon-shevron-down
+    &:before
+        border-bottom: 2px solid
+        border-left: 2px solid
+        top: -2px
+
+
+.icon-shevron-up
+    &:before
+        border-top: 2px solid
+        border-right: 2px solid
+        content: ''
+        height: 6px
+        width: 6px
+        top: 2px
+
+.icon-remove
+    //background: none
+    margin: 10px 3px 0
+    //position: relative
+    background-image: url($PATH_ICONS)
+    background-position: 0 -250px
+
+    //&:before,
+    //&:after
+    //    display: block
+    //    content: ''
+    //    position: relative
+    //
+    //&:before
+    //    border-top: 2px solid #fff
+    //    +rotate(-45deg)
+    //
+    //&:after
+    //    border-bottom: 2px solid #fff
+    //    +rotate(45deg)
+    //    top: -2px
+
+.i-warning
+    position: relative
+    display: inline-block
+    width: 46px
+    height: 40px
+    color: #ffffff
+    background: #e83e2e
+    text-align: center
+    font-size: 26px
+    font-style: normal
+    line-height: 40px
+    overflow: hidden
+    padding-top: 5px
+
+    &:before,
+    &:after
+        position: absolute
+        top: 0
+        border-bottom: 40px solid transparent
+        content: ''
+
+    &:before
+        left: 0
+        border-left: 23px solid #fff
+
+    &:after
+        right: 0
+        border-right: 23px solid #fff
+
+
+
+.icon-empty
+    width: 74px
+    height: 47px
+    background: url($PATH_ICON_empty) 50% 50% no-repeat

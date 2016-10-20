@@ -1,0 +1,389 @@
+/**
+ *   FORM
+ *   date modification
+ *
+ **/
+
+
+
+////webkit, opera, IE9
+//::selection
+//    background: #ae1917
+//    color:      #fff
+//
+////mozilla firefox
+//::-moz-selection
+//    background: #ae1917
+//    color:      #fff
+
+
+=elemForm_baseStyle()
+    margin:          0
+    padding:         8px 10px
+    font:
+        weight: normal
+        style: normal
+        size: $BaseFontSize
+        family: $FontFamily
+
+    line-height: $BaseLineHeight
+    text:
+        align:      left
+        decoration: none
+        overflow:   ellipsis
+        //shadow:     1px 0 0 #fff
+        indent:     0
+
+    white-space:     nowrap
+    overflow:        hidden
+    vertical-align:  middle
+    outline:         0 none
+    border:          1px solid $form__color-border
+    //+round(6px)
+    +box-sizing()
+    //-webkit-appearance: none
+    //appearance: none
+
+    // &:hover
+    //     border-color: #ffc107
+
+
+    &:focus,
+    &:active
+        outline: 0 none
+        border-color: #ffa000
+
+
+
+
+form
+    display: inline-block // for IE
+
+form
+    display: block
+    margin:  0
+    padding: 0
+
+fieldset
+    padding: 0
+    margin:  0
+    border:  0
+
+legend
+    margin:      0 0 0 10px
+    padding:     0 10px
+    font-weight: bold
+
+    font-size:   1.2em
+    line-height: 1.5em
+    //color:       #2d2d2d
+
+    small
+        font-size:  $BaseLineHeight * 0.75
+
+label
+    font-weight: normal
+
+[disabled],
+[readonly]
+    background-color: #f5f5f5
+    border-color:     $color-white
+    cursor:           default
+    +user-select()
+
+
+    &:hover,
+    &:focus,
+    &:active
+        outline: 0 none
+        border-color: $color-white !important
+
+
+[readonly]:focus
+    outline: 0 none
+    border-color:  $form__color-border
+
+[placeholder]
+    &:-moz-placeholder
+        color: $color__placeholder
+
+    &:-ms-input-placeholder
+        color: $color__placeholder
+
+    &::-webkit-input-placeholder
+        color: $color__placeholder
+
+
+//  INPUT
+input[type='text'],
+input[type='password'],
+select,
+textarea
+    transition:         border linear 0.2s, box-shadow linear 0.2s
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s
+    -moz-transition:    border linear 0.2s, box-shadow linear 0.2s
+
+
+input
+    +elemForm_baseStyle
+
+
+//input[type='text'],
+//input[type='password']
+//    +elemForm_baseStyle
+//
+//
+//input[type="email"],
+//input[type="number"],
+//input[type="search"],
+//input[type="tel"],
+//input[type="url"],
+//input[type="color"],
+//input[type="date"],
+//input[type="datetime"],
+//input[type="datetime-local"],
+//input[type="month"],
+//input[type="time"],
+//input[type="week"]
+//    +elemForm_baseStyle
+
+button
+    &:focus,
+    &:active
+        outline: 0 none
+        border-color: #ffa000
+
+
+// SELECT
+
+
+select
+    +elemForm_baseStyle
+
+    background:         url('data:image/gif;base64,R0lGODlhDwAIAIABAFJSUv///yH5BAEAAAEALAAAAAAPAAgAAAIQjA2nG+C8nIS0WiafnbfVAgA7') 100% 50% no-repeat, -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5)
+
+    -webkit-appearance:     button
+    -webkit-padding-end:    20px
+    -webkit-padding-start:  2px
+    -webkit-user-select:    none
+
+    -moz-appearance:        button
+    -moz-padding-end:       20px
+    -moz-padding-start:     2px
+    -moz-user-select:       none
+
+    appearance:     button
+    padding-end:    20px
+    padding-start:  2px
+    user-select:    none
+    cursor: pointer
+
+
+select[multiple],
+select[size]
+    height: auto
+
+optgroup
+    font-size:  inherit
+    font-style: normal
+
+
+//  INPUT type = file
+input[type="file"]
+
+    font-size: 12px
+    cursor: pointer
+
+    &::-webkit-file-upload-button
+        position: relative
+
+        +elemForm_baseStyle
+        +round(12px)
+        +gradient-vertical(#f9f9f9, #e2e2e2)
+
+        padding:    4px 10px 4px 0
+        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.30, #e2e2e2), color-stop(0.70, #f9f9f9))
+        -webkit-transition: border linear 0.2s, box-shadow linear 0.2s
+        -webkit-padding-start:  10px
+        -webkit-padding-end:    10px
+        -webkit-appearance:     button
+        cursor: pointer
+
+        &:hover
+            border-color: #32b9f0
+            +box-shadow(0 0 5px $form__shadow_hover)
+
+//  TEXTAREA
+textarea
+
+    +elemForm_baseStyle
+
+    +round(6px)
+
+    text-indent: 0
+    background-color: #fff
+    white-space: pre-wrap
+    word-wrap:   break-word
+    resize:      vertical
+
+    &:focus
+        outline: 0 none
+        //+box-shadow(0 0 5px $form__shadow_hover)
+
+select,
+textarea,
+input[type='text'],
+input[type='password'],
+input[type='checkbox']
+
+    // &:hover
+    //     border-color: #cccccc
+
+    &:focus
+        outline: 0 none
+
+    &[readonly]:focus
+        border-color:  $form__color-border
+
+input,
+select,
+textarea
+
+    //&.show-error
+    //    border-color: $warning__color
+
+    &.show-error
+        border-color: #ff3333 !important
+
+        &:hover
+            border-color: #ff3333 !important
+        &:focus
+            border-color: #ff3333 !important
+
+
+
+//.check-box
+//    display: none
+//    margin: 0 2px 2px 2px
+//    vertical-align: middle
+//
+//    & + label
+//        cursor: pointer
+//
+//        &:before
+//            position: relative
+//            display: inline-block
+//            width: 28px
+//            height: 20px
+//            margin: -6px 0 0 0
+//            vertical-align: middle
+//            cursor: pointer
+//            content: ''
+//
+//    &:checked + label
+//        &:before
+//            background-position: 0 -140px
+//
+//    &[disabled] + label
+//        color: $color-light
+//        cursor: default
+//
+//        &:before
+//            cursor: default
+
+
+// Add comment field
+.panel-add-comment
+    display: table
+    table-layout: fixed
+    width: 100%
+
+    .item-filed
+        display: table-cell
+
+    .item-button
+        display: table-cell
+        width: 70px
+
+
+    .field-comment
+        background: #fff
+        width: 100%
+        padding: 8px 15px
+        resize: none
+        +round(6px, left)
+
+    .button-primary
+        min-width: 60px
+        width: 100%
+        padding:
+            left: 0
+            right: 0
+        +round(6px, right)
+
+
+// Send to field
+.panel-send-to
+    margin-bottom: 10px
+    position: relative
+
+    .field-label
+        color: #afb0b3
+        position: absolute
+        pointer-events: none
+        top: 10px
+        left: 10px
+        font-size: 12px
+        font-weight: normal
+
+    .field-control
+        +round( 6px )
+        border: 1px solid #efefef
+        padding-left: 35px
+        width: 100%
+
+
+// Search block
+.panel-search
+    display: table
+    width: 100%
+
+    .item-field
+        display: table-cell
+
+    .item-button
+        display: table-cell
+        width: 40px
+
+    .field-control
+        +round( 6px, left )
+        background-color: #fff
+        border: 1px solid #fff
+        font-size: 12px
+        height: 40px
+        padding: 10px 15px
+        width: 100%
+
+    .button-primary
+        +round( 6px, right )
+        background-color: #ffa000
+        border: 1px solid #fff
+        width: 100%
+        height: 40px
+        padding: 8px 0
+
+        [class^="icon-"]
+            margin-right: 0
+
+        +desktop-only
+            &:hover
+                background-color: #ffc107
+
+
+// block textarea
+.panel-textarea
+    margin-bottom: 10px
+
+    textarea
+        min-height: 100px
+        width: 100%
