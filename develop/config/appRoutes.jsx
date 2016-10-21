@@ -6,7 +6,7 @@ import Layout from './../containers/layouts/Layout.container.jsx';
 import Pokemon from '../containers/pokemons/Pokemon.container.jsx';
 import Pokemons from '../containers/pokemons/Pokemons.container.jsx';
 
-import UIStyle from '../containers/ui/UI.container.jsx';
+import UIStyleGuide from '../containers/ui/UI.container.jsx';
 
 export default (
     <Route path="/" component={App}>
@@ -20,7 +20,7 @@ export default (
             </Route>
 
             <Route path="ui">
-                <IndexRoute component={UIStyle} />
+                <IndexRoute component={UIStyleGuide} />
             </Route>
 
         </Route>

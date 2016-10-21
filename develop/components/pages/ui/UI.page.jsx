@@ -4,7 +4,7 @@ import ModalContainer from '../../../containers/modal/Modal.container.jsx';
 
 import '../../../assets/stylesheets/index.sass';
 
-export default class LayoutPage extends Component {
+export default class UIPage extends Component {
     renderContainerModal() {
         const { windowWidth, isModalOpen, containerModalData, handleKeyDown } = this.props;
 
@@ -20,15 +20,33 @@ export default class LayoutPage extends Component {
     }
 
     render() {
-        const { children } = this.props;
-        const headerStyle = { textAlign: 'center', paddingTop: '15px' };
 
         return (
-            <div className="container-fluid">
+            <div className="ui-style-guide">
 
-                <h2 className="hide" style={headerStyle}> {'<Pokémon GO|Noxwille />'} </h2>
+                <header className="ui__header">
+                    <h1>UI Style Guide</h1>
+                    Version 1.0
+                </header>
 
-                {children}
+                <section className="ui__section">
+
+                    <h2 className="ui__title">Colors Palette</h2>
+
+
+
+                    <div className="ui__color"></div>
+                    <div className="ui__color-code-hex"></div>
+                    <div className="ui__color-code-rgba"></div>
+
+
+                </section>
+
+
+
+
+
+
 
                 {this.renderContainerModal()}
 
@@ -37,7 +55,7 @@ export default class LayoutPage extends Component {
     }
 }
 
-LayoutPage.propTypes = {
+UIPage.propTypes = {
     children: PropTypes.element,
     windowWidth: PropTypes.number,
     handleKeyDown: PropTypes.func,

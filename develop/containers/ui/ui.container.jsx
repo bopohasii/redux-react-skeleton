@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 
 import { closeModal } from '../../actions/modal.actions';
 
-import LayoutPage from '../../components/pages/layouts/Layout.page.jsx';
+import UIPage from '../../components/pages/ui/UI.page.jsx';
 
-class Layout extends Component {
+class UIStyleGuide extends Component {
 
     handleKeyDown(e) {
         const { isModalOpen, handleCloseModal } = this.props;
@@ -18,7 +18,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <LayoutPage
+            <UIPage
                 {...this.props}
                 {...this.state}
                 handleKeyDown={this.handleKeyDown.bind(this)}
@@ -27,7 +27,7 @@ class Layout extends Component {
     }
 }
 
-Layout.propTypes = {
+UIStyleGuide.propTypes = {
     isModalOpen: PropTypes.bool,
     handleCloseModal: PropTypes.func,
 };
@@ -40,4 +40,4 @@ const mapDispatchToProps = (dispatch) => ({
     handleCloseModal: bindActionCreators(closeModal, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(UIStyleGuide);
