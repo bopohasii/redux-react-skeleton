@@ -24,13 +24,12 @@ export default class LayoutPage extends Component {
         const headerStyle = { textAlign: 'center', paddingTop: '15px' };
 
         return (
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-12">
-                        <h2 style={headerStyle}> {'<Pokémon GO|Noxwille />'} </h2>
-                    </div>
+            <div>
+                <div className="hide">
+                    <h2 style={headerStyle}> {'<Pokémon GO|Noxwille />'} </h2>
+                    <hr />
                 </div>
-                <hr />
+
                 {children}
 
                 {this.renderContainerModal()}

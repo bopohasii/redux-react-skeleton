@@ -1,26 +1,12 @@
 //@font-face
-//    font:
-//        family: 'HelveticaNeue'
-//        weight: normal
-//        style: normal
-//    src: url('../fonts/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue.ttf') format('truetype')
-//
-//
-//@font-face
-//    font:
-//        family: 'HelveticaNeue-Medium'
-//        weight: normal
-//        style: normal
-//    src: url('../fonts/HelveticaNeueMedium.ttf') format('truetype')
-//
-//
+//    font-family: 'HelveticaNeue'
+//    src: local('☺')
 
-@font-face
-    font-family: 'HelveticaNeue'
-    src: local('☺')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
 
-*
-    +box-sizing()
+
+//*
+//    +box-sizing()
 
 
 html,
@@ -31,6 +17,7 @@ body
     margin: 0
 
 html
+    font-size: 10px
     height: 100%
 
 body
@@ -54,44 +41,12 @@ body
 
 
 
-.container:after,
-.row:after,
-.u-cf
-    content: ""
-    display: table
-    clear: both
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .container-app
     min-height: 100%
     padding: 0
     margin: 0
     vertical-align: top
-    //+box-sizing()
-
-
-
-//@include tablet
-//    overflow: auto
-//    -webkit-overflow-scrolling: touch
-
 
 
 .container
@@ -101,8 +56,6 @@ body
         left: 0
         right: 0
     margin: 0 auto
-
-    +box-sizing(content-box)
 
 
     +desktop

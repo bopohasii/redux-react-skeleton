@@ -1,0 +1,69 @@
+.ui-style-guide
+    padding: 3rem 4rem
+
+    h1
+        font:
+            size: 3rem
+            weight: 100
+        margin: 0
+
+.ui__header
+    display: block
+    margin-bottom: 6rem
+
+.ui__section
+    display: block
+    margin-bottom: 6rem
+
+.ui__title
+    font:
+        size: 3rem
+        weight: 100
+    margin: 0 0 2rem
+
+    &:after
+        display: block
+        width: 3rem
+        height: .2rem
+        background: #000
+        content: ''
+
+
+
+
+
+
+
+
+.ui__color
+    width: 20rem
+    height: 20rem
+    background: $color-text
+
+.ui__color-code-hex
+    display: block
+    margin: 1rem 0
+
+    &:before
+        display: inline-block
+
+        width: 5rem
+        opacity: .5
+        content: 'HEX'
+    &:after
+        content: '#{$color-text}'
+
+.ui__color-code-rgba
+    display: block
+    margin: 1rem 0
+
+    &:before
+        display: inline-block
+
+        width: 5rem
+        opacity: .5
+        content: 'RGBA'
+    &:after
+        content: '#{rgba($color-text, .2)}'
+
+
