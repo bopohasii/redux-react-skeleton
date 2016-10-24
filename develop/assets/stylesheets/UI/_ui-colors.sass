@@ -1,0 +1,76 @@
+
+=ui-color($color)
+    &:before
+        background: $color
+
+    //.ui__color-name
+    //    &:after
+    //        content: $color
+
+    .ui__color-code-hex
+        &:after
+            content: '#{$color}'
+
+    .ui__color-code-rgba
+        &:after
+            content: '#{rgba($color, .2)}'
+
+
+.ui__color
+    display: inline-block
+    vertical-align: top
+    width: 20rem
+    margin: 0 4rem 2rem 0
+
+    &:before
+        display: block
+        width: 10rem
+        height: 10rem
+        +round()
+        content: ''
+
+.ui__color-name,
+.ui__color-code-hex,
+.ui__color-code-rgba
+    display: block
+    margin: 1rem 0
+
+    &:before
+        display: inline-block
+        width: 5rem
+        opacity: .5
+
+.ui__color-name
+    &:before
+        content: 'Name'
+
+.ui__color-code-hex
+    &:before
+        content: 'HEX'
+
+.ui__color-code-rgba
+    &:before
+        content: 'RGBA'
+
+
+
+
+// Color type
+
+.ui__color-text
+    +ui-color($color-text)
+
+.ui__color-link
+    +ui-color($color-link)
+
+.ui__color-red
+    +ui-color($color-red)
+
+.ui__color-green
+    +ui-color($color-green)
+
+.ui__color-blue
+    +ui-color($color-blue)
+
+.ui__color-orange
+    +ui-color($color-orange)
