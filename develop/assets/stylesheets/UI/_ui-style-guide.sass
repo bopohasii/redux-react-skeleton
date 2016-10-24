@@ -27,13 +27,9 @@
         height: .2rem
         background: #000
         content: ''
-
-
-
-
-
-
-
+//-------------------------------------------------------------------------------------
+// Color
+//-------------------------------------------------------------------------------------
 
 .ui__color
     width: 20rem
@@ -66,4 +62,49 @@
     &:after
         content: '#{rgba($color-text, .2)}'
 
+//-------------------------------------------------------------------------------------
+// Typography
+//-------------------------------------------------------------------------------------
 
+.ui__typography
+    margin: 0 -1.5%
+
+.ui__typography-item
+    display: inline-block
+    flex-direction: column
+    margin-bottom: 30px
+    padding: 0 1.5%
+    width: 30%
+
+
+.ui__typography-preview
+    align-items: center
+    background: #f4f7f9
+    border: 1px solid #e4ecf0
+    box-sizing: border-box
+    display: flex
+    justify-content: center
+    margin-bottom: 20px
+    min-height: 100px
+    padding: 15px
+
+    .title
+        margin-bottom: 0
+
+.ui__typography-size
+    margin: 0 0 10px 0
+
+    &:before
+        content: 'Size'
+        display: inline-block
+        opacity: .5
+        width: 6rem
+
+.ui__typography-weight
+    margin: 0 0 10px 0
+
+    &:before
+        content: 'Weight'
+        display: inline-block
+        opacity: .5
+        width: 6rem

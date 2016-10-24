@@ -27,34 +27,31 @@ a
         color: $color_link
         text-decoration: none
 
-
     &:visited
         text-decoration: none
 
+.title
+    font:
+        size: $text-large
+        weight: 700
+        family: $FontFamily
+    margin: 0 0 20px
 
-.el-link
-    display: inline
+    &--large
+        font-size: 2.8rem
+
+    &--medium
+        font-size: 2.4rem
+
+    &--small
+        font-size: 2rem
+
+.link
     color: $color-link
     cursor: pointer
 
     &:hover
         text-decoration: underline
-
-.item-link
-    color: $color-text
-    cursor: pointer
-
-    &:hover
-        color: $color-link
-        text-decoration: none
-
-.i-link
-    color: $color-link
-
-
-.press-bottom
-    display: flex
-    align-items: flex-end
 
 .overage
     display: block
@@ -62,73 +59,9 @@ a
     overflow: hidden
     text-overflow: ellipsis
 
-.center
-    text-align: center
-
-.hide,
-.hidden
+.hide
     display: none !important
 
 .hide-xs
     +mobile
         display: none !important
-
-.tinyicon
-    display: inline-block
-    min-width: 25px
-    height: 24px
-    padding: 0 5px
-    font-size: $text-small
-    line-height: 24px
-    text-align: center
-    color: #fff
-    background: #00bcd4
-    +round(12px)
-    cursor: default
-
-.panel-counter
-    font-size: $text-small
-    color: $color-light
-
-.autor
-    display: block
-    max-width: 100%
-    font-size: $text-large
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-
-.time
-    font-size: $text-small
-    color: $color-light
-
-.btn-triangle
-    display: inline-block
-    padding: 7px 9px
-    vertical-align: top
-    cursor: pointer
-
-.area
-    float: right
-
-.title
-    font:
-        size: $text-large
-        weight: 500
-        family: $FontFamily
-    margin: 0 0 20px
-
-
-.heading
-    padding: 0
-    margin: 0 0 15px
-    font:
-        size: 48px
-        weight: bold
-        style: normal
-    line-height: 1
-
-    +mobile
-        font-size: $text-large
-        line-height: $BaseLineHeight
-        margin-bottom: 3px
