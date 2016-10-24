@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import ModalContainer from '../../../containers/modal/Modal.container.jsx';
 
+
 import '../../../assets/stylesheets/index.sass';
 
 export default class UIPage extends Component {
@@ -19,6 +20,8 @@ export default class UIPage extends Component {
         );
     }
 
+
+
     render() {
 
         return (
@@ -32,8 +35,6 @@ export default class UIPage extends Component {
                 <section className="ui__section">
 
                     <h2 className="ui__title">Colors Palette</h2>
-
-
 
                     <div className="ui__color ui__color-text">
                         <pre className="ui__color-name">
@@ -85,12 +86,6 @@ export default class UIPage extends Component {
 
 
                 </section>
-
-
-
-
-
-
 
                 {this.renderContainerModal()}
 
