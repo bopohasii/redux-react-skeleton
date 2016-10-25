@@ -26,7 +26,7 @@ class UITypography extends Component{
 
                         <div className="ui__typography-name title">Sub-title</div>
                         <div className="ui__typography-size">1.6 rem</div>
-                        <div className="ui__typography-weight">500/bold</div>
+                        <div className="ui__typography-weight">500/normal</div>
                     </div>
 
                     <div className="ui__typography-item">
