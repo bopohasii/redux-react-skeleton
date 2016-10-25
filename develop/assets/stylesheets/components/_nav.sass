@@ -1,29 +1,31 @@
 .nav
-    display: flex
-    background: #f4f7f9
+    background: $nav__background
     list-style: none
-    margin: 0 0 50px 0
+    margin: 0 0 5rem 0
     padding: 0
     width: 100%
 
+    &__item
+        display: inline-block
+
     &__link
-        color: $color-text
+        color: $nav__color-link
         cursor: pointer
         border-bottom: 1px solid transparent
         display: inline-block
-        margin-bottom: -1px
-        padding: 10px 20px
+        margin-bottom: -.1rem
+        padding: 1rem 2rem
 
         &:hover
-            background: darken(#f4f7f9, 15%)
+            background: $nav__background-hover
             border-bottom: 1px solid $color-light
-            color: $color-text
+            color: $nav__color-link
             text-decoration: none
 
     .active
         .nav__link
-            border-bottom-color: $color-text
-            color: $color-text
+            border-bottom-color: $nav__color-border
+            color: $nav__color-link
             cursor: default
 
             &:hover
@@ -39,31 +41,37 @@
                 display: block
 
         &::after
-            border-bottom: 1px solid gray
-            border-right: 1px solid gray
+            border-bottom: 1px solid $nav__color-border
+            border-right: 1px solid $nav__color-border
             content: ""
             display: inline-block
             height: 5px
-            margin-top: -3px
+            margin-top: .3rem
             position: absolute
             right: 10px
             transform: rotate(45deg)
-            top: 20px
+            top: 14px
             width: 5px
 
+        .nav__item
+            display: block
+
         .nav__link
-            padding: 10px 30px 10px 20px
+            padding: 1rem 3rem 1rem 2rem
 
     &__sub
-        background: darken(#f4f7f9, 4%)
+        background: $nav__background-sub
         display: none
         list-style: none
-        margin-top: 1px
+        margin-top: .1rem
         padding: 0
         position: absolute
 
     +mobile
         display: block
+
+        &__item
+            display: block
 
         &__link
             display: block
