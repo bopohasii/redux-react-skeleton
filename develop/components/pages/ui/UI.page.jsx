@@ -1,11 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 
 import ModalContainer from '../../../containers/modal/Modal.container.jsx';
+import UIColor from './UI.color.jsx';
+import UITypography from './UI.typography.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
 
-export default class UIPage extends Component {
+
+class UIPage extends Component{
     renderContainerModal() {
         const { windowWidth, isModalOpen, containerModalData, handleKeyDown } = this.props;
 
@@ -20,8 +23,6 @@ export default class UIPage extends Component {
         );
     }
 
-
-
     render() {
 
         return (
@@ -31,6 +32,10 @@ export default class UIPage extends Component {
                     <h1>UI Style Guide</h1>
                     Version 1.0
                 </header>
+
+                <UIColor />
+
+                <UITypography />
 
                 <section className="ui__section">
 
@@ -147,3 +152,6 @@ UIPage.propTypes = {
     containerModalData: PropTypes.object,
     isModalOpen: PropTypes.bool,
 };
+
+
+export default UIPage;

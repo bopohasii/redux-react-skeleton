@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
-class UIColorSection extends Component{
+class UIColor extends Component{
 
     render() {
 
@@ -63,4 +63,4 @@ class UIColorSection extends Component{
     }
 }
 
-export default UIColorSection;
+export default UIColor;
