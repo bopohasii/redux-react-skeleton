@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
 import ModalContainer from '../../../containers/modal/Modal.container.jsx';
+
 import UIColor from './UI.color.jsx';
 import UITypography from './UI.typography.jsx';
 import UINavigation from './UI.navigation.jsx';
 import UIBreadcrumbs from './UI.breadcrumbs.jsx';
+import UIForms from './UI.forms.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -42,6 +44,8 @@ class UIPage extends Component{
                 <UINavigation />
 
                 <UIBreadcrumbs />
+
+                <UIForms />
 
                 {this.renderContainerModal()}
 
