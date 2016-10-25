@@ -1,0 +1,37 @@
+.breadcrumbs
+    list-style: none
+    margin: 0
+    padding: 0
+
+    &__item
+        display: inline-block
+        padding: 5px 10px
+        position: relative
+
+        &:first-child
+            padding-left: 0
+
+            &:after
+                border-color: transparent
+
+        &:after
+            border-top: 1px solid gray
+            border-right: 1px solid gray
+            content: ""
+            display: inline-block
+            height: 5px
+            left: -5px
+            margin-top: -3px
+            position: absolute
+            transform: rotate(45deg)
+            top: 50%
+            width: 5px
+
+    &__text
+        color: $color-text
+
+        &:hover
+            color: $color-text
+            cursor: default
+            text-decoration: none
+
