@@ -108,7 +108,7 @@ export default class UIPage extends Component {
 
                             <div className="ui__typography-name title">Sub-title</div>
                             <div className="ui__typography-size">1.6 rem</div>
-                            <div className="ui__typography-weight">500/bold</div>
+                            <div className="ui__typography-weight">500/normal</div>
                         </div>
     
                         <div className="ui__typography-item">
@@ -132,6 +132,66 @@ export default class UIPage extends Component {
                         </div>
                     </div>
                 </section>
+
+                <div className="ui__section">
+                    <div className="ui__title">Navigation</div>
+
+                    <nav className="nav">
+                        <div className="nav__item active">
+                            <a href="#" className="nav__link">Menu-item 1</a>
+                        </div>
+                        <div className="nav__item">
+                            <a href="#" className="nav__link">Menu-item 2</a>
+                        </div>
+                        <div className="nav__item">
+                            <a href="#" className="nav__link">Menu-item 3</a>
+                        </div>
+                    </nav>
+
+
+                    <ul className="nav">
+                        <li className="nav__item active">
+                            <a href="#" className="nav__link">Menu-item 1</a>
+                        </li>
+                        <li className="nav__item">
+                            <a href="#" className="nav__link">Menu-item 2</a>
+                        </li>
+                        <li className="nav__item">
+                            <a href="#" className="nav__link">Menu-item 3</a>
+                        </li>
+
+                        <li className="nav__item nav__item--dropdown">
+                            <a href="#" className="nav__link">Menu-item dropdown</a>
+                            <ul className="nav__sub">
+                                <li className="nav__item">
+                                    <a href="#" className="nav__link">Menu-sub item 1</a>
+                                </li>
+                                <li className="nav__item">
+                                    <a href="#" className="nav__link">Menu-sub item 2</a>
+                                </li>
+                                <li className="nav__item">
+                                    <a href="#" className="nav__link">Menu-sub item 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="ui__section">
+                    <div className="ui__title">Breadcrumbs</div>
+
+                    <ul className="breadcrumbs">
+                        <li className="breadcrumbs__item">
+                            <a href="#" className="breadcrumbs__link">Home</a>
+                        </li>
+                        <li className="breadcrumbs__item">
+                            <a href="#" className="breadcrumbs__link">Library</a>
+                        </li>
+                        <li className="breadcrumbs__item active">
+                            <span className="breadcrumbs_text">Data</span>
+                        </li>
+                    </ul>
+                </div>
 
                 {this.renderContainerModal()}
 

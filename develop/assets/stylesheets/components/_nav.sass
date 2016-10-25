@@ -1,92 +1,81 @@
-
-.nav-tabs
-    display: inline-block
-    width: 100%
-    border-bottom: 1px solid #ddd
-
-
-    .item-tab
-        float: left
-        font-weight: bold
-        color: #5f5f5f
-        padding: 10px 20px
-        margin-left: 5px
-        margin-bottom: -1px
-        border: 1px solid transparent
-        +round(10px, top)
-        cursor: pointer
-
-        &:hover
-            color: $color-text
-
-        &.active
-            border-color: #ddd
-            border-bottom-color: #fff
-            color: $color-text
-            cursor: default
-
-
 .nav
-    display: inline-block
-    width: 100%
-    border-bottom: 1px solid #ddd
+    background: $nav__background
     list-style: none
+    margin: 0 0 5rem 0
     padding: 0
-    margin: 0 0 15px
+    width: 100%
 
-    .nav-item
-        float: left
-        margin-left: 5px
-
-    .nav-link
+    &__item
         display: inline-block
-        font-weight: bold
-        color: #5f5f5f
-        padding: 10px 20px
-        margin-bottom: -1px
-        border: 1px solid transparent
-        text-decoration: none
-        vertical-align: top
-        +round(10px, top)
+
+    &__link
+        color: $nav__color-link
         cursor: pointer
+        border-bottom: 1px solid transparent
+        display: inline-block
+        margin-bottom: -.1rem
+        padding: 1rem 2rem
 
         &:hover
-            color: $color-text
+            background: $nav__background-hover
+            border-bottom: 1px solid $color-light
+            color: $nav__color-link
+            text-decoration: none
 
     .active
-        .nav-link
-            border-color: #ddd
-            border-bottom-color: #fff
-            color: $color-text
+        .nav__link
+            border-bottom-color: $nav__color-border
+            color: $nav__color-link
             cursor: default
 
+            &:hover
+                background: none
 
+    //Dropdown
 
-.nav-bar
-    margin: 45px 0 0 300px
-
-    .item
-        color: #fff
-        text-transform: uppercase
-        padding: 0 10px 5px
-        margin: 0 15px
-        cursor: default
-
-        &.active
-            cursor: default
-            border-bottom: 1px solid #fff
-
-    a.item
-        cursor: pointer
+    &__item--dropdown
+        position: relative
 
         &:hover
-            border-bottom: 1px solid #fff
+            .nav__sub
+                display: block
 
+        &::after
+            border-bottom: 1px solid $nav__color-border
+            border-right: 1px solid $nav__color-border
+            content: ""
+            display: inline-block
+            height: 5px
+            margin-top: .3rem
+            position: absolute
+            right: 10px
+            transform: rotate(45deg)
+            top: 14px
+            width: 5px
 
-
-.tab-content
-    .tab-pane
-        display: none
-
-        &.active
+        .nav__item
             display: block
+
+        .nav__link
+            padding: 1rem 3rem 1rem 2rem
+
+    &__sub
+        background: $nav__background-sub
+        display: none
+        list-style: none
+        margin-top: .1rem
+        padding: 0
+        position: absolute
+
+    +mobile
+        display: block
+
+        &__item
+            display: block
+
+        &__link
+            display: block
+
+        &__sub
+            position: relative
+
