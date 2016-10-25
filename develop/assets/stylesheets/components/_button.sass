@@ -49,8 +49,8 @@ button
     &[disabled],
     &[disabled]:hover
         color: #fff
-        background-color: $color-grey
-        border-color: $color-grey
+        background-color: $color-gray
+        border-color: $color-gray
         cursor: default
 
     &::-moz-focus-inner
@@ -68,6 +68,11 @@ button
         margin: -3px 5px -1px 0
 
 
+    +mobile
+        width: 100%
+
+
+
 
 
 //  INPUT
@@ -80,159 +85,3 @@ button
 .button-primary
 
     +button($btn_primary__color, $btn_primary__background)
-
-    [class^="icon-"]
-        margin: -5px 5px -3px 0
-
-    .icon-invite
-        background-position: -100px -125px
-
-
-    +desktop-only
-        &:hover
-            background-color: $btn_primary__hover_background
-
-    +mobile
-        width: 100%
-
-
-.button-facebook
-
-    +button($btn_facebook__color, $btn_facebook__background)
-    min-width: 240px
-    font-size: $text-large
-    +box-shadow(0 3px 6px 0 rgba(0, 0, 0, 0.34))
-
-    .icon-facebook
-        float: left
-        margin: 0 -24px 0 0
-
-    +desktop-only
-        &:hover
-            background-color: $btn_facebook__hover_background
-
-    +mobile
-        width: 100%
-        max-width: 300px
-
-
-
-
-.button-add-picture
-
-    +button($btn_add-picture__color, $btn_add-picture__background)
-
-    padding: 7px 10px
-
-    background-color: #fff
-    border: 1px solid $btn_add-picture__background
-
-    .icon-camera
-        margin-right: 10px
-
-    //+desktop-only
-    //    &:hover
-    //        background-color: $btn_primary__hover_background
-
-    +mobile
-        width: 165px
-
-
-.button-joined
-
-    +button($color-light, transparent)
-
-    padding: 7px 10px
-    border: 1px solid $color-grey
-
-    &:hover
-        background-color: #fafafa
-
-.button-cancel
-
-    +button(#e83e2e, #fff)
-
-    padding: 7px 10px
-    border: 1px solid transparent
-    white-space: normal
-
-    &:hover
-        background-color: #fafafa
-        border-color: #fafafa
-
-
-
-.btn-decline
-    display: inline
-    font-size: $text-small
-    color: $color-link
-    vertical-align: middle
-
-    &:hover
-        text-decoration: underline
-
-
-.btn-remove
-    display: inline
-    font-size: $text-small
-    color: $color-warning
-
-    &:hover
-        text-decoration: underline
-
-.btn-fb
-    display: inline-block
-    width: 25px
-    height: 25px
-    background: #507CC0
-    +round(3px)
-
-    .icon-fb
-        vertical-align: top
-
-
-.btn-show-more
-    +transition( all 150ms ease )
-    background-color: #afb0b3
-    color: #fff
-    font-size: 14px
-    padding: 10px 0
-    text-align: center
-    width: 100%
-
-    [class^="icon-"]
-        margin-right: 10px
-        margin-bottom: -4px
-        margin-top: -3px
-
-    +desktop-only
-        &:hover
-            background-color: lighten( #afb0b3, 3% )
-
-a.btn-show-more
-    display: block
-
-    &:hover,
-    &:focus
-        color: #fff
-        outline: none
-        text-decoration: none
-
-.button-simple
-    +transition( all 150ms ease )
-    +round( 6px )
-    background-color: #fff
-    display: inline-block
-    color: #4d4013
-    min-width: 80px
-    text-align: center
-    padding: 6px 10px
-
-    [class^="icon-"]
-        margin: -5px 5px -3px 0
-
-    +desktop-only
-        &:hover
-            background-color: #f9f9f9
-            color: #4d4013
-            text-decoration: none

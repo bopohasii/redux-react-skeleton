@@ -12,7 +12,14 @@ class UIForms extends Component{
                 <article className="ui__article">
 
 
+                    <button className="">
+                        Default
+                    </button>
 
+
+                    <button className="button-primary">
+                        Primary
+                    </button>
 
 
 
