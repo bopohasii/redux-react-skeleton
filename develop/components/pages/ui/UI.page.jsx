@@ -193,6 +193,51 @@ export default class UIPage extends Component {
                     </ul>
                 </div>
 
+                <div className="ui__section">
+                    <div className="ui__title">Pagination</div>
+
+                    <div className="pagination-container">
+                        <ul className="pagination">
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link disabled">«</a>
+                            </li>
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link active">1</a>
+                            </li>
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link">2</a>
+                            </li>
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link disabled">...</a>
+                            </li>
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link">4</a>
+                            </li>
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link">5</a>
+                            </li>
+                            <li className="pagination__item">
+                                <a href="#" className="pagination__link">»</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="ui__section">
+                    <div className="ui__title">Pager</div>
+
+                    <div className="pager-container">
+                        <ul className="pager">
+                            <li className="pager__item">
+                                <a href="#" className="pager__link">Previous</a>
+                            </li>
+                            <li className="pager__item">
+                                <a href="#" className="pager__link">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 {this.renderContainerModal()}
 
             </div>
