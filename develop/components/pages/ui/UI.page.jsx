@@ -5,6 +5,8 @@ import UIColor from './UI.color.jsx';
 import UITypography from './UI.typography.jsx';
 import UINavigation from './UI.navigation.jsx';
 import UIBreadcrumbs from './UI.breadcrumbs.jsx';
+import UIPagination from './UI.pagination.jsx';
+import UIPager from './UI.pager.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -42,6 +44,10 @@ class UIPage extends Component{
                 <UINavigation />
 
                 <UIBreadcrumbs />
+
+                <UIPagination />
+                
+                <UIPager />
 
                 {this.renderContainerModal()}
 
