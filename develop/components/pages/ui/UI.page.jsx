@@ -7,6 +7,7 @@ import UINavigation from './UI.navigation.jsx';
 import UIBreadcrumbs from './UI.breadcrumbs.jsx';
 import UIPagination from './UI.pagination.jsx';
 import UIPager from './UI.pager.jsx';
+import UITabs from './UI.tabs.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -48,6 +49,8 @@ class UIPage extends Component{
                 <UIPagination />
                 
                 <UIPager />
+                
+                <UITabs />
 
                 {this.renderContainerModal()}
 
