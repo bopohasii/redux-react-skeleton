@@ -1,73 +1,119 @@
-.filter-tabs
-    display: block
-    white-space: nowrap
+.tabs
+    margin-bottom: 3rem
 
-    .inner-wrap
+.tabs__list
+    border-bottom: 1px solid $tabs__color-border
+    margin: 0
+
+    @extend %list-reset
+
+.tabs__item
+    display: inline-block
+    margin: 0 .5rem -.1rem 0
+
+.tabs__link
+    background: $tabs__background
+    border: 1px solid $tabs__color-border
+    color: $color-text
+    display: inline-block
+    padding: 1rem 1.5rem
+
+    &:hover
+        background: $tabs__background-hover
+        color: $color-text
+        cursor: pointer
+        text-decoration: none
+
+    &.active
+        border-bottom-color: $tabs__background
+        cursor: default
+        font-weight: bold
+
+        &:hover
+            background: $tabs__background
+
+    &.disabled
+        background: none
+        cursor: default
+        color: $tabs__color-disabled
+
+        &:hover
+            background: none
+            color: $tabs__color-disabled
+
+.tabs__content
+    background: $tabs__background
+    border: 1px solid $tabs__color-border
+    border-top: none
+
+.tabs__pane
+    padding: 1rem 1.5rem
+
+.tabs--vertical
+    display: flex
+
+    .tabs__list
+        border-bottom: none
+        margin-right: -.1rem
+        max-width: 15rem
+        width: 100%
+
+    .tabs__item
+        display: block
+        margin: 0 0 .5rem 0
+        max-width: 100%
+        position: relative
+        z-index: 100
+
+        &:last-child
+            margin-bottom: 0
+
+    .tabs__link
+        width: 100%
+
+        &.active
+            border-bottom-color: $tabs__color-border
+            border-right-color: $tabs__background
+
+    .tabs__content
+        border-top: 1px solid $tabs__color-border
+        width: calc(100% - 15rem)
+
++mobile
+
+    .tabs__item
+        display: block
+        margin: 0 0 .1rem 0
+
+        &:last-child
+            margin-bottom: .5rem
+
+    .tabs__link
+        width: 100%
+
+        &.active
+            border-bottom-color: $tabs__color-border
+
+    .tabs--vertical
         display: block
 
-    .tab
-        display: inline-block
-        color: $color-light
-        padding: 10px 60px
-        +round(6px, top)
-        border: 1px solid transparent
-        border-bottom: 0 none
-        cursor: pointer
+        .tabs__list
+            max-width: 100%
+            margin-right: 0
 
-    .tinyicon
-        margin: 0 10px
+        .tabs__item
+            margin: 0 0 .1rem 0
 
-    .active
-        position: relative
-        background-color: #fff
-        border-color: $color-border
-        font-family: $FontFamily-medium
-        color: $color-text
-        cursor: default
+            &:last-child
+                margin-bottom: .5rem
 
-        &:before
-            position: absolute
-            top: 100%
-            left: 0
-            right: 0
-            height: 6px
-            background-color: #fff
-            content: ''
-
-        &:first-child
-            &:before
-                left: -1px
-                border-left: 1px solid $color-border
-
-
-    +mobile
-        padding:
-            top: 10px
-            left: 15px
-            right: 15px
-        margin-bottom: 20px
-        background: #fff
-
-        .inner-wrap
-            display: table
-            width: 100%
-            table-layout: fixed
-
-        .tab
-            display: table-cell
-            padding: 10px 0 6px
-            border: 0 none
-            text-align: center
-            border-bottom: 4px solid transparent
-
-            max-width: 50%
-
-            &:before
-                display: none
+        .tabs__link
 
             &.active
-                border-bottom-color: $color-orange
+                border-right-color: $tabs__color-border
 
+        .tabs__content
+            width: 100%
 
 
 
