@@ -12,12 +12,12 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: 'style!css' },
+            { test: /\.css$/, loader: 'style!css!autoprefixer?{browsers:["last 1 version", "ie >= 11"]}' },
 
-            { test: /\.gif$/, loader: 'url?limit=16000&mimetype=image/gif' },
-            { test: /\.jpg$/, loader: 'url?limit=100000&mimetype=image/jpg' },
-            { test: /\.png$/, loader: 'url?limit=50000&mimetype=image/png' },
-            { test: /\.svg/, loader: 'url?limit=50000&mimetype=image/svg+xml' },
+            { test: /\.gif$/, loader: 'url?limit=16000&mimetype=image/gif&name=[name].[ext]?[hash]' },
+            { test: /\.jpg$/, loader: 'url?limit=100000&mimetype=image/jpg&name=[name].[ext]?[hash]' },
+            { test: /\.png$/, loader: 'url?limit=50000&mimetype=image/png&name=[name].[ext]?[hash]' },
+            { test: /\.svg/, loader: 'url?limit=50000&mimetype=image/svg+xml&name=[name].[ext]?[hash]' },
 
             // {
             //     test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -25,10 +25,10 @@ module.exports = {
             // },
 
 
-            { test: /\.(woff|woff2|ttf|eot)/, loader: 'url?limit=500000' },
+            { test: /\.(woff|woff2|ttf|eot)/, loader: 'url?limit=500000&name=[name].[ext]?[hash]' },
 
-            { test: /\.jsx$/, loader: 'react-hot!babel', exclude: [/node_modules/, /public/] },
-            { test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /public/] },
+            { test: /\.jsx$/, loader: 'react-hot!babel', exclude: /(node_modules|public)/ },
+            { test: /\.js$/, loader: 'babel', exclude: /(node_modules|public)/ },
 
             { test: /\.json$/, loader: 'json' },
         ],
@@ -51,7 +51,6 @@ module.exports = {
             filename: '../../index.html',
             template: 'develop/index.html',
             inject: 'body',
-            hash: true,
         }),
     ],
 };
