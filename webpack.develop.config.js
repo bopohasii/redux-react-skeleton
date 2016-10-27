@@ -6,7 +6,6 @@ config.debug = true;
 config.devtool = 'cheap-module-eval-source-map';
 config.devServer = {
     inline: true,
-    hot: true,
     host: '0.0.0.0',
     port: 3030,
     contentBase: './public',

@@ -8,7 +8,11 @@
     "prod:build": "webpack -p --config webpack.production.config.js",
     "develop:ci:build": "npm run clean && npm i && npm run develop:build",
     "develop:build": "npm i && webpack -d --config webpack.develop.config.js",
+<<<<<<< HEAD
     "develop:devserver": "webpack-dev-server --config webpack.develop.config.js",
+=======
+    "develop:devserver": "webpack-dev-server --history-api-fallback --hot --config webpack.develop.config.js",
+>>>>>>> 83dfbb5a0968d2510555eda0d4fa3233419ea9af
     "lint": "eslint develop test --fix --cache --ignore-pattern .gitignore",
     "test": "mocha --compilers js:babel-core/register --recursive --require ./test/unit/setup.js",
     "test:watch": "npm test -- --watch",
@@ -50,7 +54,8 @@
     "react-waypoint": "^3.1.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "reselect": "^2.5.3"
+    "reselect": "^2.5.3",
+    "history": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
