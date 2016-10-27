@@ -7,22 +7,23 @@
  *   1. 
  *   
  */
-button
-    appearance: none
-    padding: 0
-    cursor: pointer
-    background: transparent
-    border: 0
+
+
+$btn__fontSize   : $BaseFontSize
+$btn__lineHeight : $BaseLineHeight
+$btn__padding    : ($BaseFontSize*$BaseLineHeight)/2 $BaseFontSize
+$btn__border     : 0 none
+
 
 =button($color: $btn__color , $background: $btn__background)
     +transition( all 200ms ease )
     display: inline-block
     text-align: center
     margin: 0
-    padding: ($BaseFontSize*$BaseLineHeight)/2 $BaseFontSize
+    padding: $btn__padding
 
-    font-size: $BaseFontSize
-    line-height: $BaseLineHeight
+    font-size: $btn__fontSize
+    line-height: $btn__lineHeight
     text:
         transform: none
         decoration: none
@@ -31,13 +32,13 @@ button
     white-space:     nowrap
     vertical-align:  middle
     outline:         0 none
-    border: 0 none
+    border: $btn__border
 
     min-width: 100px
 
     +round()
     +user-select()
-    +box-sizing()
+    +box-sizing(content-box)
     cursor: pointer
 
     &:hover
@@ -71,6 +72,7 @@ button
     &:hover,
     &.hover
         background-color: darken($background, 10%)
+        text-decoration: none
 
     &:active,
     &.pressed
@@ -83,13 +85,22 @@ button
 
 
 
+button
+    appearance: none
+    padding: 0
+    cursor: pointer
+    background: transparent
+    border: 0
 
-//  INPUT
+
+//_____________________________________________________________________________________________________________________
+//    INPUT
 //    1. type  = button
 //    2. type  = submit
 //    3. class = button
-//input[type="button"],
-//input[type="submit"],
+//      input[type="button"],
+//      input[type="submit"],
+//_____________________________________________________________________________________________________________________
 
 .button-default
     +button()
@@ -105,3 +116,12 @@ button
 .button-danger
 
     +button($btn_danger__color, $btn_danger__background)
+
+.button-cancel
+
+    +button($btn_cancel__color, $btn_cancel__background)
+
+    border: 1px solid $btn_cancel__border
+
+    //&:hover
+    //    border-color: darken($btn_cancel__border, 20%)
