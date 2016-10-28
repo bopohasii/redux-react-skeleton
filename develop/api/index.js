@@ -1,5 +1,5 @@
-import { baseUrl } from '../config/apiConfig';
 import ApiClient from './ApiClient';
+import { baseUrl } from '../config/appConfig';
 import { mandatory } from '../utils/valadation.helper';
 
 import PokeballAPI from './PokeballAPI';

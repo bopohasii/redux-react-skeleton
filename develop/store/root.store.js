@@ -4,17 +4,22 @@ import createLogger from 'redux-logger';
 import rootReducer from '../reducers/root.reducer';
 
 const loggerMiddleware = createLogger();
+const devToolMiddleware = window.devToolsExtension && window.devToolsExtension();
+
+const developMiddleware = process.env.NODE_ENV !== 'production'
+    ? [loggerMiddleware]
+    : [];
 
 const createStoreWithMiddleware = applyMiddleware(
     thunkMiddleware,
-    loggerMiddleware
+    ...developMiddleware
 )(createStore);
 
-export default function configureStore(initialState) {
+function configureStore(initialState) {
     const store = createStoreWithMiddleware(
         rootReducer,
         initialState,
-        window.devToolsExtension && window.devToolsExtension()
+        devToolMiddleware
     );
 
     if (module.hot) {
@@ -26,3 +31,8 @@ export default function configureStore(initialState) {
 
     return store;
 }
+
+const initialState = {};
+const store = configureStore(initialState);
+
+export default store;

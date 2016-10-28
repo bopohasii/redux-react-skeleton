@@ -5,11 +5,8 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
 import routes from './config/appRoutes.jsx';
-import configureStore from './store/root.store';
+import store from './store/root.store';
 import appHistory from './config/appHistory';
-
-const initialState = {};
-const store = configureStore(initialState);
 
 ReactDOM.render(
     <Provider store={store}>
