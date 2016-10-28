@@ -57,8 +57,8 @@
 
 
 
-form
-    display: inline-block // for IE
+//form
+//    display: inline-block // for IE
 
 form
     display: block
@@ -97,7 +97,7 @@ label
     &:focus,
     &:active
         outline: 0 none
-        border-color: $color-white !important
+        border-color: $color-white
 
 
 [readonly]:focus  
@@ -150,7 +150,7 @@ button
     &:focus,
     &:active
         outline: 0 none
-        border-color: #ffa000
+        //border-color: #ffa000
 
 
 // SELECT
@@ -203,8 +203,8 @@ input[type="file"]
         padding:    4px 10px 4px 0
         background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.30, #e2e2e2), color-stop(0.70, #f9f9f9))
         -webkit-transition: border linear 0.2s, box-shadow linear 0.2s
-        -webkit-padding-start:  10px
-        -webkit-padding-end:    10px
+        -webkit-padding-start:  1rem
+        -webkit-padding-end:    1rem
         -webkit-appearance:     button
         cursor: pointer
 
@@ -252,12 +252,12 @@ textarea
     //    border-color: $warning__color
 
     &.show-error
-        border-color: #ff3333 !important
+        border-color: $color-red !important
 
         &:hover
-            border-color: #ff3333 !important
+            border-color: $color-red !important
         &:focus
-            border-color: #ff3333 !important
+            border-color: $color-red !important
 
 
 

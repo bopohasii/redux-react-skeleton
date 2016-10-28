@@ -71,7 +71,8 @@
 .ui__form-line-height,
 .ui__form-padding,
 .ui__form-border,
-.ui__form-color
+.ui__form-color,
+.ui__form-height
     display: block
     margin: 1rem 0
 
@@ -104,6 +105,10 @@
     &:before
         content: 'Color text'
 
+.ui__form-height
+    &:before
+        content: 'Height'
+
 
 // after
 // ____________________________________________________________
@@ -133,6 +138,11 @@
 .ui__form-color
     &:after
         content: '#{$form__color}'
+
+
+.ui__form-height
+    &:after
+        content: '#{$form__height}'
 
 
 
