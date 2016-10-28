@@ -11,7 +11,8 @@
     "no-bitwise": 2,
 
     // React
-    "react/jsx-indent": [2, 4]
+    "react/jsx-indent": [2, 4],
+    "react/jsx-no-bind": [2, { "allowBind": true }]
   },
   "env": {
     "browser": true,
@@ -19,7 +20,10 @@
     "mocha": true,
     "es6": true
   },
-
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
