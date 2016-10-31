@@ -36,6 +36,34 @@ class UIForms extends Component{
 
                 </article>
 
+                <article className="ui__article ui-forms">
+
+                    <h4 className="ui__sub-title">Elements</h4>
+
+
+                    <div className="grid">
+
+                        <div className="item-row">
+                            <label className="label-row">Label</label>
+                            <div className="indent-row">
+                                <input type="text" className="" />
+                            </div>
+                        </div>
+                        <div className="item-row">
+                            <label className="label-row">Label</label>
+                            <div className="indent-row">
+                                <select>
+                                    <option>Select 1</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </article>
+
 
                 <article className="ui__article ui-forms">
 

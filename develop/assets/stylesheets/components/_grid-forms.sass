@@ -23,91 +23,59 @@ form
 
 
 
-.form-grid
-    display: block
-
-    .item-row
-        margin-bottom: 20px
-
-    .label-row
-        display: block
-        color: $color-light
-        margin-bottom: 10px
-
-    .field-line
-        width: 100%
-        padding: 0 0 5px
-        border:
-            top: 0 none
-            left: 0 none
-            right: 0 none
-
-    .sun-info
-        margin: 10px 0 0
-        color: $color-grey
-
-    .field-textarea
-        width: 100%
-
-    .field-description
-        width: 100%
-
-    [disabled],
-    [readonly]
-        background-color: transparent
-
-
-
-
-
-
-//.grid
-//    .rows
-//        display: block
-//        margin: 15px 0
+//.form-grid
+//    display: block
 //
-//    .label
-//        float: left
-//        width: 95px
-//        padding-top: 10px
-//        line-height: $BaseLineHeight
-//
-//    .label-b
-//        display: block
-//        margin-bottom: 6px
-//
-//    .indent
-//        display: block
-//        margin-left: 100px
-//
-//    .rows-button
-//        display: block
-//        margin-top: 20px
+//    .item-row
 //        margin-bottom: 20px
 //
-//    .button,
-//    .button-primary,
-//    .button-danger
-//        margin-right: 5px
+//    .label-row
+//        display: block
+//        color: $color-light
+//        margin-bottom: 10px
 //
-//    .sub
-//        font-size: 11px
+//    .field-line
+//        width: 100%
+//        padding: 0 0 5px
+//        border:
+//            top: 0 none
+//            left: 0 none
+//            right: 0 none
 //
-//    ins
-//        color: #ae1917
-//        border: 0 none
-//        text-decoration: none
-//        margin-right: -8px
+//    //.sun-info
+//    //    margin: 10px 0 0
+//    //    color: $color-grey
 //
+//    .field-textarea
+//        width: 100%
 //
-//    .delim
-//        margin: 0 15px
+//    .field-description
+//        width: 100%
 //
-//    .field-datepicker
-//        width: 150px
-//
-//    .field-id
-//        width: 150px
+//    [disabled],
+//    [readonly]
+//        background-color: transparent
+
+
+
+
+
+
+.grid
+
+    .item-row
+        display: block
+        margin: 1rem 0
+
+    .label-row
+        float: left
+        width: 10rem
+        line-height: $BaseLineHeight
+
+    .indent-row
+        display: block
+        margin-left: 10rem
+
 
 
 .button-group
@@ -117,7 +85,7 @@ form
 
     .item
         display: table-cell
-        padding: 0 10px
+        padding: 0 1rem
         vertical-align: middle
 
         &:first-child
@@ -139,43 +107,43 @@ form
 
 
 
-
-
-.group-form
-
-    display: inline-block
-    white-space: nowrap
-    vertical-align: middle
-
-    .elem
-        padding: 3px 4px
-
-    .elem,
-    .add-on,
-    .button,
-    input,
-    select
-        float: left
-        margin-right: -1px
-        line-height: 20px
-        +round(1px)
-
-        &:first-child
-            +round(3px, left)
-
-        &:last-child
-            +round(3px, right)
-
-    &.show-error
-
-        .elem,
-        .add-on,
-        input,
-        select
-            border-color: $warning__color
-            +box-shadow(0 0 7px -2px $warning__color)
-
-
+//
+//
+//.group-form
+//
+//    display: inline-block
+//    white-space: nowrap
+//    vertical-align: middle
+//
+//    .elem
+//        padding: 3px 4px
+//
+//    .elem,
+//    .add-on,
+//    .button,
+//    input,
+//    select
+//        float: left
+//        margin-right: -1px
+//        line-height: 20px
+//        +round(1px)
+//
+//        &:first-child
+//            +round(3px, left)
+//
+//        &:last-child
+//            +round(3px, right)
+//
+//    &.show-error
+//
+//        .elem,
+//        .add-on,
+//        input,
+//        select
+//            border-color: $warning__color
+//            +box-shadow(0 0 7px -2px $warning__color)
+//
+//
 
 
 
@@ -208,39 +176,3 @@ form
         width: 100%
         line-height: 16px
 
-
-.field-price-bar
-    display: table
-    width: 100%
-
-    .price-bar
-        display: table-cell
-        width: 1%
-        vertical-align: top
-
-    .field-price
-        display: table-cell
-        vertical-align: top
-
-
-
-
-.field-add-picture
-    position: relative
-    display: inline-block
-    width: 200px
-    height: 40px
-    overflow: hidden
-
-    .input-file
-
-        position: absolute
-        top: 0
-        left: 0
-        padding: 0
-        width: 100%
-        height: 100%
-        opacity: 0
-
-    .button-add-picture
-        width: 100%

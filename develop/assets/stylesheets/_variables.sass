@@ -86,14 +86,14 @@ $info__color    : #514721
 $form__fontSize     : $BaseFontSize
 $form__fontFamily   : $FontFamily
 $form__lineHeight   : $BaseLineHeight
-$form__padding      : ($BaseFontSize*$BaseLineHeight)/2 $BaseFontSize
+$form__padding      : $BaseFontSize/2 $BaseFontSize
 $form__borderColor  : $color-border
 $form__border       : 1px solid $form__borderColor
 $form__color        : $color-text
 $form__background   : #fff
 $form__shadow       : rgba(50, 185, 240, 0.1 )
 $form__shadow_hover : rgba(50, 185, 240, 0.75)
-$form__height       : ($form__fontSize * $form__lineHeight) + ($BaseFontSize * $BaseLineHeight) + .2rem
+$form__height       : $form__fontSize + ($BaseFontSize * $BaseLineHeight) + .2rem
 
 $color__placeholder  : #d4d4d4
 
@@ -122,7 +122,7 @@ $btn_danger__background : $error__background
 //BUTTON Cancel
 $btn_cancel__color      : $color-text
 $btn_cancel__background : #fff
-$btn_cancel__border     : $color-gray
+$btn_cancel__border     : $color-border
 
 
 
