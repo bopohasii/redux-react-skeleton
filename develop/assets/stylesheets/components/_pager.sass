@@ -1,0 +1,17 @@
+.pager
+    display: flex
+    justify-content: space-between
+
+    @extend %list-reset
+
+.pager__link
+    border: 1px solid $pagination__color-border
+    display: inline-block
+    padding: .5rem 1rem
+
+    @extend %pagination-disabled
+    +round(20px)
+
+    &:hover
+        background: $pagination__background-hover
+        text-decoration: none

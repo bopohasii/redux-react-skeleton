@@ -3,35 +3,35 @@
     margin: 0
     padding: 0
 
-    &__item
-        display: inline-block
-        padding: .5rem 1rem
-        position: relative
+.breadcrumbs__item
+    display: inline-block
+    padding: .5rem 1rem
+    position: relative
 
-        &:first-child
-            padding-left: 0
-
-            &:after
-                border-color: transparent
+    &:first-child
+        padding-left: 0
 
         &:after
-            border-top: 1px solid $breadcrumbs__color-border
-            border-right: 1px solid $breadcrumbs__color-border
-            content: ""
-            display: inline-block
-            height: 5px
-            left: -5px
-            margin-top: -.3rem
-            position: absolute
-            transform: rotate(45deg)
-            top: 50%
-            width: 5px
+            border-color: transparent
 
-    &__text
+    &:after
+        border-top: 1px solid $breadcrumbs__color-border
+        border-right: 1px solid $breadcrumbs__color-border
+        content: ""
+        display: inline-block
+        height: 5px
+        left: -5px
+        margin-top: -.3rem
+        position: absolute
+        transform: rotate(45deg)
+        top: 50%
+        width: 5px
+
+.breadcrumbs__text
+    color: $color-text
+
+    &:hover
         color: $color-text
-
-        &:hover
-            color: $color-text
-            cursor: default
-            text-decoration: none
+        cursor: default
+        text-decoration: none
 

@@ -37,6 +37,8 @@ $color-blue   : #1da9fc
 $color-orange : #ff6f00
 $color-border : #d4d4d4
 $color-light  : #808080
+$color-white  : #fff
+$color-black  : #000
 
 //Gray
 $color-gray: #808080
@@ -61,6 +63,12 @@ $nav__color-link: $color-text
 //Breadcrumbs
 $breadcrumbs__color-border: $color-gray
 
+//Pagination
+$pagination__background: #f4f7f9
+$pagination__background-hover: #c3d3de
+$pagination__background-active: $color-gray
+$pagination__color-border: #e4ecf0
+
 // Alert
 $warning__background : $color-orange
 $success__background  : $color-green
@@ -68,17 +76,24 @@ $error__background   : $color-red
 $info__background    : $color-blue
 
 $warning__color : #686868
-$success__color  : #264409
+$success__color : #264409
 $error__color   : #8a1f11
 $info__color    : #514721
 
 // Form
-$form__color        : #fff
+
+
+$form__fontSize     : $BaseFontSize
+$form__fontFamily   : $FontFamily
+$form__lineHeight   : $BaseLineHeight
+$form__padding      : ($BaseFontSize*$BaseLineHeight)/2 $BaseFontSize
+$form__borderColor  : $color-border
+$form__border       : 1px solid $form__borderColor
+$form__color        : $color-text
 $form__background   : #fff
-$form__border       : #fff
-$form__color-border : #efefef
 $form__shadow       : rgba(50, 185, 240, 0.1 )
 $form__shadow_hover : rgba(50, 185, 240, 0.75)
+$form__height       : ($form__fontSize * $form__lineHeight) + ($BaseFontSize * $BaseLineHeight) + .2rem
 
 $color__placeholder  : #d4d4d4
 
@@ -87,8 +102,8 @@ $options__background : #fff
 $options__border     : $color-border
 
 //BUTTON
-$btn__color      : #5e5e5e
-$btn__background : #f4f4f4
+$btn__color            : #5e5e5e
+$btn__background       : #f4f4f4
 $btn__hover_background : #eee
 $btn__focus_background : #eee
 
@@ -103,6 +118,11 @@ $btn_success__background : $success__background
 //BUTTON Danger
 $btn_danger__color      : #fff
 $btn_danger__background : $error__background
+
+//BUTTON Cancel
+$btn_cancel__color      : $color-text
+$btn_cancel__background : #fff
+$btn_cancel__border     : $color-gray
 
 
 

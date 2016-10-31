@@ -28,3 +28,122 @@
         margin: 0 0 1rem
         line-height: $BaseLineHeight*2
 
+
+
+
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// FORM
+// --------------------------------------------------------------------------------------------------------------------
+
+//=ui-form($value)
+//
+//    .ui__form-padding
+//        &:after
+//            content: '#{$value}'
+//
+//    .ui__form
+//        &:after
+//            content: '#{$value}'
+
+
+.ui__form-list
+    padding: 0
+    margin: 0
+    list-style: none
+
+
+
+//$form__fontSize     : $BaseFontSize
+//$form__fontFamily   : $FontFamily
+//$form__lineHeight   : $BaseLineHeight
+//$form__padding      : ($BaseFontSize*$BaseLineHeight)/2 $BaseFontSize
+//$form__borderColor  : $color-border
+//$form__border       : 1px solid $form__borderColor
+//$form__color        : $color-text
+//$form__background   : #fff
+//$form__shadow       : rgba(50, 185, 240, 0.1 )
+//$form__shadow_hover : rgba(50, 185, 240, 0.75)
+
+.ui__form-font-family,
+.ui__form-font-size,
+.ui__form-line-height,
+.ui__form-padding,
+.ui__form-border,
+.ui__form-color,
+.ui__form-height
+    display: block
+    margin: 1rem 0
+
+    &:before
+        display: inline-block
+        width: 10rem
+        opacity: .5
+
+.ui__form-font-family
+    &:before
+        content: 'Font Family'
+
+.ui__form-font-size
+    &:before
+        content: 'Font Size'
+
+.ui__form-line-height
+    &:before
+        content: 'Line height'
+
+.ui__form-padding
+    &:before
+        content: 'Padding'
+
+.ui__form-border
+    &:before
+        content: 'Border'
+
+.ui__form-color
+    &:before
+        content: 'Color text'
+
+.ui__form-height
+    &:before
+        content: 'Height'
+
+
+// after
+// ____________________________________________________________
+
+
+
+.ui__form-font-family
+    &:after
+        content: '#{$form__fontFamily}'
+
+.ui__form-font-size
+    &:after
+        content: '#{$form__fontSize}'
+
+.ui__form-line-height
+    &:after
+        content: '#{$form__lineHeight}'
+
+.ui__form-padding
+    &:after
+        content: '#{$form__padding}'
+
+.ui__form-border
+    &:after
+        content: '#{$form__border}'
+
+.ui__form-color
+    &:after
+        content: '#{$form__color}'
+
+
+.ui__form-height
+    &:after
+        content: '#{$form__height}'
+
+
+
+

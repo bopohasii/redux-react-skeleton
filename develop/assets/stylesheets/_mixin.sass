@@ -92,7 +92,7 @@
     column-gap:             $columnGap
 
 
-=box-sizing ($type : border-box)
+=box-sizing ($type : content-box)
     -webkit-box-sizing: $type
     -moz-box-sizing: $type
     box-sizing: $type
@@ -344,30 +344,6 @@
         .grid-span#{$i} .select,
         .grid-span#{$i} .indent
             margin-left: ($columnWidth * $i) + ($gutterWidth * ($i))
-
-//=button($color: $btn__color , $background: $btn__background)
-//    display: inline-block
-//    text-align: center
-//    margin: 0
-//    padding: 4px 10px
-//    border: 0 none
-//    //font:
-//    //    size:       14px
-//    //    family:     Arial, Helvetica, sans-serif
-//    //line-height:     $baseLineHeight
-//    color: $color
-//    background: $background
-//    white-space:     nowrap
-//    vertical-align:  middle
-//    outline:         0 none
-//    +round(2px)
-//
-//    //-webkit-transition: border linear 0.075s
-//    //-moz-transition: border linear 0.075s
-//    //transition: border linear 0.075s
-//    text-decoration: none
-//    +user-select
-//    cursor: pointer
 
 
 //  ARROW

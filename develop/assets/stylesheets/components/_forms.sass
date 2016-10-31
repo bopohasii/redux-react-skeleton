@@ -17,16 +17,17 @@
 //    color:      #fff
 
 
-=elemForm_baseStyle()
-    margin:          0
-    padding:         8px 10px
+
+=formBaseStyle()
+    margin:  0
+    padding: $form__padding
     font:
         weight: normal
         style: normal
-        size: $BaseFontSize
-        family: $FontFamily
+        size: $form__fontSize
+        family: $form__fontFamily
 
-    line-height: $BaseLineHeight
+    line-height: $form__lineHeight
     text:
         align:      left
         decoration: none
@@ -38,8 +39,8 @@
     overflow:        hidden
     vertical-align:  middle
     outline:         0 none
-    border:          1px solid $form__color-border
-    //+round(6px)
+    border:          $form__border
+    +round()
     +box-sizing()
     //-webkit-appearance: none
     //appearance: none
@@ -56,8 +57,8 @@
 
 
 
-form
-    display: inline-block // for IE
+//form
+//    display: inline-block // for IE
 
 form
     display: block
@@ -96,12 +97,12 @@ label
     &:focus,
     &:active
         outline: 0 none
-        border-color: $color-white !important
+        border-color: $color-white
 
 
-[readonly]:focus
+[readonly]:focus  
     outline: 0 none
-    border-color:  $form__color-border
+    border-color:  $form__borderColor
 
 [placeholder]
     &:-moz-placeholder
@@ -119,46 +120,44 @@ input[type='text'],
 input[type='password'],
 select,
 textarea
-    transition:         border linear 0.2s, box-shadow linear 0.2s
-    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s
-    -moz-transition:    border linear 0.2s, box-shadow linear 0.2s
+    transition: border linear 0.2s, box-shadow linear 0.2s
 
 
-input
-    +elemForm_baseStyle
+//input
+//    +formBaseStyle()
 
 
-//input[type='text'],
-//input[type='password']
-//    +elemForm_baseStyle
-//
-//
-//input[type="email"],
-//input[type="number"],
-//input[type="search"],
-//input[type="tel"],
-//input[type="url"],
-//input[type="color"],
-//input[type="date"],
-//input[type="datetime"],
-//input[type="datetime-local"],
-//input[type="month"],
-//input[type="time"],
-//input[type="week"]
-//    +elemForm_baseStyle
+input[type='text'],
+input[type='password']
+    +formBaseStyle()
+
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"]
+    +formBaseStyle()
 
 button
     &:focus,
     &:active
         outline: 0 none
-        border-color: #ffa000
+        //border-color: #ffa000
 
 
 // SELECT
 
 
 select
-    +elemForm_baseStyle
+    +formBaseStyle()
 
     background:         url('data:image/gif;base64,R0lGODlhDwAIAIABAFJSUv///yH5BAEAAAEALAAAAAAPAAgAAAIQjA2nG+C8nIS0WiafnbfVAgA7') 100% 50% no-repeat, -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5)
 
@@ -197,15 +196,15 @@ input[type="file"]
     &::-webkit-file-upload-button
         position: relative
 
-        +elemForm_baseStyle
+        +formBaseStyle()
         +round(12px)
         +gradient-vertical(#f9f9f9, #e2e2e2)
 
         padding:    4px 10px 4px 0
         background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.30, #e2e2e2), color-stop(0.70, #f9f9f9))
         -webkit-transition: border linear 0.2s, box-shadow linear 0.2s
-        -webkit-padding-start:  10px
-        -webkit-padding-end:    10px
+        -webkit-padding-start:  1rem
+        -webkit-padding-end:    1rem
         -webkit-appearance:     button
         cursor: pointer
 
@@ -216,9 +215,9 @@ input[type="file"]
 //  TEXTAREA
 textarea
 
-    +elemForm_baseStyle
+    +formBaseStyle()
 
-    +round(6px)
+    +round()
 
     text-indent: 0
     background-color: #fff
@@ -243,7 +242,7 @@ input[type='checkbox']
         outline: 0 none
 
     &[readonly]:focus
-        border-color:  $form__color-border
+        border-color:  $form__borderColor
 
 input,
 select,
@@ -253,12 +252,12 @@ textarea
     //    border-color: $warning__color
 
     &.show-error
-        border-color: #ff3333 !important
+        border-color: $color-red !important
 
         &:hover
-            border-color: #ff3333 !important
+            border-color: $color-red !important
         &:focus
-            border-color: #ff3333 !important
+            border-color: $color-red !important
 
 
 
@@ -290,94 +289,6 @@ textarea
 //
 //        &:before
 //            cursor: default
-
-
-// Add comment field
-.panel-add-comment
-    display: table
-    table-layout: fixed
-    width: 100%
-
-    .item-filed
-        display: table-cell
-
-    .item-button
-        display: table-cell
-        width: 70px
-
-
-    .field-comment
-        background: #fff
-        width: 100%
-        padding: 8px 15px
-        resize: none
-        +round(6px, left)
-
-    .button-primary
-        min-width: 60px
-        width: 100%
-        padding:
-            left: 0
-            right: 0
-        +round(6px, right)
-
-
-// Send to field
-.panel-send-to
-    margin-bottom: 10px
-    position: relative
-
-    .field-label
-        color: #afb0b3
-        position: absolute
-        pointer-events: none
-        top: 10px
-        left: 10px
-        font-size: 12px
-        font-weight: normal
-
-    .field-control
-        +round( 6px )
-        border: 1px solid #efefef
-        padding-left: 35px
-        width: 100%
-
-
-// Search block
-.panel-search
-    display: table
-    width: 100%
-
-    .item-field
-        display: table-cell
-
-    .item-button
-        display: table-cell
-        width: 40px
-
-    .field-control
-        +round( 6px, left )
-        background-color: #fff
-        border: 1px solid #fff
-        font-size: 12px
-        height: 40px
-        padding: 10px 15px
-        width: 100%
-
-    .button-primary
-        +round( 6px, right )
-        background-color: #ffa000
-        border: 1px solid #fff
-        width: 100%
-        height: 40px
-        padding: 8px 0
-
-        [class^="icon-"]
-            margin-right: 0
-
-        +desktop-only
-            &:hover
-                background-color: #ffc107
 
 
 // block textarea

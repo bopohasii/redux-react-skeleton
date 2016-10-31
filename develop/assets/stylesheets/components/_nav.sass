@@ -1,28 +1,26 @@
 .nav
     background: $nav__background
-    list-style: none
     margin: 0 0 5rem 0
-    padding: 0
     width: 100%
 
-    &__item
-        display: inline-block
+    @extend %list-reset
 
-    &__link
-        color: $nav__color-link
-        cursor: pointer
-        border-bottom: 1px solid transparent
-        display: inline-block
-        margin-bottom: -.1rem
-        padding: 1rem 2rem
+    +mobile
+        display: block
 
-        &:hover
-            background: $nav__background-hover
-            border-bottom: 1px solid $color-light
-            color: $nav__color-link
-            text-decoration: none
+        .nav__item
+            display: block
 
-    .active
+        .nav__link
+            display: block
+
+        .nav__sub
+            position: relative
+
+.nav__item
+    display: inline-block
+
+    &.active
         .nav__link
             border-bottom-color: $nav__color-border
             color: $nav__color-link
@@ -31,51 +29,53 @@
             &:hover
                 background: none
 
-    //Dropdown
+.nav__link
+    color: $nav__color-link
+    cursor: pointer
+    border-bottom: 1px solid transparent
+    display: inline-block
+    margin-bottom: -.1rem
+    padding: 1rem 2rem
 
-    &__item--dropdown
-        position: relative
+    &:hover
+        background: $nav__background-hover
+        border-bottom: 1px solid $color-light
+        color: $nav__color-link
+        text-decoration: none
 
-        &:hover
-            .nav__sub
-                display: block
+//Dropdown
 
-        &::after
-            border-bottom: 1px solid $nav__color-border
-            border-right: 1px solid $nav__color-border
-            content: ""
-            display: inline-block
-            height: 5px
-            margin-top: .3rem
-            position: absolute
-            right: 10px
-            transform: rotate(45deg)
-            top: 14px
-            width: 5px
+.nav__item--dropdown
+    position: relative
 
-        .nav__item
+    &:hover
+        .nav__sub
             display: block
 
-        .nav__link
-            padding: 1rem 3rem 1rem 2rem
-
-    &__sub
-        background: $nav__background-sub
-        display: none
-        list-style: none
-        margin-top: .1rem
-        padding: 0
+    &::after
+        border-bottom: 1px solid $nav__color-border
+        border-right: 1px solid $nav__color-border
+        content: ""
+        display: inline-block
+        height: 5px
+        margin-top: .3rem
         position: absolute
+        right: 10px
+        transform: rotate(45deg)
+        top: 14px
+        width: 5px
 
-    +mobile
+    .nav__item
         display: block
 
-        &__item
-            display: block
+    > .nav__link
+        padding: 1rem 3rem 1rem 2rem
 
-        &__link
-            display: block
-
-        &__sub
-            position: relative
+.nav__sub
+    background: $nav__background-sub
+    display: none
+    list-style: none
+    margin-top: .1rem
+    padding: 0
+    position: absolute
 

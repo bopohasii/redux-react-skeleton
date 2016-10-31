@@ -1,0 +1,35 @@
+.pagination-container
+    text-align: left
+
+.pagination
+    display: inline-block
+    background: $pagination__background
+
+    @extend %list-reset
+
+.pagination__item
+    display: inline-block
+
+    &:not(:last-child)
+        .pagination__link
+            border-right: none
+
+.pagination__link
+    border: 1px solid $pagination__color-border
+    display: inline-block
+    padding: .5rem 1rem
+
+    @extend %pagination-disabled
+
+    &:hover
+        background: $pagination__background-hover
+        text-decoration: none
+
+    &.active
+        cursor: default
+        color: $color-white
+        background: $pagination__background-active
+
+        &:hover
+            background: $pagination__background-active
+            text-decoration: none
