@@ -44,13 +44,14 @@ class UIForms extends Component{
                     <div className="grid">
 
                         <div className="item-row">
-                            <label className="label-row">Label</label>
+                            <label className="label-row">Label input</label>
                             <div className="indent-row">
                                 <input type="text" className="" />
                             </div>
                         </div>
+
                         <div className="item-row">
-                            <label className="label-row">Label</label>
+                            <label className="label-row">Select</label>
                             <div className="indent-row">
                                 <select>
                                     <option>Select 1</option>
@@ -58,8 +59,14 @@ class UIForms extends Component{
                             </div>
                         </div>
 
-                    </div>
+                        <div className="item-row">
+                            <label className="label-row">Select</label>
+                            <div className="indent-row">
+                                <textarea className=""></textarea>
+                            </div>
+                        </div>
 
+                    </div>
 
 
                 </article>
