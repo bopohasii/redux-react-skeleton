@@ -1,0 +1,21 @@
+.thumbnail
+    display: table
+    height: 15rem
+    margin: 0 5rem 1rem 0
+    width: 15rem
+
+    &--secondary
+        padding: 1rem
+        border: 1px solid $thumbnail-color-border
+
+.thumbnail__img-wrap
+    display: table-cell
+
+.thumbnail__img
+    display: inline-block
+    max-width: 100%
+    max-height: 100%
+    vertical-align: middle
+
+    &--circle
+        +round(50%)
