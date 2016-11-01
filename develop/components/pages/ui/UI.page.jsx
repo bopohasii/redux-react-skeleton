@@ -9,6 +9,7 @@ import UIPagination from './UI.pagination.jsx';
 import UIPager from './UI.pager.jsx';
 import UITabs from './UI.tabs.jsx';
 import UITable from './UI.table.jsx';
+import UIThumbnails from './UI.thumbnails.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -54,6 +55,8 @@ class UIPage extends Component{
                 <UITabs />
                 
                 <UITable />
+                
+                <UIThumbnails />
 
                 {this.renderContainerModal()}
 
