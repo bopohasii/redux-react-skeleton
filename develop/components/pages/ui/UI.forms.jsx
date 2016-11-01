@@ -40,28 +40,34 @@ class UIForms extends Component{
 
                     <h4 className="ui__sub-title">Elements</h4>
 
+                    <div className="form-grid grid-2">
 
-                    <div className="grid">
-
-                        <div className="item-row">
-                            <label className="label-row">Label input</label>
-                            <div className="indent-row">
-                                <input type="text" className="" />
+                        <div className="item-form">
+                            <label className="elem-label">Input [type="text"]</label>
+                            <div className="indent">
+                                <input type="text"/>
                             </div>
                         </div>
 
-                        <div className="item-row">
-                            <label className="label-row">Select</label>
-                            <div className="indent-row">
+                        <div className="item-form">
+                            <label className="elem-label">Input [type="file"]</label>
+                            <div className="indent">
+                                <input type="file" />
+                            </div>
+                        </div>
+
+                        <div className="item-form">
+                            <label className="elem-label">Select</label>
+                            <div className="indent">
                                 <select>
                                     <option>Select 1</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div className="item-row">
-                            <label className="label-row">Select</label>
-                            <div className="indent-row">
+                        <div className="item-form">
+                            <label className="elem-label">Textarea</label>
+                            <div className="indent">
                                 <textarea className=""></textarea>
                             </div>
                         </div>
@@ -70,6 +76,7 @@ class UIForms extends Component{
 
 
                 </article>
+
 
 
                 <article className="ui__article ui-forms">
@@ -175,6 +182,49 @@ class UIForms extends Component{
                         </div>
                     </div>
 
+
+
+                </article>
+
+                <article className="ui__article ui-forms">
+
+                    <h4 className="ui__sub-title">Form grid</h4>
+
+                    <div className="show-grid">
+                        <div className="form-grid grid-2">
+
+                            <div className="item-form">
+                                <label className="elem-label">Input [type="text"]</label>
+                                <div className="indent">
+                                    <input className="span2" type="text"/>
+                                </div>
+                            </div>
+
+                            <div className="item-form">
+                                <label className="elem-label">Input [type="file"]</label>
+                                <div className="indent">
+                                    <input type="file" />
+                                </div>
+                            </div>
+
+                            <div className="item-form">
+                                <label className="elem-label">Select</label>
+                                <div className="indent">
+                                    <select className="span2">
+                                        <option>Select 1</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="item-form">
+                                <label className="elem-label">Textarea</label>
+                                <div className="indent">
+                                    <textarea className="span6"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
 
                 </article>

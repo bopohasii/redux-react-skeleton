@@ -41,7 +41,7 @@
     outline:         0 none
     border:          $form__border
     +round()
-    +box-sizing()
+    +box-sizing(border-box)
     //-webkit-appearance: none
     //appearance: none
 
@@ -159,21 +159,21 @@ button
 select
     +formBaseStyle()
 
-    background:         url('data:image/gif;base64,R0lGODlhDwAIAIABAFJSUv///yH5BAEAAAEALAAAAAAPAAgAAAIQjA2nG+C8nIS0WiafnbfVAgA7') 100% 50% no-repeat, -webkit-linear-gradient(#fafafa, #f4f4f4 40%, #e5e5e5)
+    background: $color-white url('data:image/gif;base64,R0lGODlhDwAIAIABAFJSUv///yH5BAEAAAEALAAAAAAPAAgAAAIQjA2nG+C8nIS0WiafnbfVAgA7') 100% 50% no-repeat
 
     -webkit-appearance:     button
     -webkit-padding-end:    20px
-    -webkit-padding-start:  2px
+    -webkit-padding-start:  10px
     -webkit-user-select:    none
 
     -moz-appearance:        button
     -moz-padding-end:       20px
-    -moz-padding-start:     2px
+    -moz-padding-start:     10px
     -moz-user-select:       none
 
     appearance:     button
     padding-end:    20px
-    padding-start:  2px
+    padding-start:  10px
     user-select:    none
     cursor: pointer
 

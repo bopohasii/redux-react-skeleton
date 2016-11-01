@@ -59,28 +59,32 @@ form
 
 
 
-+gridForm()
 
 
 
-.grid
 
-    .item-row
+.form-grid
+
+    .item-form
         display: block
         margin: 1rem 0
 
-    .label-row
+    .elem-label
         float: left
         width: 10rem
         padding: $BaseFontSize/2 0
         line-height: $BaseLineHeight
 
-    .indent-row
+    .indent
         display: block
         margin-left: 10rem
 
++gridForm()
 
++gridSystem()
 
+.show-grid
+    +showGrid($gridColumnWidth, $gridGutterWidth)
 
 
 // Group Button

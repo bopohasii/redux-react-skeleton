@@ -323,7 +323,8 @@
 
 
 
-=showgrid ($gridColumnWidth, $gridGutterWidth)
+=showGrid($gridColumnWidth, $gridGutterWidth)
+
     background-image: -moz-linear-gradient( 0, rgba(217,229,250, 0.3) $gridColumnWidth, transparent 1px ), -moz-linear-gradient( 0, rgba(210,210,210, 0.8) 1px,  transparent 1px )
     background-image: -webkit-linear-gradient(0, rgba(74,255,255, 0.15) $gridColumnWidth, transparent 0),  -webkit-linear-gradient(0, rgba(74,255,255, 0.8) 1px,  transparent 0)
     background-size: ($gridColumnWidth + $gridGutterWidth) $gridColumnWidth, ($gridColumnWidth + $gridGutterWidth) $gridColumnWidth
@@ -334,15 +335,13 @@
 //  ________________________________________
 //  Generator grid form
 
-=gridForm($columns : $gridColumns/2, $columnWidth : $gridColumnWidth, $gutterWidth : $gridGutterWidth)
+=gridForm($columns : $gridColumns, $columnWidth : $gridColumnWidth, $gutterWidth : $gridGutterWidth)
     @for $i from 1 through $columns
 
-        .grid-span#{$i} .label
+        .grid-#{$i} .elem-label
             width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
 
-        .grid-span#{$i} .input,
-        .grid-span#{$i} .select,
-        .grid-span#{$i} .indent
+        .grid-#{$i} .indent
             margin-left: ($columnWidth * $i) + ($gutterWidth * ($i))
 
 
