@@ -3,10 +3,10 @@ import React, { PropTypes } from 'react';
 const UITooltip = (props) => {
     const { text, placement, children } = props;
     const classNames = 'tooltip-custom'
-        + `${(placement === 'top') ? 'tooltip-top' : ''}`
-        + `${(placement === 'left') ? 'tooltip-left' : ''}`
-        + `${(placement === 'right') ? 'tooltip-right' : ''}`
-        + `${(placement === 'bottom') ? 'tooltip-bottom' : ''}`;
+        + `${(placement === 'top') ? ' tooltip-top' : ''}`
+        + `${(placement === 'left') ? ' tooltip-left' : ''}`
+        + `${(placement === 'right') ? ' tooltip-right' : ''}`
+        + `${(placement === 'bottom') ? ' tooltip-bottom' : ''}`;
 
     return (
         <span className={classNames}>

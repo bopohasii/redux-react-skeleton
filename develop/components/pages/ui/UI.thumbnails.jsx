@@ -1,34 +1,41 @@
 import React, { Component } from 'react';
+import UIThumbnail from '../../common/UIThumbnail.jsx';
 
 class UIThumbnails extends Component{
 
     render() {
-
         return (
             <section className="ui__section">
                 <h2 className="ui__title">Thumbnails</h2>
 
                 <div className="ui__thumbnails">
                     <div className="thumbnail">
-                        <div className="thumbnail__img-wrap">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
-                                 alt="thumbnail" className="thumbnail__img"/>
-                        </div>
+                        <UIThumbnail
+                          src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
+                          defaultSrc="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
+                          width="140"
+                          height="auto"
+                        />
                     </div>
 
                     <div className="thumbnail ">
-                        <div className="thumbnail__img-wrap">
-                            <img className="thumbnail__img thumbnail__img--circle"
-                                 src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
-                                 alt="thumbnail"/>
-                        </div>
+                        <UIThumbnail
+                          src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
+                          defaultSrc="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
+                          width="140"
+                          height="auto"
+                          type="circle"
+                        />
                     </div>
 
-                    <div className="thumbnail thumbnail--secondary">
-                        <div className="thumbnail__img-wrap">
-                            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
-                                 alt="thumbnail" className="thumbnail__img"/>
-                        </div>
+                    <div className="thumbnail">
+                        <UIThumbnail
+                          src="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
+                          defaultSrc="https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150"
+                          width="140"
+                          height="auto"
+                          type="border"
+                        />
                     </div>
                 </div>
             </section>
