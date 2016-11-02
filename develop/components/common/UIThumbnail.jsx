@@ -59,7 +59,7 @@ UIThumbnail.defaultProps = {
     src: '',
     width: '150',
     height: '150',
-    link: 'default',
+    type: 'default',
 };
 
 export default UIThumbnail;
