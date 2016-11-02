@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Tooltip from 'rc-tooltip';
 
-class Popover extends Component {
+class UIPopover extends Component {
     handleToggleVisibility = (visible) => {
         this.props.handleToggle(visible);
     };
@@ -32,7 +32,7 @@ class Popover extends Component {
     }
 }
 
-Popover.propTypes = {
+UIPopover.propTypes = {
     visible: PropTypes.bool,
     align: PropTypes.object,
     overlay: PropTypes.element,
@@ -43,10 +43,10 @@ Popover.propTypes = {
     children: PropTypes.node,
 };
 
-Popover.defaultProps = {
+UIPopover.defaultProps = {
     placement: 'bottomRight',
     trigger: 'click',
     align: {},
 };
 
-export default Popover;
+export default UIPopover;
