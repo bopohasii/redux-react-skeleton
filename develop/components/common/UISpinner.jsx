@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Spinner = () => (
+const UISpinner = () => (
     <div className="loader-container">
         <div className="loader" />
     </div>
 );
 
-export default Spinner;
+export default UISpinner;
