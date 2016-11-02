@@ -66,6 +66,27 @@ class UIForms extends Component{
                         </div>
 
                         <div className="item-form">
+                            <div className="indent">
+
+                                <label>
+                                    <input className="check-box" type="checkbox" />
+                                    <span className="marker">checkbox</span>
+                                </label>
+
+                            </div>
+                        </div>
+                        <div className="item-form">
+                            <div className="indent">
+
+                                <label>
+                                    <input className="radio-box" type="radio" />
+                                    <span className="marker">radiobox</span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div className="item-form">
                             <label className="elem-label">Textarea</label>
                             <div className="indent">
                                 <textarea className=""></textarea>

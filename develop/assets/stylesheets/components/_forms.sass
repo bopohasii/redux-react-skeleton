@@ -41,7 +41,7 @@
     outline:         0 none
     border:          $form__border
     +round()
-    +box-sizing(border-box)
+    +box-sizing()
     //-webkit-appearance: none
     //appearance: none
 
@@ -261,34 +261,116 @@ textarea
 
 
 
-//.check-box
-//    display: none
-//    margin: 0 2px 2px 2px
-//    vertical-align: middle
-//
-//    & + label
-//        cursor: pointer
-//
-//        &:before
-//            position: relative
-//            display: inline-block
-//            width: 28px
-//            height: 20px
-//            margin: -6px 0 0 0
-//            vertical-align: middle
-//            cursor: pointer
-//            content: ''
-//
-//    &:checked + label
-//        &:before
-//            background-position: 0 -140px
-//
-//    &[disabled] + label
-//        color: $color-light
-//        cursor: default
-//
-//        &:before
-//            cursor: default
+.check-box
+    display: none
+    margin: 0 2px 2px 2px
+    vertical-align: middle
+
+    & + label
+        cursor: pointer
+
+        &:before
+            position: relative
+            display: inline-block
+            width: 28px
+            height: 20px
+            margin: -6px 0 0 0
+            vertical-align: middle
+            cursor: pointer
+            content: ''
+
+    &:checked + label
+        &:before
+            background-position: 0 -140px
+
+    &[disabled] + label
+        color: $color-light
+        cursor: default
+
+        &:before
+            cursor: default
+
+
+
+
+.check-box
+    display: none
+    margin: 0 2px 2px 2px
+    vertical-align: middle
+
+    & + .marker
+        cursor: pointer
+
+        &:before
+            position: relative
+            display: inline-block
+            width: 16px
+            height: 16px
+            margin: -3px 5px 0 0
+            border: 1px solid $form__borderColor
+            background-color: #f7f7f7
+            +round(2px)
+            +box-sizing()
+            vertical-align: middle
+            cursor: pointer
+
+            content: ''
+
+
+
+    &:checked + .marker
+        &:before
+            border-color: $color-gray
+            background-color: $color-gray
+            background-repeat: no-repeat
+            background-position: -65px -30px
+
+    &[disabled] + .marker
+        color: $color-light
+        cursor: default
+
+        &:before
+            cursor: default
+
+
+
+
+.radio-box
+    display: none
+    margin: 0 2px 2px 2px
+    vertical-align: middle
+
+    & + .marker
+        cursor: pointer
+
+        &:before
+            position: relative
+            display: inline-block
+            width: 16px
+            height: 16px
+            margin: -3px 5px 0 0
+            border: 1px solid $form__borderColor
+            background-color: #f7f7f7
+            +round(50%)
+            +box-sizing()
+            vertical-align: middle
+            cursor: pointer
+            content: ''
+
+    &:checked + .marker
+        &:before
+            border: 1px solid $color-gray
+            background-color: $color-gray
+            +box-shadow(inset 0 0 0 3px #fff)
+
+    &[disabled] + .marker
+        color: $color-light
+        cursor: default
+
+        &:before
+            cursor: default
+
+
 
 
 // block textarea
