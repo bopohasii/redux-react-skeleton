@@ -70,7 +70,15 @@ class UIForms extends Component{
 
                                 <label>
                                     <input className="check-box" type="checkbox" />
-                                    <span className="marker">checkbox</span>
+                                    <span className="marker">checkbox One</span>
+                                </label>
+
+                            </div>
+                            <div className="indent">
+
+                                <label>
+                                    <input className="check-box" type="checkbox" checked />
+                                    <span className="marker">checkbox Two</span>
                                 </label>
 
                             </div>
@@ -79,8 +87,16 @@ class UIForms extends Component{
                             <div className="indent">
 
                                 <label>
-                                    <input className="radio-box" type="radio" />
-                                    <span className="marker">radiobox</span>
+                                    <input name="radio" className="radio-box" type="radio" />
+                                    <span className="marker">radio box One</span>
+                                </label>
+
+                            </div>
+                            <div className="indent">
+
+                                <label>
+                                    <input name="radio" className="radio-box" type="radio" />
+                                    <span className="marker">radio box One</span>
                                 </label>
 
                             </div>

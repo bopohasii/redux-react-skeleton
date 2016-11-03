@@ -19,7 +19,8 @@ module.exports = {
             { test: /\.jpg$/, loader: 'url?limit=100000&mimetype=image/jpg&name=[name].[ext]?[hash]' },
             { test: /\.png$/, loader: 'url?limit=50000&mimetype=image/png&name=[name].[ext]?[hash]' },
 
-            { test: /\.svg/, loader: 'url?limit=50000&mimetype=image/svg+xml&name=[name].[ext]?[hash]!svgo' },
+            { test: /\.svg/, loader: 'url-loader?limit=50000&mimetype=image/svg+xml' },
+            //{ test: /\.svg/, loader: 'url?limit=50000&mimetype=image/svg+xml&name=[name].[ext]?[hash]!svgo' },
 
             // {
             //     test: /.*\.(gif|png|jpe?g|svg)$/i,

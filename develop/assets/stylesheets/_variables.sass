@@ -8,7 +8,7 @@ $tablet-width:  769px
 $desktop-width: 1024px
 $large-desktop: 1280px
 
-
+$container-main__width : 736px
 
 
 $FontFamily : 'Open Sans', sans-serif
@@ -93,17 +93,17 @@ $info__color    : #514721
 // Form
 
 
-$form__fontSize     : $BaseFontSize
-$form__fontFamily   : $FontFamily
-$form__lineHeight   : $BaseLineHeight
-$form__padding      : $BaseFontSize/2 $BaseFontSize
-$form__borderColor  : $color-border
-$form__border       : 1px solid $form__borderColor
-$form__color        : $color-text
-$form__background   : #fff
-$form__shadow       : rgba(50, 185, 240, 0.1 )
-$form__shadow_hover : rgba(50, 185, 240, 0.75)
-$form__height       : $form__fontSize + ($BaseFontSize * $BaseLineHeight) + .2rem
+$FORM__fontSize     : $BaseFontSize
+$FORM__fontFamily   : $FontFamily
+$FORM__lineHeight   : $BaseLineHeight
+$FORM__padding      : $BaseFontSize/2 $BaseFontSize
+$FORM__borderColor  : $color-border
+$FORM__border       : 1px solid $FORM__borderColor
+$FORM__color        : $color-text
+$FORM__background   : #fff
+$FORM__shadow       : rgba(50, 185, 240, 0.1 )
+$FORM__shadow_hover : rgba(50, 185, 240, 0.75)
+$FORM__height       : $FORM__fontSize + ($BaseFontSize * $BaseLineHeight) + .2rem
 
 $color__placeholder  : #d4d4d4
 
@@ -136,29 +136,28 @@ $btn_cancel__border     : $color-border
 
 
 
-$container-main__width : 736px
+
+
+
+
+
 
 // PATH Images
 $PATH      : '../assets/images/'
 
-$PATH_LOGO      : $PATH + 'logo-kijiji.svg'
-$PATH_MENU      : $PATH + 'icons/menu.svg'
-$PATH_ICONS     : $PATH + 'icons/icons.svg'
+//$PATH_LOGO      : $PATH + 'logo.svg'
+//$PATH_MENU      : $PATH + 'icons/menu.svg'
+//$PATH_ICONS     : $PATH + 'icons/icons.svg'
+
+$PATH_CHECKBOX : $PATH + 'icons/check.svg'
+//$PATH_CHECKBOX : $PATH + 'icons/icons.svg'
 
 
-@mixin logo
-    background-image: url($PATH_logo)
-    background-repeat: no-repeat
-
-    +pixel-ratio
-        background-image: url($PATH_logo_x2)
-        background-size: 195px 40px
-
-
-//@mixin loader
-//    background-image: url($PATH_loader)
+//@mixin logo
+//    background-image: url($PATH_logo)
 //    background-repeat: no-repeat
 //
 //    +pixel-ratio
-//        background-image: url($PATH_loader_x2)
-//        background-size: 24px 24px
+//        background-image: url($PATH_logo_x2)
+//        background-size: 195px 40px
+

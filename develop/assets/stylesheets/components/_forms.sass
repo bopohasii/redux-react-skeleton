@@ -5,7 +5,6 @@
  **/
 
 
-
 ////webkit, opera, IE9
 //::selection
 //    background: #ae1917
@@ -20,14 +19,14 @@
 
 =formBaseStyle()
     margin:  0
-    padding: $form__padding
+    padding: $FORM__padding
     font:
         weight: normal
         style: normal
-        size: $form__fontSize
-        family: $form__fontFamily
+        size: $FORM__fontSize
+        family: $FORM__fontFamily
 
-    line-height: $form__lineHeight
+    line-height: $FORM__lineHeight
     text:
         align:      left
         decoration: none
@@ -39,7 +38,7 @@
     overflow:        hidden
     vertical-align:  middle
     outline:         0 none
-    border:          $form__border
+    border:          $FORM__border
     +round()
     +box-sizing()
     //-webkit-appearance: none
@@ -102,7 +101,7 @@ label
 
 [readonly]:focus  
     outline: 0 none
-    border-color:  $form__borderColor
+    border-color:  $FORM__borderColor
 
 [placeholder]
     &:-moz-placeholder
@@ -210,7 +209,7 @@ input[type="file"]
 
         &:hover
             border-color: #32b9f0
-            +box-shadow(0 0 5px $form__shadow_hover)
+            +box-shadow(0 0 5px $FORM__shadow_hover)
 
 //  TEXTAREA
 textarea
@@ -227,7 +226,7 @@ textarea
 
     &:focus
         outline: 0 none
-        //+box-shadow(0 0 5px $form__shadow_hover)
+        //+box-shadow(0 0 5px $FORM__shadow_hover)
 
 select,
 textarea,
@@ -242,7 +241,7 @@ input[type='checkbox']
         outline: 0 none
 
     &[readonly]:focus
-        border-color:  $form__borderColor
+        border-color:  $FORM__borderColor
 
 input,
 select,
@@ -261,37 +260,6 @@ textarea
 
 
 
-.check-box
-    display: none
-    margin: 0 2px 2px 2px
-    vertical-align: middle
-
-    & + label
-        cursor: pointer
-
-        &:before
-            position: relative
-            display: inline-block
-            width: 28px
-            height: 20px
-            margin: -6px 0 0 0
-            vertical-align: middle
-            cursor: pointer
-            content: ''
-
-    &:checked + label
-        &:before
-            background-position: 0 -140px
-
-    &[disabled] + label
-        color: $color-light
-        cursor: default
-
-        &:before
-            cursor: default
-
-
-
 
 .check-box
     display: none
@@ -307,23 +275,29 @@ textarea
             width: 16px
             height: 16px
             margin: -3px 5px 0 0
-            border: 1px solid $form__borderColor
+            border: 1px solid $FORM__borderColor
             background-color: #f7f7f7
             +round(2px)
             +box-sizing()
+            +transition( border-color 150ms ease )
+            +user-select(none)
             vertical-align: middle
             cursor: pointer
 
             content: ''
 
-
+        &:hover
+            &:before
+                border-color: $color-green
 
     &:checked + .marker
+
         &:before
-            border-color: $color-gray
-            background-color: $color-gray
-            background-repeat: no-repeat
-            background-position: -65px -30px
+            border-color: $color-green
+            background:
+                image: url($PATH_CHECKBOX)
+                position: -2px -7px
+                repeat: no-repeat
 
     &[disabled] + .marker
         color: $color-light
@@ -349,7 +323,7 @@ textarea
             width: 16px
             height: 16px
             margin: -3px 5px 0 0
-            border: 1px solid $form__borderColor
+            border: 1px solid $FORM__borderColor
             background-color: #f7f7f7
             +round(50%)
             +box-sizing()
@@ -359,9 +333,9 @@ textarea
 
     &:checked + .marker
         &:before
-            border: 1px solid $color-gray
-            background-color: $color-gray
-            +box-shadow(inset 0 0 0 3px #fff)
+            border: 1px solid $color-green
+            background-color: $color-green
+            +box-shadow(inset 0 0 0 4px #fff)
 
     &[disabled] + .marker
         color: $color-light
@@ -374,9 +348,9 @@ textarea
 
 
 // block textarea
-.panel-textarea
-    margin-bottom: 10px
-
-    textarea
-        min-height: 100px
-        width: 100%
+//.panel-textarea
+//    margin-bottom: 10px
+//
+//    textarea
+//        min-height: 100px
+//        width: 100%
