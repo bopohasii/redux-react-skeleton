@@ -1,4 +1,5 @@
 import apiTypes from './types/api.types';
+
 import { httpStatusHandler } from '../constants/httpErrors.constant';
 
 // * Actions structure *
@@ -17,36 +18,31 @@ export default {
         };
     },
 
-    success(type, payload) {
+    success(type, payload, meta) {
         return (dispatch) => {
-            dispatch(this.request(type, false));
-
             const action = payload
-                ? { type, payload }
+                ? { type, payload, meta }
                 : { type };
 
             dispatch(action);
+            dispatch(this.request(type, false));
         };
     },
 
     // save in the api Reducer
     failure(key, error) {
-        return (dispatch) => {
-            dispatch(this.request(key, false));
-
-            const action = {
-                type: apiTypes.SET_ERROR,
-                error: {
-                    key,
-                    value: {
-                        ...error,
-                        ...httpStatusHandler(error.status),
-                    },
+        const action = {
+            type: apiTypes.SET_ERROR,
+            error: {
+                key,
+                value: {
+                    ...httpStatusHandler(error.status),
+                    message: error,
                 },
-            };
-
-            dispatch(action);
+            },
         };
+
+        return action;
     },
 
     // save in the api Reducer
