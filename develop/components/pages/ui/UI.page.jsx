@@ -10,6 +10,9 @@ import UIPager from './UI.pager.jsx';
 import UITabs from './UI.tabs.jsx';
 import UITable from './UI.table.jsx';
 import UIThumbnails from './UI.thumbnails.jsx';
+import UIPopoverBlock from './UI.popover.jsx';
+import UITooltip from './UI.tooltip.jsx';
+
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -57,6 +60,10 @@ class UIPage extends Component{
                 <UITable />
                 
                 <UIThumbnails />
+
+                <UIPopoverBlock />
+                
+                <UITooltip />
 
                 {this.renderContainerModal()}
 

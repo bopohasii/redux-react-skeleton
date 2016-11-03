@@ -1,0 +1,109 @@
+.tooltip
+    position: relative
+    display: inline-block
+
+    .tooltip__text
+        background: $tooltip__background
+        border: 1px solid $tooltip__color-border
+        color: $color-text
+        display: none
+        min-width: 10rem
+        padding: 1rem
+        position: absolute
+        width: 15rem
+        z-index: 2000
+        +round()
+        +transition(all example 1s)
+
+        &:before,
+        &:after
+            content: ''
+            position: absolute
+
+
+    &.tooltip__bottom
+        .tooltip__text
+            top: 100%
+            left: 0
+            margin: 1rem 0 0
+
+            &:before,
+            &:after
+                left: 2rem
+
+            &:before
+                z-index: 1
+                +arrow(top, .7rem, $tooltip__color-border )
+
+            &:after
+                margin-bottom: -.1rem
+                z-index: 2
+                +arrow(top, .7rem, $tooltip__background )
+
+
+    &.tooltip__top
+        .tooltip__text
+            bottom: 100%
+            left: 0
+            margin: 0 0 1rem
+
+            &:before,
+            &:after
+                left: 2rem
+
+            &:before
+                z-index: 1
+                +arrow(bottom, .7rem, $tooltip__color-border )
+
+            &:after
+                margin-top: -.1rem
+                z-index: 2
+                +arrow(bottom, .7rem, $tooltip__background )
+
+    &.tooltip__right
+        .tooltip__text
+            top: -1rem
+            left: 100%
+            margin: 0 0 0 1rem
+
+            &:before,
+            &:after
+                left: 2rem
+
+            &:before
+                z-index: 1
+                +arrow(left, .7rem, $tooltip__color-border )
+
+            &:after
+                margin-left: .1rem
+                z-index: 2
+                +arrow(left, .7rem, $tooltip__background )
+
+    &.tooltip__left
+        .tooltip__text
+            top: -1rem
+            right: 100%
+            margin: 0 1rem 0 0
+
+            &:before,
+            &:after
+                right: 2rem
+
+            &:before
+                z-index: 1
+                +arrow(right, .7rem, $tooltip__color-border )
+
+            &:after
+                margin-right: .1rem
+                z-index: 2
+                +arrow(right, .7rem, $tooltip__background )
+
+
+
+.tooltip
+    &:hover
+        .tooltip__text
+            display: block
+
+.ui__tooltip-itemui__tooltip
+    margin-left: 20rem
