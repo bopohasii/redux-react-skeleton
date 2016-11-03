@@ -2,21 +2,21 @@ import React, { PropTypes } from 'react';
 
 const UITooltip = (props) => {
     const { text, placement, children } = props;
-    const classNames = 'tooltip-custom'
-        + `${(placement === 'top') ? ' tooltip-top' : ''}`
-        + `${(placement === 'left') ? ' tooltip-left' : ''}`
-        + `${(placement === 'right') ? ' tooltip-right' : ''}`
-        + `${(placement === 'bottom') ? ' tooltip-bottom' : ''}`;
+    const classNames = 'tooltip'
+        + `${(placement === 'top') ? ' tooltip__top' : ''}`
+        + `${(placement === 'left') ? ' tooltip__left' : ''}`
+        + `${(placement === 'right') ? ' tooltip__right' : ''}`
+        + `${(placement === 'bottom') ? ' tooltip__bottom' : ''}`;
 
     return (
-        <span className={classNames}>
+        <div className={classNames}>
             {children}
             {
                 text
-                    ? <span className="tooltip-text">{text}</span>
+                    ? <p className="tooltip__text">{text}</p>
                     : null
             }
-        </span>
+        </div>
     );
 };
 
