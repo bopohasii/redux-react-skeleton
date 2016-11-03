@@ -28,6 +28,7 @@ function setLoading(state, action) {
         [action.payload.key]: {
             ...state[action.payload.key],
             isLoading: action.payload.value,
+            error: {},
         },
     };
 }
@@ -47,6 +48,7 @@ function setError(state, action) {
         ...state,
         [action.error.key]: {
             ...state[action.error.key],
+            isLoading: false,
             error: action.error.value,
         },
     };
