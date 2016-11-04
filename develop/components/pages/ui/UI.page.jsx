@@ -10,6 +10,7 @@ import UIPager from './UI.pager.jsx';
 import UITabs from './UI.tabs.jsx';
 import UITable from './UI.table.jsx';
 import UIThumbnails from './UI.thumbnails.jsx';
+import UISelect from '../../common/UISelect.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -55,8 +56,15 @@ class UIPage extends Component{
                 <UITabs />
                 
                 <UITable />
-                
+
+                <UISelect
+                  options={[{ id: 1, name: 'Bob' }]}
+                  valueKey="id"
+                  labelKey="name"
+                />
+
                 <UIThumbnails />
+
 
                 {this.renderContainerModal()}
 
