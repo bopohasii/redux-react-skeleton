@@ -41,17 +41,19 @@
   "dependencies": {
     "axios": "^0.11.1",
     "babel-polyfill": "^6.9.1",
+    "history": "^2.0.0",
     "normalizr": "^2.2.1",
     "query-string": "^3.0.0",
+    "rc-tooltip": "^3.4.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.1",
+    "react-select": "^1.0.0-rc.2",
     "react-waypoint": "^3.1.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "reselect": "^2.5.3",
-    "history": "^2.0.0"
+    "reselect": "^2.5.3"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",

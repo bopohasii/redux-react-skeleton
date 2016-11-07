@@ -9,6 +9,13 @@ import UIBreadcrumbs from './UI.breadcrumbs.jsx';
 import UIPagination from './UI.pagination.jsx';
 import UIPager from './UI.pager.jsx';
 import UIForms from './UI.forms.jsx';
+import UITabs from './UI.tabs.jsx';
+import UITable from './UI.table.jsx';
+import UIThumbnails from './UI.thumbnails.jsx';
+import UIPopoverBlock from './UI.popover.jsx';
+import UITooltip from './UI.tooltip.jsx';
+
+import UISelect from '../../common/UISelect.jsx';
 
 
 import '../../../assets/stylesheets/index.sass';
@@ -52,6 +59,22 @@ class UIPage extends Component{
                 <UIPagination />
 
                 <UIPager />
+
+                <UITabs />
+
+                <UITable />
+
+                <UISelect
+                  options={[{ id: 1, name: 'Bob' }]}
+                  valueKey="id"
+                  labelKey="name"
+                />
+
+                <UIThumbnails />
+
+                <UIPopoverBlock />
+
+                <UITooltip />
 
                 {this.renderContainerModal()}
 
