@@ -161,18 +161,18 @@ select
     background: $color-white url('data:image/gif;base64,R0lGODlhDwAIAIABAFJSUv///yH5BAEAAAEALAAAAAAPAAgAAAIQjA2nG+C8nIS0WiafnbfVAgA7') 100% 50% no-repeat
 
     -webkit-appearance:     button
-    -webkit-padding-end:    20px
-    -webkit-padding-start:  10px
+    -webkit-padding-end:    2rem
+    -webkit-padding-start:  1rem
     -webkit-user-select:    none
 
     -moz-appearance:        button
-    -moz-padding-end:       20px
-    -moz-padding-start:     10px
+    -moz-padding-end:       2rem
+    -moz-padding-start:     1rem
     -moz-user-select:       none
 
     appearance:     button
-    padding-end:    20px
-    padding-start:  10px
+    padding-end:    2rem
+    padding-start:  1rem
     user-select:    none
     cursor: pointer
 
@@ -189,17 +189,17 @@ optgroup
 //  INPUT type = file
 input[type="file"]
 
-    font-size: 12px
+    font-size: 1.2rem
     cursor: pointer
 
     &::-webkit-file-upload-button
         position: relative
 
         +formBaseStyle()
-        +round(12px)
+        +round(2rem)
         +gradient-vertical(#f9f9f9, #e2e2e2)
 
-        padding:    4px 10px 4px 0
+        padding: $FORM__borderColor
         background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.30, #e2e2e2), color-stop(0.70, #f9f9f9))
         -webkit-transition: border linear 0.2s, box-shadow linear 0.2s
         -webkit-padding-start:  1rem
@@ -295,8 +295,9 @@ textarea
         &:before
             border-color: $color-green
             background:
+                color: $color-green
                 image: url($PATH_CHECKBOX)
-                position: -2px -7px
+                position: -1px -1px
                 repeat: no-repeat
 
     &[disabled] + .marker

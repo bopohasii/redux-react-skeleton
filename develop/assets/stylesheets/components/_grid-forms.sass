@@ -67,7 +67,7 @@ form
 
     .item-form
         display: block
-        margin: 1rem 0
+        margin: 1.5rem 0
 
     .elem-label
         float: left
@@ -79,12 +79,16 @@ form
         display: block
         margin-left: 10rem
 
+    .filed
+        width: 100%
+
 +gridForm()
 
 +gridSystem()
 
 .show-grid
-    +showGrid($gridColumnWidth, $gridGutterWidth)
+
+    +showGrid()
 
 
 // Group Button
@@ -113,7 +117,7 @@ form
 
         .button-primary
             white-space: normal
-            word-break: break-all
+            //word-break: break-all
             word-break: break-word
 
 

@@ -323,12 +323,31 @@
 
 
 
-=showGrid($gridColumnWidth, $gridGutterWidth)
+=showGrid ()
 
     background-image: -moz-linear-gradient( 0, rgba(217,229,250, 0.3) $gridColumnWidth, transparent 1px ), -moz-linear-gradient( 0, rgba(210,210,210, 0.8) 1px,  transparent 1px )
     background-image: -webkit-linear-gradient(0, rgba(74,255,255, 0.15) $gridColumnWidth, transparent 0),  -webkit-linear-gradient(0, rgba(74,255,255, 0.8) 1px,  transparent 0)
     background-size: ($gridColumnWidth + $gridGutterWidth) $gridColumnWidth, ($gridColumnWidth + $gridGutterWidth) $gridColumnWidth
     background-position: 0 0, 0 0
+
+    //+large-desktop
+    //    $columnWidth : (($large-desktop-width + $gridGutterWidth) / $gridColumns) - $gridGutterWidth
+    //    background-image: -moz-linear-gradient( 0, rgba(217,229,250, 0.3) $columnWidth, transparent 1px ), -moz-linear-gradient( 0, rgba(210,210,210, 0.8) 1px,  transparent 1px )
+    //    background-image: -webkit-linear-gradient(0, rgba(74,255,255, 0.15) $columnWidth, transparent 0),  -webkit-linear-gradient(0, rgba(74,255,255, 0.8) 1px,  transparent 0)
+    //    background-size: ($columnWidth + $gridGutterWidth) $columnWidth, ($columnWidth + $gridGutterWidth) $columnWidth
+    //    background-position: 0 0, 0 0
+    //
+    //+desktop
+    //    $columnWidth : (($desktop-width + $gridGutterWidth) / $gridColumns) - $gridGutterWidth
+    //    background-image: -moz-linear-gradient( 0, rgba(217,229,250, 0.3) $columnWidth, transparent 1px ), -moz-linear-gradient( 0, rgba(210,210,210, 0.8) 1px,  transparent 1px )
+    //    background-image: -webkit-linear-gradient(0, rgba(74,255,255, 0.15) $columnWidth, transparent 0),  -webkit-linear-gradient(0, rgba(74,255,255, 0.8) 1px,  transparent 0)
+    //    background-size: ($columnWidth + $gridGutterWidth) $columnWidth, ($columnWidth + $gridGutterWidth) $columnWidth
+    //    background-position: 0 0, 0 0
+
+
+
+
+
 
 
 //  GRID SYSTEM
@@ -397,11 +416,11 @@
         @content
 
 =desktop
-    @media (min-width: #{$desktop-width + 1px}) and (max-width: #{$large-desktop - 1px})
+    @media (min-width: #{$desktop-width + 1px}) and (max-width: #{$large-desktop-width - 1px})
         @content
 
 =large-desktop
-    @media (min-width: #{$large-desktop})
+    @media (min-width: #{$large-desktop-width})
         @content
 
 

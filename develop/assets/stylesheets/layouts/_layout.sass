@@ -40,8 +40,6 @@ body
 
 
 
-
-
 .container-app
     min-height: 100%
     padding: 0
@@ -51,7 +49,7 @@ body
 
 .container
     width: auto
-    max-width: 1060px
+    max-width: $large-desktop-width
     padding:
         left: 0
         right: 0
@@ -59,9 +57,10 @@ body
 
 
     +desktop
-        padding:
-            left: 20px
-            right: 20px
+        max-width: $desktop-width
+        //padding:
+        //    left: 20px
+        //    right: 20px
 
     +tablet
         padding:
