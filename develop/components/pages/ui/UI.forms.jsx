@@ -299,7 +299,7 @@ class UIForms extends Component{
                             <div className="form-grid grid-2 show-grid">
 
                                 <div className="item-form">
-                                    <label className="elem-label">Input - "span2"</label>
+                                    <label className="elem-label">Input "span2"</label>
                                     <div className="indent">
                                         <input className="span2" type="text"/>
                                     </div>
@@ -326,6 +326,263 @@ class UIForms extends Component{
                                     </div>
                                 </div>
 
+
+
+
+
+                                <hr className="ui__delimeter" />
+
+
+
+
+                                <div className="item-form">
+                                    <label className="elem-label">Group Form</label>
+                                    <div className="indent span2">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent span3">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent span4">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent span5">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="item-form">
+
+                                    <label className="elem-label">Group Form</label>
+
+                                    <div className="indent span2">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent span3">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent span4">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent span5">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                            <div className="middle">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="item-form">
+                                        <label className="elem-label">Group Form</label>
+
+                                        <div className="indent span6">
+                                            <div className="flex-group-form">
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="indent span6">
+                                            <div className="flex-group-form">
+                                                <div className="middle">
+                                                    <input className="filed" type="text"/>
+                                                    middle
+                                                </div>
+                                                <div className="mini">
+                                                    <select className="filed">
+                                                        <option>Select 1</option>
+                                                    </select>
+                                                    mini
+                                                </div>
+                                                <div className="middle">
+                                                    <input className="filed" type="text"/>
+                                                    middle
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div className="indent span6">
+                                            <div className="flex-group-form">
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                                <div className="mini">
+                                                    <select className="filed">
+                                                        <option>Select 1</option>
+                                                    </select>
+                                                    mini
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="indent span6">
+                                            <div className="flex-group-form">
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    small
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="indent span6">
+                                            <div className="flex-group-form">
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    mini
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    mini
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    mini
+                                                </div>
+                                                <div className="small">
+                                                    <input className="filed" type="text"/>
+                                                    mini
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="indent span6">
+                                            <div className="flex-group-form">
+                                                <div className="middle">
+                                                    <input className="filed" type="text"/>
+                                                    middle
+                                                </div>
+                                                <div className="small">
+                                                    <select className="filed">
+                                                        <option>Select 1</option>
+                                                    </select>
+                                                    small
+                                                </div>
+
+                                                <div className="middle">
+                                                    <input className="filed" type="text"/>
+                                                    middle
+                                                </div>
+                                                <div className="small">
+                                                    <select className="filed">
+                                                        <option>Select 1</option>
+                                                    </select>
+                                                    small
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
                                 <hr className="ui__delimeter" />
 
                                 <div className="item-form">
@@ -342,6 +599,136 @@ class UIForms extends Component{
                                             <option>Select 1</option>
                                         </select>
                                     </div>
+                                </div>
+
+                                <div className="item-form">
+                                    <label className="elem-label">Group Form</label>
+
+                                    <div className="indent">
+                                        <div className="flex-group-form">
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                                middle
+                                            </div>
+                                            <div className="mini">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                                mini
+                                            </div>
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                                middle
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="indent">
+                                        <div className="flex-group-form">
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                            <div className="mini">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                                mini
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent">
+                                        <div className="flex-group-form">
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                small
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent">
+                                        <div className="flex-group-form">
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                mini
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                mini
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                mini
+                                            </div>
+                                            <div className="small">
+                                                <input className="filed" type="text"/>
+                                                mini
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="indent">
+                                        <div className="flex-group-form">
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                                middle
+                                            </div>
+                                            <div className="small">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                                small
+                                            </div>
+
+                                            <div className="middle">
+                                                <input className="filed" type="text"/>
+                                                middle
+                                            </div>
+                                            <div className="small">
+                                                <select className="filed">
+                                                    <option>Select 1</option>
+                                                </select>
+                                                small
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
 
                                 <div className="item-form">

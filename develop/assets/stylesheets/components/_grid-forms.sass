@@ -78,9 +78,11 @@ form
     .indent
         display: block
         margin-left: 10rem
+        margin-bottom: 1rem
 
     .filed
         width: 100%
+
 
 +gridForm()
 
@@ -122,8 +124,8 @@ form
 
 
 
-//
-//
+
+
 //.group-form
 //
 //    display: inline-block
@@ -141,7 +143,7 @@ form
 //        float: left
 //        margin-right: -1px
 //        line-height: 20px
-//        +round(1px)
+//        +round(0)
 //
 //        &:first-child
 //            +round(3px, left)
@@ -157,8 +159,8 @@ form
 //        select
 //            border-color: $warning__color
 //            +box-shadow(0 0 7px -2px $warning__color)
-//
-//
+
+
 
 
 
@@ -166,7 +168,9 @@ form
     display: table
     width: 100%
     white-space: normal
-    +box-sizing()
+    table-layout: fixed
+
+    //+box-sizing()
 
     .small,
     .mini,
@@ -176,10 +180,14 @@ form
         padding-right: 4px
         +box-sizing()
 
-    .mini
-        width: 30%
         &:last-child
             padding-right: 0
+
+    .item
+        width: 1%
+
+    .mini
+        width: 25%
 
     .small
         width: 40%
@@ -187,7 +195,11 @@ form
     .middle
         width: 50%
 
-    .elem
-        width: 100%
-        line-height: 16px
+    //.elem
+    //    width: 100%
+    //    line-height: 16px
 
+
+
+.group-form
+    @extend .flex-group-form
