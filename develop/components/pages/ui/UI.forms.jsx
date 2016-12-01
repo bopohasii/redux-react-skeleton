@@ -129,6 +129,9 @@ class UIForms extends Component{
                         <div className="item">
                             Pressed
                         </div>
+                        <div className="item">
+                            Disabled
+                        </div>
                     </div>
 
                     <div className="ui__btn-type">
@@ -144,6 +147,11 @@ class UIForms extends Component{
                         </div>
                         <div className="item">
                             <button className="button-default pressed">
+                                Default
+                            </button>
+                        </div>
+                        <div className="item">
+                            <button className="button-default" disabled>
                                 Default
                             </button>
                         </div>
@@ -164,6 +172,11 @@ class UIForms extends Component{
                                 Primary
                             </button>
                         </div>
+                        <div className="item">
+                            <button className="button-primary" disabled>
+                                Primary
+                            </button>
+                        </div>
                     </div>
                     <div className="ui__btn-type">
                         <div className="item">
@@ -178,6 +191,11 @@ class UIForms extends Component{
                         </div>
                         <div className="item">
                             <button className="button-success pressed">
+                                Success
+                            </button>
+                        </div>
+                        <div className="item">
+                            <button className="button-success" disabled>
                                 Success
                             </button>
                         </div>
@@ -198,6 +216,11 @@ class UIForms extends Component{
                                 Danger
                             </button>
                         </div>
+                        <div className="item">
+                            <button className="button-danger" disabled>
+                                Danger
+                            </button>
+                        </div>
                     </div>
 
                     <div className="ui__btn-type">
@@ -213,6 +236,11 @@ class UIForms extends Component{
                         </div>
                         <div className="item">
                             <button className="button-cancel pressed">
+                                Cancel
+                            </button>
+                        </div>
+                        <div className="item">
+                            <button className="button-cancel" disabled>
                                 Cancel
                             </button>
                         </div>

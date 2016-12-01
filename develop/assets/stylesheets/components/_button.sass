@@ -45,14 +45,6 @@ $btn__border     : 0 none
         color: $color
         text-decoration: none
 
-    &.disabled,
-    &.disabled:hover,
-    &[disabled],
-    &[disabled]:hover
-        color: #fff
-        background-color: $color-gray
-        border-color: $color-gray
-        cursor: default
 
     &::-moz-focus-inner
         border: 0 none
@@ -84,6 +76,20 @@ $btn__border     : 0 none
 
 
 
+=buttonDisablet($color: $btn__color , $background: $btn__background)
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:active,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:active
+        color: rgba($color, .75)
+        background-color: rgba($background, .5)
+        border-color: rgba($background, .5)
+        cursor: default
+
+
 
 button
     appearance: none
@@ -104,24 +110,28 @@ button
 
 .button-default
     +button()
+    +buttonDisablet($btn_cancel__color, $btn_cancel__border)
 
 .button-primary
 
     +button($btn_primary__color, $btn_primary__background)
+    +buttonDisablet($btn_primary__color, $btn_primary__background)
 
 .button-success
 
     +button($btn_success__color, $btn_success__background)
+    +buttonDisablet($btn_success__color, $btn_success__background)
 
 .button-danger
 
     +button($btn_danger__color, $btn_danger__background)
+    +buttonDisablet($btn_danger__color, $btn_danger__background)
 
 .button-cancel
 
     +button($btn_cancel__color, $btn_cancel__background)
-
     border: 1px solid $btn_cancel__border
+    +buttonDisablet($btn_cancel__color, $btn_cancel__border)
 
     //&:hover
     //    border-color: darken($btn_cancel__border, 20%)
