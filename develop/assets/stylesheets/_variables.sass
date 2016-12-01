@@ -105,24 +105,22 @@ $popover__color-shadow: 0 2px 2px 0 rgba(171, 171, 171, 0.8)
 $tooltip__background: #f4f7f9
 $tooltip__color-border: #e4ecf0
 
-// Alert
+//Alert
 $warning__background : $color-orange
-$success__background  : $color-green
+$success__background : $color-green
 $error__background   : $color-red
 $info__background    : $color-blue
 
-$warning__color : #686868
-$success__color : #264409
-$error__color   : #8a1f11
-$info__color    : #514721
+$warning__color : darken($color-orange, 40%)
+$success__color : darken($color-green, 40%)
+$error__color   : darken($color-red, 40%)
+$info__color    : darken($color-blue, 40%)
 
-// Form
-
-
+//Form
 $FORM__fontSize     : $BaseFontSize
 $FORM__fontFamily   : $FontFamily
 $FORM__lineHeight   : $BaseLineHeight
-$FORM__padding      : (($BaseFontSize/2) + 0.2rem) $BaseFontSize
+$FORM__padding      : ($BaseFontSize/2) $BaseFontSize
 $FORM__borderColor  : $color-border
 $FORM__border       : 1px solid $FORM__borderColor
 $FORM__color        : $color-text

@@ -226,20 +226,26 @@ class UIForms extends Component{
 
                     <h4 className="ui__sub-title">Alert</h4>
 
-                    <div className="alert-warning">
-                        Warning
+                    <div className="warning">
+                        <div className="title">Holy guacamole! This is a warning!</div>
+                        Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue.
                     </div>
 
-                    <div className="alert-danger">
-                        Danger
+                    <div className="danger">
+                        <div className="title">Oh snap! You got an error!</div>
+                        Change this and that and try again. Duis mollis, est non commodo luctus,
+                        nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
                     </div>
 
-                    <div className="alert-info">
-                        Info
+                    <div className="info">
+                        <div className="title">Heads up!</div>
+                        This is an alert that needs your attention, but it’s not a huge priority just yet.
                     </div>
 
-                    <div className="alert-success">
-                        Success
+                    <div className="success">
+                        <div className="title">Well done!</div>
+                        You successfully read this alert message. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Maecenas faucibus mollis interdum.
                     </div>
 
 
