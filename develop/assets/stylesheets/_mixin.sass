@@ -24,7 +24,7 @@
 
 
 // Round
-=round ($radius: 3px, $position-corner:all)
+=round ($radius: $border-radius, $position-corner:all)
     @if $position-corner == top
         -webkit-border-top-left-radius:     $radius
         -webkit-border-top-right-radius:    $radius
@@ -298,26 +298,35 @@
 //  Generator grid for dinamick window width
 
 =gridSystem ($columns : $gridColumns, $columnWidth : $gridColumnWidth, $gutterWidth : $gridGutterWidth)
-    .row
-        margin-left: $gutterWidth * -1
-
-    .row > [class*="span"]
-        margin-left: $gutterWidth
-
-    @for $i from 1 through $columns
-        @if $i == $columns
-            .span#{$i},
-            .container
-                width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
-        @else
-            .span#{$i}
-                width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
 
 
     @for $i from 1 through $columns
-        @if $i != $columns
-            .offset#{$i}
-                margin-left: ($columnWidth * $i) + ($gutterWidth * ($i - 1)) + ($gutterWidth * 2)
+        .span-#{$i}
+            width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
+
+
+
+//=gridSystem ($columns : $gridColumns, $columnWidth : $gridColumnWidth, $gutterWidth : $gridGutterWidth)
+//    .row
+//        margin-left: $gutterWidth * -1
+//
+//    .row > [class*="span"]
+//        margin-left: $gutterWidth
+//
+//    @for $i from 1 through $columns
+//        @if $i == $columns
+//            .span-2#{$i},
+//            .container
+//                width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
+//        @else
+//            .span#{$i}
+//                width: ($columnWidth * $i) + ($gutterWidth * ($i - 1))
+//
+//
+//    @for $i from 1 through $columns
+//        @if $i != $columns
+//            .offset#{$i}
+//                margin-left: ($columnWidth * $i) + ($gutterWidth * ($i - 1)) + ($gutterWidth * 2)
 
 
 

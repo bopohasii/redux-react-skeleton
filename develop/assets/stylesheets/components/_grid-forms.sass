@@ -23,51 +23,12 @@ form
 
 
 
-//.form-grid
-//    display: block
-//
-//    .item-row
-//        margin-bottom: 20px
-//
-//    .label-row
-//        display: block
-//        color: $color-light
-//        margin-bottom: 10px
-//
-//    .field-line
-//        width: 100%
-//        padding: 0 0 5px
-//        border:
-//            top: 0 none
-//            left: 0 none
-//            right: 0 none
-//
-//    //.sun-info
-//    //    margin: 10px 0 0
-//    //    color: $color-grey
-//
-//    .field-textarea
-//        width: 100%
-//
-//    .field-description
-//        width: 100%
-//
-//    [disabled],
-//    [readonly]
-//        background-color: transparent
-
-
-
-
-
-
-
 
 .form-grid
 
     .item-form
         display: block
-        margin: 1.5rem 0
+        margin: 0 0 1.5rem
 
     .elem-label
         float: left
@@ -75,13 +36,63 @@ form
         padding: $BaseFontSize/2 0
         line-height: $BaseLineHeight
 
+    .label-row
+        display: block
+        margin-bottom: .5rem
+
     .indent
         display: block
         margin-left: 10rem
         margin-bottom: 1rem
 
-    .filed
+    .mini
+        width: 25%
+
+    .small
+        width: 40%
+
+    .middle
+        width: 50%
+
+    .large
+        width: 60%
+
+    .field
         width: 100%
+
+    .sub-info
+        font-size: 1.2rem
+        color: $color-light
+
+
+.add-on
+    background: #f1f1f1
+    margin:  0
+    padding: $FORM__padding
+
+    white-space:     nowrap
+    overflow:        hidden
+    vertical-align:  middle
+    outline:         0 none
+    border:          $FORM__border
+
+
+.form-group
+    display: block
+    margin: 0 -10px
+    white-space: nowrap
+
+    > .small,
+    > .mini,
+    > .middle,
+    > .large
+        display: inline-block
+        padding-right: 10px
+        padding-left: 10px
+        white-space: normal
+        vertical-align: top
+        +box-sizing()
+
 
 
 +gridForm()
@@ -126,39 +137,46 @@ form
 
 
 
-//.group-form
-//
-//    display: inline-block
-//    white-space: nowrap
-//    vertical-align: middle
-//
-//    .elem
-//        padding: 3px 4px
-//
-//    .elem,
-//    .add-on,
-//    .button,
-//    input,
-//    select
-//        float: left
-//        margin-right: -1px
-//        line-height: 20px
-//        +round(0)
-//
-//        &:first-child
-//            +round(3px, left)
-//
-//        &:last-child
-//            +round(3px, right)
-//
-//    &.show-error
-//
-//        .elem,
-//        .add-on,
-//        input,
-//        select
-//            border-color: $warning__color
-//            +box-shadow(0 0 7px -2px $warning__color)
+.group-form
+
+    display: table
+    white-space: nowrap
+    vertical-align: middle
+
+    input,
+    select,
+    button
+        +round(0)
+
+    .elem,
+    .add-on
+        display: table-cell
+
+    .elem
+        width: 100%
+
+        &:first-child
+            input,
+            select,
+            button
+                +round($border-radius, left)
+
+        &:last-child
+            input,
+            select,
+            button
+                +round($border-radius, right)
+
+    .add-on
+        &:first-child
+            border-right: 0 none
+            +round($border-radius, left)
+
+        &:last-child
+            border-left: 0 none
+            +round($border-radius, right)
+
+
 
 
 
@@ -186,20 +204,20 @@ form
     .item
         width: 1%
 
-    .mini
-        width: 25%
-
-    .small
-        width: 40%
-
-    .middle
-        width: 50%
-
-    //.elem
-    //    width: 100%
-    //    line-height: 16px
 
 
 
-.group-form
-    @extend .flex-group-form
+.flex-field-form
+    display: block
+    margin: 0 -10px
+    white-space: nowrap
+
+    .small,
+    .mini,
+    .middle,
+    .large
+        display: inline-block
+        padding-right: 10px
+        padding-left: 10px
+        white-space: normal
+        +box-sizing()
